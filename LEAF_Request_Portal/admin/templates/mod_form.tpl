@@ -1255,22 +1255,17 @@ function getForm(indicatorID, series) {
     $('#button_advanced').on('click', function() {
         if(<!--{$hasDevConsoleAccess}--> == 1) {
             $('#button_advanced').css('display', 'none');
-            // triggers overflow of content
-            $('#xhr').css('overflow-y', 'scroll');
             $('#advanced').css('height', 'auto');
     	    $('#advanced').css('visibility', 'visible');
     	    $('.table').css('border-collapse', 'collapse');
         }
         else {
-            //alert('Please go to Admin Panel -> LEAF Programmer to gain access to this area.');
             alert('Notice: Please go to Admin Panel -> LEAF Programmer to ensure continued access to this area.');
             $('#button_advanced').css('display', 'none');
     	    $('#advanced').css('visibility', 'visible');
         }
     });
 
-    // resets overflow on new dialog open
-    $('#xhr').css('overflow-y', 'unset');
 
     /**
      * Purpose: Save custom HTML Code
