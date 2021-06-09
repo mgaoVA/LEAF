@@ -1,63 +1,34 @@
-<style>
-    div#massActionContainer {
-        width: 800px;
-        margin: auto;
-    }
-    #searchRequestsContainer, #searchResults, #errorMessage, #iconBusy {
-        display: none;
-    }
-    #actionContainer {
-        padding-bottom: 5px;
-    }
-    #iconBusy{
-        height: 20px;
-    }
-    table#requests {
-        border-collapse: collapse;
-    }
-    table#requests th {
-        text-align: center;
-        border: 1px solid black;
-        padding: 4px 2px;
-        font-size: 12px;
-        background-color: rgb(209, 223, 255);
-    }
-    table#requests td {
-        border: 1px solid black; 
-        padding: 8px; 
-        font-size: 12px;
-    }
-    .buttonNorm.takeAction, .buttonNorm.buttonDaySearch {
-        text-align: center;
-        font-weight: bold;
-        white-space: normal
-    }
-</style>
-<!--{include file="site_elements/generic_confirm_xhrDialog.tpl"}-->
-<script src="./js/formSearch.js"></script>
-<script>
+/*
+ * Mass Action Page Javascript
+ */
 
-var processedRequests = 0;
-var totalActions = 0;
-var actionValue = '';
-var successfulActionRecordIDs = [];
-var failedActionRecordIDs = [];
-var dialog_confirm;
-var searchID = '';
-var leafSearch;
-var isLeafSearchInit = false;
-var extraTerms;
+// Global variables
+let LeafSearch;
+$.getScript('js/formSearch.js', function()
+{
+    leafSearch.init();
+});
+let massActionToken = document.getElementById("mass-action-js").getAttribute("data-token");
+let processedRequests = 0;
+let totalActions = 0;
+let successfulActionRecordIDs = [];
+let failedActionRecordIDs = [];
+let dialog_confirm;
+let searchID = '';
+let extraTerms;
 
 $(document).ready(function(){
 
+    // Setup choosing selection and dialog for future use
     chooseAction();
-
     dialog_confirm = new dialogController('confirm_xhrDialog', 'confirm_xhr', 'confirm_loadIndicator', 'confirm_button_save', 'confirm_button_cancelchange');
 
+    // When action changes, redo the choose so it sets up the correct fields to enter
     $('select#action').change(function(){
         chooseAction();
     });
 
+    // Confirm submission for mass action and perform action if accepted
     $("button.takeAction").click(function() {
         dialog_confirm.setContent('<img src="../../../libs/dynicons/?img=process-stop.svg&amp;w=48" alt="Cancel Request" style="float: left; padding-right: 24px" /> Are you sure you want to perform this action?');
 
@@ -68,106 +39,127 @@ $(document).ready(function(){
         dialog_confirm.show();
     });
 
+    // When "Select All" selected/de-selected, set all of the request checkboxes to match
     $('input#selectAllRequests').change(function(){
         $('input.massActionRequest').prop('checked', $(this).is(':checked'));
     });
 
-    $(document).on('change', 'input.massActionRequest', function() { 
+    // When changing any mass action, reset all record checkboxes to unchecked
+    $(document).on('change', 'input.massActionRequest', function() {
         $('input#selectAllRequests').prop('checked', false);
     });
 
+    // Do the search from the input textbox if it is requested
     leafSearch = new LeafFormSearch('searchRequestsContainer');
     leafSearch.setRootURL('./');
     leafSearch.setSearchFunc(function(search) {
         extraTerms = search;
         doSearch();
     });
-
-    //leafSearch.init();
 });
 
-function chooseAction()
-{
-    if($('select#action').val() !== '')
-    {
+/**
+ * Purpose: Setup of choosing which action to take overall
+ */
+function chooseAction() {
+
+    // If nothing selected and action selected is not 'Email Reminder'
+    let actionValue = $('#action').val();
+    if ((actionValue !== '') && (actionValue !== 'email')) {
+        // Hide the email reminder and reset then show other options search and perform
+        $('#emailSection').hide();
         $('#searchRequestsContainer').show();
-        if(!isLeafSearchInit)
-        {
-            isLeafSearchInit = true;
-            leafSearch.init();
-        }
         doSearch();
     }
-    else
-    {
-        $('#searchRequestsContainer').hide();
-        $('#searchResults').hide();
-        $('#errorMessage').hide();
-        
+    // If selected 'Email Reminder' then hide searches, show last action select
+    else if ((actionValue === 'email')) {
+        $('#emailSection, #searchRequestsContainer, #searchResults, #errorMessage').show();
+        // When changing the time of last action, grab the value selected and search it
+        $('#lastAction').change(function() {
+          reminderDaysSearch();
+        });
+        $('#submitSearchByDays').click(function() {
+           reminderDaysSearch();
+        });
     }
+    // Nothing selected so hide search and email sections
+    else {
+        $('#emailSection, #searchRequestsContainer, #searchResults, #errorMessage').hide();
+    }
+}
+
+/**
+ * Purpose do reminder search (used by click or change of lastAction text)
+ */
+function reminderDaysSearch() {
+    let daysSince = document.getElementById('lastAction').valueOf();
+    doSearch();
 }
 
 /**
  * Sets up and builds the search query, passing it along to listRequests
  */
-function doSearch()
-{
-    var getCancelled = '';
-    var getSubmitted = '';
+function doSearch() {
+
+    let getCancelled = false;
+    let getSubmitted = false;
+    let getReminder = 0;
 
     $('input#selectAllRequests').prop('checked', false);
     setProgress("");
-    actionValue = $('select#action').val();//lock in selection
-
+    // Get Dropdown values
+    actionValue = $('select#action').val();
     switch(actionValue) {
-        case 'submit':
-            getCancelled = 'false';
-            getSubmitted = 'false';
+        case 'email':
+            getReminder = Number(document.getElementById('lastAction').value);
+            getSubmitted = true;
             break;
-        case 'cancel':
-            getCancelled = 'false';
-            break;
+
         case 'restore':
-            getCancelled = 'true';
+            getCancelled = true;
             break;
     }
-    var queryObj = buildQuery(getCancelled, getSubmitted);
+
+    let queryObj = buildQuery(getCancelled, getSubmitted, getReminder);
     searchID = Math.floor((Math.random() * 1000000000));
-    listRequests(queryObj, searchID);
+    listRequests(queryObj, searchID, getReminder);
 }
 
 /**
  * Builds query object to pass to form/query
  *
- * @param {string}  [getCancelled]      '','true', or 'false' whether to filter by cancelled, then whether request is('true') or isn't('false') cancelled 
- * @param {string}  [getSubmitted]      '','true', or 'false' whether to filter by submitted, then whether request is('true') or isn't('false') cancelled 
+ * @param {boolean}  [getCancelled]     filter by cancelled
+ * @param {boolean}  [getSubmitted]     filter by submitted
+ * @param {int}      [getReminder]      value of email reminder selection
  *
  * @return {Object} query object to pass to form/query.
  */
-function buildQuery(getCancelled, getSubmitted)
+function buildQuery(getCancelled, getSubmitted, getReminder)
 {
-    var requestQuery = {"terms":[],
-                        "joins":["service", "recordsDependencies", "categoryName", "status"],
-                        "sort":{}
-                        };
+    let requestQuery = {"terms":[],
+        "joins":["service", "recordsDependencies", "categoryName", "status"],
+        "sort":{}
+    };
 
-    if(getCancelled === 'true')
-    {
+    if (getCancelled) {
         requestQuery.terms.push({"id":"stepID","operator":"=","match":"deleted"});
     }
-    else if(getCancelled === 'false')
-    {
+    else {
         requestQuery.terms.push({"id":"stepID","operator":"!=","match":"deleted"});
     }
 
-    if(getSubmitted === 'false')
-    {
+    if(!getSubmitted) {
         requestQuery.terms.push({"id":"stepID","operator":"!=","match":"submitted"});
     }
 
+    if (getReminder) {
+        requestQuery.joins.push('action_history');
+        requestQuery.terms.push({"id": "stepID","operator": "!=","match": "resolved"});
+    }
+
     //handle extraTerms
-    var isJSON = true;
-    var advSearch = {};
+    let isJSON = true;
+    let advSearch = {};
     try {
         advSearch = $.parseJSON(extraTerms);
     }
@@ -188,10 +180,11 @@ function buildQuery(getCancelled, getSubmitted)
 /**
  * Looks up requests based on filter/searchbar and builds table with the results
  *
- * @param {Object}  [queryObj]  Object to pass to form/query
+ * @param {Object}  [queryObj]      Object to pass to form/query
  * @param {Integer} [thisSearchID]  When done() is called, this param is compared to the global searchID. If they are not equal, then the results are not processed.
+ * @param {Number}  [getReminder]   Number of days for email reminder selection
  */
-function listRequests(queryObj, thisSearchID)
+function listRequests(queryObj, thisSearchID, getReminder = 0)
 {
     $('#searchResults').hide();
     $('#errorMessage').hide();
@@ -202,7 +195,7 @@ function listRequests(queryObj, thisSearchID)
         type: 'GET',
         url: './api/?a=form/query',
         data: {q: JSON.stringify(queryObj),
-                CSRFToken: '<!--{$CSRFToken}-->'},
+            CSRFToken: massActionToken},
         cache: false
     }).done(function(data) {
         if(thisSearchID === searchID)
@@ -210,22 +203,35 @@ function listRequests(queryObj, thisSearchID)
             if(Object.keys(data).length)
             {
                 $.each(data, function( index, value ) {
-                    console.log(value);
-                    requestsRow = '<tr class="requestRow">';
-                    requestsRow += '<td><a href="index.php?a=printview&amp;recordID='+value.recordID+'">'+value.recordID+'</a></td>';
-                    requestsRow += '<td>'+((value.categoryNames === undefined || value.categoryNames.length == 0) ? 'non' : value.categoryNames[0]) +'</td>';
-                    requestsRow += '<td>'+(value.service == null ? '' : value.service)+'</td>';
-                    requestsRow += '<td>'+value.title+'</td>';
-                    requestsRow += '<td><input type="checkbox" name="massActionRequest" class="massActionRequest" value="'+value.recordID+'"></td>';
-                    requestsRow += '</tr>';
-                    $('table#requests').append(requestsRow);
+                    let displayRecord = true;
+                    // If this is email reminder list, then compare against give time period
+                    if (getReminder) {
+                        // Get if we can show record for time period selected
+                        let numberActions = value.action_history.length;
+                        let lastActionDate = Number(value.action_history[numberActions-1].time) * 1000;
+
+                        // Current date minus selected reminder time period
+                        let comparisonDate = Date.now() - (getReminder * 86400 * 1000);
+                        if (lastActionDate >= comparisonDate) {
+                            displayRecord = false;
+                        }
+                    }
+                    if (displayRecord) {
+                        requestsRow = '<tr class="requestRow">';
+                        requestsRow += '<td><a href="index.php?a=printview&amp;recordID=' + value.recordID + '" target="_blank">' + value.recordID + '</a></td>';
+                        requestsRow += '<td>' + ((value.categoryNames === undefined || value.categoryNames.length === 0) ? 'non' : value.categoryNames[0]) + '</td>';
+                        requestsRow += '<td>' + (value.service == null ? '' : value.service) + '</td>';
+                        requestsRow += '<td>' + value.title + '</td>';
+                        requestsRow += '<td><input type="checkbox" name="massActionRequest" class="massActionRequest" value="' + value.recordID + '"></td>';
+                        requestsRow += '</tr>';
+                        $('table#requests').append(requestsRow);
+                    }
                 });
                 $('#searchResults').show();
             }
             else
             {
-                $('#errorMessage').html('No Results');
-                $('#errorMessage').show();
+                $('#errorMessage').html('No Results').show();
             }
         }
     }).fail(function (jqXHR, error, errorThrown) {
@@ -242,38 +248,41 @@ function listRequests(queryObj, thisSearchID)
  */
 function executeMassAction()
 {
-    var selectedRequests = $('input.massActionRequest:checked');
+    let selectedRequests = $('input.massActionRequest:checked');
+    let reminderDaysSince = Number($('#lastAction').val());
+    // Update global variables for execution - used in updateProgress function
+    // Setting them to default at beginning of mass execution run
     processedRequests = 0;
     totalActions = selectedRequests.length;
     successfulActionRecordIDs = [];
     failedActionRecordIDs = [];
-    
+
     if(totalActions)
     {
         $('button.takeAction').attr("disabled", "disabled");
     }
     $.each(selectedRequests, function(key, item) {
-        var ajaxPath = '';
-        var ajaxData = {};
-        var recordID = $(item).val();
-        switch(actionValue) {    
+        let ajaxPath = '';
+        let ajaxData = {CSRFToken: massActionToken};
+        let recordID = $(item).val();
+        switch(actionValue) {
             case 'submit':
                 ajaxPath = './api/?a=form/'+recordID+'/submit';
-                ajaxData = {CSRFToken: '<!--{$CSRFToken}-->'};
                 break;
             case 'cancel':
                 ajaxPath = './api/?a=form/'+recordID+'/cancel';
-                ajaxData = {CSRFToken: '<!--{$CSRFToken}-->'};
                 break;
             case 'restore':
                 ajaxPath = './ajaxIndex.php?a=restore';
-                ajaxData = {restore: recordID,
-                            CSRFToken: '<!--{$CSRFToken}-->'};
+                ajaxData['restore'] = recordID;
+                break;
+            case 'email':
+                ajaxPath = './api/?a=form/'+recordID+'/reminder/'+reminderDaysSince;
                 break;
         }
 
         executeOneAction(recordID, ajaxPath, ajaxData);
-	});
+    });
 }
 
 /**
@@ -291,7 +300,7 @@ function executeOneAction(recordID, ajaxPath, ajaxData)
         data: ajaxData,
         dataType: "text",
         cache: false
-    }).done(function(data) {
+    }).done(function() {
         successTrueFalse = true;
         updateProgress(recordID, successTrueFalse);
     }).fail(function (jqXHR, error, errorThrown) {
@@ -325,7 +334,7 @@ function updateProgress(recordID, success)
     {
         if(failedActionRecordIDs.length > 0)
         {
-            var alertMessage = "Action failed on the following requests:";
+            let alertMessage = "Action failed on the following requests:";
             $.each(failedActionRecordIDs, function(key, item) {
                 alertMessage += "\n - ID: " + item;
             });
@@ -334,7 +343,7 @@ function updateProgress(recordID, success)
 
         doSearch();
         setProgress(successfulActionRecordIDs.length + ' successes and ' + failedActionRecordIDs.length + ' failures of ' + totalActions + ' total.');
-        
+
         $('button.takeAction').removeAttr("disabled");
     }
 }
@@ -348,43 +357,3 @@ function setProgress(message)
 {
     $('div.progress').html(message);
 }
-</script>
-<div id="massActionContainer">
-    <h1>Mass Action</h1>
-    <div id="actionContainer">
-        <label for="action"> Choose Action </label>
-        <select id="action" name="action">  
-            <option value="">-Select-</option>
-            <option value="cancel">Cancel</option>
-            <option value="restore">Restore</option>
-            <option value="submit">Submit</option>
-            <option value="email">Email Reminder</option>
-        </select>
-    </div>
-
-    <div id="searchRequestsContainer"></div>
-
-    <div id="emailSection">
-        <label for="lastAction">Days Since Last Action</label>
-        <input type="number" id="lastAction" name="lastAction" value="7" maxlength="3" />
-        <button class="buttonNorm buttonDaySearch" id="submitSearchByDays">Search Requests</button>
-    </div>
-
-    <img id="iconBusy" src="./images/indicator.gif" class="employeeSelectorIcon" alt="busy">
-    <div id="searchResults">
-        <button class="buttonNorm takeAction" style="text-align: center; font-weight: bold; white-space: normal">Take Action</button>
-        <div class="progress"></div>
-        <table id="requests">
-            <tr id="headerRow">
-                <th>UID</th>
-                <th>Type</th>
-                <th>Service</th>
-                <th>Title</th>
-                <th><input type="checkbox" name="selectAllRequests" id="selectAllRequests" value=""></th>
-            </tr>
-        </table>
-        <button class="buttonNorm takeAction" style="text-align: center; font-weight: bold; white-space: normal">Take Action</button>
-    </div>
-    <div class="progress"></div>
-    <div id="errorMessage"></div>
-</div>
