@@ -49,7 +49,6 @@ class DB
         }
         catch (PDOException $e)
         {
-            error_log("**** host: {$this->dbHost} ----- dbname: {$this->dbName} ---- user: {$this->dbUser} ---- ");
             trigger_error('DB conn: ' . $e->getMessage());
             if(!$abortOnError) {
                 echo '<div style="background-color: white; line-height: 200%; position: absolute; top: 50%; height: 200px; width: 750px; margin-top: -100px; left: 20%; font-size: 200%"><img src="../libs/dynicons/?img=edit-clear.svg&w=96" alt="Server Maintenance" style="float: left" /> Database connection error.<br />Please try again in 15 minutes.</div>';
@@ -158,7 +157,7 @@ class DB
         if ($res !== false)
         {
             return $res->fetchAll(PDO::FETCH_ASSOC);
-        }
+        } else {echo "oopsie";}
         $err = $this->db->errorInfo();
         $this->logError($err[2]);
 

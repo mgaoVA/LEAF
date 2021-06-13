@@ -13,9 +13,9 @@
 
 // require '../../../config.php';
 
-namespace Orgchart;
+// namespace Orgchart;
 
-ini_set('display_errors', 0); // Set to 1 to display errors
+ini_set('display_errors', 1); // Set to 1 to display errors
 
 define('UPLOAD_LOCATION', getenv('UPLOAD_LOCATION') ?: "./UPLOADS/");
 
