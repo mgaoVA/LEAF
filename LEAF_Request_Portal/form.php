@@ -1128,24 +1128,29 @@ class Form
 
         foreach ($keys as $key)
         {
-            if (is_numeric($key))
-            {
-                if(!$this->writeDataField($recordID, $key, $series))
-                {
+            // If form has _selected key use over initial key (Multi-Select Dropdown)
+            if (is_numeric($key) && $_POST[$key . '_selected']) {
+                $_POST[$key] = $_POST[$key . '_selected'];
+                if (!$this->writeDataField($recordID, $key, $series)) {
                     return 0;
                 }
             }
-            else
+            elseif (is_numeric($key))
+            {
+                if (!$this->writeDataField($recordID, $key, $series)) {
+                    return 0;
+                }
+            }
+            elseif (!strpos($key, '_selected')) // Check for keys that don't include _selected
             {
                 list($tRecordID, $tIndicatorID) = explode('_', $key);
-                if($tRecordID == $recordID
-                    && is_numeric($tIndicatorID))
-                {
-                    if(!$this->writeDataField($recordID, $tIndicatorID, $series))
-                    {
+                if ($tRecordID == $recordID
+                    && is_numeric($tIndicatorID)) {
+                    if (!$this->writeDataField($recordID, $tIndicatorID, $series)) {
                         return 0;
                     }
                 }
+
             }
         }
 
@@ -3628,5 +3633,24 @@ class Form
         $this->db->prepared_query('DELETE FROM records_dependencies WHERE recordID=:recordID', $vars);
             
         return 1;
+    }
+
+    /**
+     * Purpose: Send reminder emails to users depending on current step of record
+     * @param $recordID
+     * @param $days
+     * @throws SmartyException
+     */
+    function sendReminderEmail($recordID, $days) {
+
+        require_once 'Email.php';
+        $email = new Email();
+        $email->setSender('leaf.noreply@va.gov');
+        $email->addSmartyVariables(array(
+            "daysSince" => $days
+        ));
+
+        $email->attachApproversAndEmail($recordID, Email::EMAIL_REMINDER, $this->login);
+
     }
 }
