@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-04-24 01:41:39
+/* Smarty version 3.1.33, created on 2021-06-14 14:27:40
   from '/var/www/html/LEAF_Nexus/templates/print_subindicators_ajax.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60837753837846_29275206',
+  'unifunc' => 'content_60c7675ce450e1_33298023',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4fe1f1a3141c0ac83b3bfb75eeaeeacdef2207e7' => 
     array (
       0 => '/var/www/html/LEAF_Nexus/templates/print_subindicators_ajax.tpl',
-      1 => 1615409011,
+      1 => 1623622032,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:print_subindicators.tpl' => 1,
   ),
 ),false)) {
-function content_60837753837846_29275206 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c7675ce450e1_33298023 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/html/libs/smarty/plugins/modifier.sanitize.php','function'=>'smarty_modifier_sanitize',),1=>array('file'=>'/var/www/html/libs/smarty/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
         <?php if ($_smarty_tpl->tpl_vars['indicator']->value['format'] == 'textarea') {?>
@@ -34,6 +34,32 @@ _<?php echo $_smarty_tpl->tpl_vars['uid']->value;?>
             </span>
         <?php }?>
         <?php if ($_smarty_tpl->tpl_vars['indicator']->value['format'] == 'radio') {?>
+                <span class="printResponse" id="data_<?php echo htmlspecialchars(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['indicator']->value['indicatorID']), ENT_QUOTES, 'UTF-8', true);?>
+_<?php echo htmlspecialchars(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['categoryID']->value), ENT_QUOTES, 'UTF-8', true);?>
+_<?php echo htmlspecialchars(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['uid']->value), ENT_QUOTES, 'UTF-8', true);?>
+">
+            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['indicator']->value['options'], 'option');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['option']->value) {
+?>
+                <?php if (is_array($_smarty_tpl->tpl_vars['option']->value)) {?>
+                    <?php $_smarty_tpl->_assignInScope('option', $_smarty_tpl->tpl_vars['option']->value[0]);?>
+                    <?php if ($_smarty_tpl->tpl_vars['option']->value == $_smarty_tpl->tpl_vars['indicator']->value['data']) {?>
+                        <?php echo htmlspecialchars(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['option']->value), ENT_QUOTES, 'UTF-8', true);?>
+
+                    <?php }?>
+                <?php } elseif ($_smarty_tpl->tpl_vars['option']->value == $_smarty_tpl->tpl_vars['indicator']->value['data']) {?>
+                    <?php echo htmlspecialchars(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['option']->value), ENT_QUOTES, 'UTF-8', true);?>
+
+                <?php }?>
+            <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                </span>
+        <?php }?>
+        <?php if ($_smarty_tpl->tpl_vars['indicator']->value['format'] == 'multiselect') {?>
                 <span class="printResponse" id="data_<?php echo htmlspecialchars(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['indicator']->value['indicatorID']), ENT_QUOTES, 'UTF-8', true);?>
 _<?php echo htmlspecialchars(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['categoryID']->value), ENT_QUOTES, 'UTF-8', true);?>
 _<?php echo htmlspecialchars(preg_replace('!<[^>]*?>!', ' ', $_smarty_tpl->tpl_vars['uid']->value), ENT_QUOTES, 'UTF-8', true);?>

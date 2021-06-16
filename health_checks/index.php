@@ -434,19 +434,40 @@ function cleanRecordsnData(int $seed_size=4){
       }
       $datum['userID'] = $record['userID'];
       // echo "<pre>";print_r($datum);echo "</pre>";
-      $new_data = htmlspecialchars($datum['data']);
+      $new_data = htmlspecialchars($datum['data'], ENT_QUOTES);
       $up_sql[] = "update data set data='{$new_data}', userID='{$record['userID']}'
         where recordID={$datum['recordID']} && indicatorID={$datum['indicatorID']} && series={$datum['series']}";
       $up_sql[] = "update data_history set data='{$new_data}', userID='{$record['userID']}'
         where recordID={$datum['recordID']} && indicatorID={$datum['indicatorID']} && series={$datum['series']}";
     }
     
-    $new_title = ucwords(rtrim(htmlspecialchars($hippy_sentences[array_rand($hippy_sentences)]), "."));
+    $new_title = ucwords(rtrim(htmlspecialchars($hippy_sentences[array_rand($hippy_sentences)], ENT_QUOTES), "."));
     $up_sql[] = "update records set title='{$new_title}' where recordID={$record['recordID']}";
     $db_portal->query(implode(";",$up_sql));
     //echo "<pre>";print_r($up_sql);echo "</pre><hr/>";
   }
   echo "All d formats: <pre>";print_r($list_of_formats); echo "</pre>";
+}
+
+function historyCleaner(int $seed_size=99){  
+  $db_config = new Config();
+  $db_config->dbName = "leaf_portal";
+  $db_portal = new DB($db_config->dbHost, $db_config->dbUser, $db_config->dbPass, $db_config->dbName);
+  $rando_miter = new User();
+  $bulk_hippy = $rando_miter->randomite('hipster',$seed_size);
+  foreach($bulk_hippy as $hippy){
+    $hippy_words = array_merge((array)$hippy_words, $hippy->words);
+    $hippy_sentences = array_merge((array)$hippy_sentences, $hippy->sentences);
+    $hippy_paragraphs = array_merge((array)$hippy_paragraphs, $hippy->paragraphs);
+  }
+  for($i=1; $i<664; $i++){
+    $sentence = htmlspecialchars($hippy_sentences[array_rand($hippy_sentences)], ENT_QUOTES);
+    $sql[] = "update action_history set comment='{$sentence}' where actionID=$i";
+  }
+  $sql_push = implode(";", $sql);
+  $db_portal->query($sql_push);
+  echo "<pre>"; print_r($sql_push);echo "</pre>";
+  echo "<pre>"; print_r($sql);echo "</pre>";
 }
 
 
@@ -457,4 +478,5 @@ function cleanRecordsnData(int $seed_size=4){
 // buildPortalUsers(200);
 ////////// cleanIndicators(100);
 // cleanRecordsnData(100);
+// historyCleaner();
 ?>
