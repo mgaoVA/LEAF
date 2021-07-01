@@ -137,15 +137,15 @@ function addHeader(column) {
                     $('#'+data.cellContainerID).html(blob[data.recordID].recordResolutionData.lastStatus);
                 }
             }});
-        break;
+            break;
         case 'resolvedBy':
             leafSearch.getLeafFormQuery().join('recordResolutionBy');
             headers.push({name: 'Resolved By', indicatorID: 'resolvedBy', editable: false, callback: function(data, blob) {
                 if(blob[data.recordID].recordResolutionBy != undefined) {
-                      $('#'+data.cellContainerID).html(blob[data.recordID].recordResolutionBy.resolvedBy);
+                    $('#'+data.cellContainerID).html(blob[data.recordID].recordResolutionBy.resolvedBy);
                 }
             }});
-        break;
+            break;
         case 'actionButton':
         	headers.unshift({name: 'Action', indicatorID: 'actionButton', editable: false, callback: function(data, blob) {
                 $('#'+data.cellContainerID).html('<div class="buttonNorm">Take Action</div>');
