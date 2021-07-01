@@ -17,7 +17,7 @@ include 'Login.php';
 include 'db_mysql.php';
 include 'db_config.php';
 include 'form.php';
-echo "<h2>Current container ip:  {$_SERVER ['SERVER_ADDR']}</h2>";
+
 // Include XSSHelpers
 if (!class_exists('XSSHelpers'))
 {

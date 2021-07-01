@@ -47,6 +47,7 @@ $(document).ready(function(){
     // When changing any mass action, reset all record checkboxes to unchecked
     $(document).on('change', 'input.massActionRequest', function() {
         $('input#selectAllRequests').prop('checked', false);
+        // TODO: reset lastAction select box - document.getElementById("lastAction").selectedIndex = 0;
     });
 
     // Do the search from the input textbox if it is requested
@@ -54,7 +55,6 @@ $(document).ready(function(){
     leafSearch.setRootURL('./');
     leafSearch.setSearchFunc(function(search) {
         extraTerms = search;
-        doSearch();
     });
 });
 
@@ -67,33 +67,27 @@ function chooseAction() {
     let actionValue = $('#action').val();
     if ((actionValue !== '') && (actionValue !== 'email')) {
         // Hide the email reminder and reset then show other options search and perform
-        $('#emailSection').hide();
+        $('#emailSection').val('').hide();
         $('#searchRequestsContainer').show();
         doSearch();
     }
     // If selected 'Email Reminder' then hide searches, show last action select
     else if ((actionValue === 'email')) {
-        $('#emailSection, #searchRequestsContainer, #searchResults, #errorMessage').show();
+        $('#emailSection').show();
+        $('#searchRequestsContainer, #searchResults, #errorMessage').hide();
         // When changing the time of last action, grab the value selected and search it
         $('#lastAction').change(function() {
-          reminderDaysSearch();
-        });
-        $('#submitSearchByDays').click(function() {
-           reminderDaysSearch();
+          let daysSince = document.getElementById('lastAction').valueOf();
+          if (daysSince !== "") {
+              $('#searchResults').show();
+              doSearch();
+          }
         });
     }
     // Nothing selected so hide search and email sections
     else {
         $('#emailSection, #searchRequestsContainer, #searchResults, #errorMessage').hide();
     }
-}
-
-/**
- * Purpose do reminder search (used by click or change of lastAction text)
- */
-function reminderDaysSearch() {
-    let daysSince = document.getElementById('lastAction').valueOf();
-    doSearch();
 }
 
 /**
@@ -111,7 +105,7 @@ function doSearch() {
     actionValue = $('select#action').val();
     switch(actionValue) {
         case 'email':
-            getReminder = Number(document.getElementById('lastAction').value);
+            getReminder = Number($('#lastAction').val());
             getSubmitted = true;
             break;
 
@@ -154,7 +148,7 @@ function buildQuery(getCancelled, getSubmitted, getReminder)
 
     if (getReminder) {
         requestQuery.joins.push('action_history');
-        requestQuery.terms.push({"id": "stepID","operator": "!=","match": "resolved"});
+        requestQuery.terms.push({"id": "stepID","operator": "!=","match": "resolved"})
     }
 
     //handle extraTerms
@@ -211,7 +205,8 @@ function listRequests(queryObj, thisSearchID, getReminder = 0)
                         let lastActionDate = Number(value.action_history[numberActions-1].time) * 1000;
 
                         // Current date minus selected reminder time period
-                        let comparisonDate = Date.now() - (getReminder * 86400 * 1000);
+                        let comparisonDate = Date.now();
+                        comparisonDate -= (getReminder * 86400 * 1000);
                         if (lastActionDate >= comparisonDate) {
                             displayRecord = false;
                         }

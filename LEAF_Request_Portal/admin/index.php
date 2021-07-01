@@ -38,8 +38,6 @@ $db = new DB($db_config->dbHost, $db_config->dbUser, $db_config->dbPass, $db_con
 $db_phonebook = new DB($config->phonedbHost, $config->phonedbUser, $config->phonedbPass, $config->phonedbName);
 unset($db_config);
 
-echo "<h2>Current container ip:  {$_SERVER ['SERVER_ADDR']}</h2>";
-
 $login = new Login($db_phonebook, $db);
 $login->setBaseDir('../');
 
