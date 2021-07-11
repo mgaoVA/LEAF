@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2021-04-12 11:29:41
+/* Smarty version 3.1.33, created on 2021-07-08 15:07:28
   from '/var/www/html/LEAF_Request_Portal/templates/view_search.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_60746765823668_52098123',
+  'unifunc' => 'content_60e74cf0ca47c8_53854925',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '809a702417e28def1fe2ce6ee294fc3f9d054dbb' => 
     array (
       0 => '/var/www/html/LEAF_Request_Portal/templates/view_search.tpl',
-      1 => 1613857664,
+      1 => 1625165045,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60746765823668_52098123 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60e74cf0ca47c8_53854925 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="searchContainer"></div>
 <button id="searchContainer_getMoreResults" class="buttonNorm" style="display: none; float: right">Show more records</button>
 <?php echo '<script'; ?>
@@ -216,10 +216,10 @@ $(function() {
             for(var i in advSearch) {
                 if(advSearch[i].id != 'data'
                     && advSearch[i].id != 'dependencyID') {
-                    query.addTerm(advSearch[i].id, advSearch[i].operator, advSearch[i].match);
+                    query.addTerm(advSearch[i].id, advSearch[i].operator, advSearch[i].match, advSearch[i].gate);
                 }
                 else {
-                    query.addDataTerm(advSearch[i].id, advSearch[i].indicatorID, advSearch[i].operator, advSearch[i].match);
+                    query.addDataTerm(advSearch[i].id, advSearch[i].indicatorID, advSearch[i].operator, advSearch[i].match, advSearch[i].gate);
                 }
 
                 if(advSearch[i].id == 'title'
