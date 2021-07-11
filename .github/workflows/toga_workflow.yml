@@ -81,8 +81,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with: 
-          context: docker/php
-          dockerfile: leaf_monlith.dockerfile
+          context: docker/php/leaf_monlith.dockerfile
+          # dockerfile: leaf_monlith.dockerfile
           # args:
           #   - BUILD_UID=1000
           #   - SMTP_HOST=smtp.leaf-portal
