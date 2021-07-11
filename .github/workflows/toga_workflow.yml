@@ -83,10 +83,10 @@ jobs:
         with: 
           context: docker/php
           dockerfile: leaf_monlith.dockerfile
-          args:
-            - BUILD_UID=1000
-            - SMTP_HOST=smtp.leaf-portal
-            - MAIL_HUB=smtp.leaf-portal
+          # args:
+          #   - BUILD_UID=1000
+          #   - SMTP_HOST=smtp.leaf-portal
+          #   - MAIL_HUB=smtp.leaf-portal
           platforms: linux/amd64
           builder: ${{ steps.buildx.outputs.name }}
           cache-from: type=local,src=/tmp/.buildx-cache
