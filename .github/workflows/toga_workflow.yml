@@ -82,7 +82,7 @@ jobs:
         uses: docker/build-push-action@v2
         with: 
           context: docker/php/
-          file: leaf_monlith.dockerfile
+          file: docker/php/leaf_monlith.dockerfile
           build-args: BUILD_UID=1000,SMTP_HOST=smtp.leaf-portal,MAIL_HUB=smtp.leaf-portal
           platforms: linux/amd64
           builder: ${{ steps.buildx.outputs.name }}
