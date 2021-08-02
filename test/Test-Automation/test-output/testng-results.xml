@@ -1,0 +1,1491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="147" passed="145" failed="2" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-07-29T16:50:19 CDT" name="RegressionSuite" finished-at="2021-07-29T16:55:15 CDT" duration-ms="296022">
+    <groups>
+    </groups>
+    <test started-at="2021-07-29T16:50:19 CDT" name="Home Page" finished-at="2021-07-29T16:50:51 CDT" duration-ms="32083">
+      <class name="Execution.homePageTest">
+        <test-method is-config="true" signature="initializeFramework(java.lang.String,java.lang.String)[pri:0, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:19 CDT" name="initializeFramework" finished-at="2021-07-29T16:50:21 CDT" duration-ms="2224" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://localhost/LEAF_Request_Portal/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeFramework -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:21 CDT" name="setUp" finished-at="2021-07-29T16:50:21 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:21 CDT" name="setUp" finished-at="2021-07-29T16:50:21 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testForCertPage()[pri:1, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:21 CDT" name="testForCertPage" finished-at="2021-07-29T16:50:23 CDT" duration-ms="2156" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testForCertPage -->
+        <test-method signature="verifyPageTitle()[pri:4, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:23 CDT" name="verifyPageTitle" finished-at="2021-07-29T16:50:23 CDT" duration-ms="16" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPageTitle -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:23 CDT" name="setUp" finished-at="2021-07-29T16:50:23 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:23 CDT" name="setUp" finished-at="2021-07-29T16:50:23 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectNewRequest()[pri:6, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:23 CDT" name="selectNewRequest" finished-at="2021-07-29T16:50:25 CDT" duration-ms="1683" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectNewRequest -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:25 CDT" name="setUp" finished-at="2021-07-29T16:50:25 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectInbox()[pri:8, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:25 CDT" name="selectInbox" finished-at="2021-07-29T16:50:29 CDT" duration-ms="3392" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectInbox -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:29 CDT" name="setUp" finished-at="2021-07-29T16:50:29 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectBookmarks()[pri:10, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:29 CDT" name="selectBookmarks" finished-at="2021-07-29T16:50:32 CDT" duration-ms="3265" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectBookmarks -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:32 CDT" name="setUp" finished-at="2021-07-29T16:50:32 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectReportBuilder()[pri:12, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:32 CDT" name="selectReportBuilder" finished-at="2021-07-29T16:50:35 CDT" duration-ms="3279" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectReportBuilder -->
+        <test-method signature="showMoreRecords()[pri:13, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:35 CDT" name="showMoreRecords" finished-at="2021-07-29T16:50:38 CDT" duration-ms="2498" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- showMoreRecords -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:35 CDT" name="setUp" finished-at="2021-07-29T16:50:35 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="basicSearchNumber()[pri:15, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:38 CDT" name="basicSearchNumber" finished-at="2021-07-29T16:50:40 CDT" duration-ms="2701" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- basicSearchNumber -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:38 CDT" name="setUp" finished-at="2021-07-29T16:50:38 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:40 CDT" name="setUp" finished-at="2021-07-29T16:50:40 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="basicSearchText()[pri:20, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:40 CDT" name="basicSearchText" finished-at="2021-07-29T16:50:44 CDT" duration-ms="3552" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- basicSearchText -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:44 CDT" name="setUp" finished-at="2021-07-29T16:50:44 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="linksDropdown()[pri:25, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:44 CDT" name="linksDropdown" finished-at="2021-07-29T16:50:46 CDT" duration-ms="2043" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- linksDropdown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:46 CDT" name="setUp" finished-at="2021-07-29T16:50:46 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="helpDropdown()[pri:30, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:46 CDT" name="helpDropdown" finished-at="2021-07-29T16:50:47 CDT" duration-ms="1540" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- helpDropdown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:47 CDT" name="setUp" finished-at="2021-07-29T16:50:47 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminPanelPage()[pri:35, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:47 CDT" name="adminPanelPage" finished-at="2021-07-29T16:50:51 CDT" duration-ms="3642" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminPanelPage -->
+        <test-method is-config="true" signature="closeDown()[pri:0, instance:Execution.homePageTest@22e357dc]" started-at="2021-07-29T16:50:51 CDT" name="closeDown" finished-at="2021-07-29T16:50:51 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDown -->
+      </class> <!-- Execution.homePageTest -->
+    </test> <!-- Home Page -->
+    <test started-at="2021-07-29T16:50:51 CDT" name="User Access Groups" finished-at="2021-07-29T16:52:56 CDT" duration-ms="125008">
+      <class name="Execution.adminUserAccessTest">
+        <test-method is-config="true" signature="initializeFramework(java.lang.String,java.lang.String)[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:50:51 CDT" name="initializeFramework" finished-at="2021-07-29T16:50:53 CDT" duration-ms="1761" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://localhost/LEAF_Request_Portal/admin/?a=mod_groups]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeFramework -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:50:53 CDT" name="setUp" finished-at="2021-07-29T16:50:53 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testForCertPage()[pri:1, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:50:53 CDT" name="testForCertPage" finished-at="2021-07-29T16:50:56 CDT" duration-ms="2878" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testForCertPage -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:50:53 CDT" name="setUp" finished-at="2021-07-29T16:50:53 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="userAccessHeaderHome()[pri:102, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:50:56 CDT" name="userAccessHeaderHome" finished-at="2021-07-29T16:50:58 CDT" duration-ms="2228" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userAccessHeaderHome -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:50:56 CDT" name="setUp" finished-at="2021-07-29T16:50:56 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:50:58 CDT" name="setUp" finished-at="2021-07-29T16:50:58 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="userAccessHeaderReportBuilder()[pri:103, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:50:58 CDT" name="userAccessHeaderReportBuilder" finished-at="2021-07-29T16:51:00 CDT" duration-ms="2157" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userAccessHeaderReportBuilder -->
+        <test-method signature="userAccessHeaderSiteLinks()[pri:104, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:00 CDT" name="userAccessHeaderSiteLinks" finished-at="2021-07-29T16:51:02 CDT" duration-ms="1517" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userAccessHeaderSiteLinks -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:00 CDT" name="setUp" finished-at="2021-07-29T16:51:00 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:02 CDT" name="setUp" finished-at="2021-07-29T16:51:02 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="userAccessHeaderHomeLinks()[pri:105, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:02 CDT" name="userAccessHeaderHomeLinks" finished-at="2021-07-29T16:51:04 CDT" duration-ms="2372" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userAccessHeaderHomeLinks -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:04 CDT" name="setUp" finished-at="2021-07-29T16:51:04 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="filterByGroup()[pri:107, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:04 CDT" name="filterByGroup" finished-at="2021-07-29T16:51:06 CDT" duration-ms="1463" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filterByGroup -->
+        <test-method signature="filterByGroupClear()[pri:108, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:06 CDT" name="filterByGroupClear" finished-at="2021-07-29T16:51:06 CDT" duration-ms="578" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filterByGroupClear -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:06 CDT" name="setUp" finished-at="2021-07-29T16:51:06 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="filterByName1()[pri:109, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:06 CDT" name="filterByName1" finished-at="2021-07-29T16:51:08 CDT" duration-ms="1711" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filterByName1 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:06 CDT" name="setUp" finished-at="2021-07-29T16:51:06 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectedSysAdmin()[pri:110, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:08 CDT" name="selectedSysAdmin" finished-at="2021-07-29T16:51:09 CDT" duration-ms="848" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectedSysAdmin -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:08 CDT" name="setUp" finished-at="2021-07-29T16:51:08 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:09 CDT" name="setUp" finished-at="2021-07-29T16:51:09 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickHistory()[pri:112, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:09 CDT" name="clickHistory" finished-at="2021-07-29T16:51:11 CDT" duration-ms="1753" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickHistory -->
+        <test-method signature="closeHistory()[pri:114, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:11 CDT" name="closeHistory" finished-at="2021-07-29T16:51:12 CDT" duration-ms="1434" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeHistory -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:11 CDT" name="setUp" finished-at="2021-07-29T16:51:11 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:12 CDT" name="setUp" finished-at="2021-07-29T16:51:12 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="cancelPopUpMenu()[pri:116, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:12 CDT" name="cancelPopUpMenu" finished-at="2021-07-29T16:51:14 CDT" duration-ms="2008" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cancelPopUpMenu -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:14 CDT" name="setUp" finished-at="2021-07-29T16:51:14 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="filterByName2()[pri:118, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:14 CDT" name="filterByName2" finished-at="2021-07-29T16:51:18 CDT" duration-ms="3932" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filterByName2 -->
+        <test-method signature="selectedSysAdmin2()[pri:120, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:18 CDT" name="selectedSysAdmin2" finished-at="2021-07-29T16:51:20 CDT" duration-ms="2483" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectedSysAdmin2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:18 CDT" name="setUp" finished-at="2021-07-29T16:51:18 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:20 CDT" name="setUp" finished-at="2021-07-29T16:51:20 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="inputAdminCandidate()[pri:122, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:20 CDT" name="inputAdminCandidate" finished-at="2021-07-29T16:51:22 CDT" duration-ms="1913" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inputAdminCandidate -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:22 CDT" name="setUp" finished-at="2021-07-29T16:51:22 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectAdminCandidate()[pri:124, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:22 CDT" name="selectAdminCandidate" finished-at="2021-07-29T16:51:25 CDT" duration-ms="2531" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectAdminCandidate -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:25 CDT" name="setUp" finished-at="2021-07-29T16:51:25 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickAddAdministrator()[pri:126, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:25 CDT" name="clickAddAdministrator" finished-at="2021-07-29T16:51:27 CDT" duration-ms="2526" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickAddAdministrator -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:27 CDT" name="setUp" finished-at="2021-07-29T16:51:27 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="recallSysAdminDialogue()[pri:128, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:27 CDT" name="recallSysAdminDialogue" finished-at="2021-07-29T16:51:30 CDT" duration-ms="2505" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- recallSysAdminDialogue -->
+        <test-method signature="verifyAddAdministrator()[pri:130, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:30 CDT" name="verifyAddAdministrator" finished-at="2021-07-29T16:51:32 CDT" duration-ms="2441" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddAdministrator -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:30 CDT" name="setUp" finished-at="2021-07-29T16:51:30 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:32 CDT" name="setUp" finished-at="2021-07-29T16:51:32 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="removeAddedAdministrator()[pri:132, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:32 CDT" name="removeAddedAdministrator" finished-at="2021-07-29T16:51:35 CDT" duration-ms="2495" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- removeAddedAdministrator -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:35 CDT" name="setUp" finished-at="2021-07-29T16:51:35 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickLeftMenuSysAdmins()[pri:134, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:35 CDT" name="clickLeftMenuSysAdmins" finished-at="2021-07-29T16:51:36 CDT" duration-ms="1551" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickLeftMenuSysAdmins -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:36 CDT" name="setUp" finished-at="2021-07-29T16:51:36 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickLeftUserGroups()[pri:136, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:36 CDT" name="clickLeftUserGroups" finished-at="2021-07-29T16:51:38 CDT" duration-ms="1484" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickLeftUserGroups -->
+        <test-method signature="clickLeftMenuAllGroups()[pri:138, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:38 CDT" name="clickLeftMenuAllGroups" finished-at="2021-07-29T16:51:39 CDT" duration-ms="1518" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickLeftMenuAllGroups -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:38 CDT" name="setUp" finished-at="2021-07-29T16:51:38 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickLeftMenuCreateGroup()[pri:140, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:39 CDT" name="clickLeftMenuCreateGroup" finished-at="2021-07-29T16:51:41 CDT" duration-ms="1503" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickLeftMenuCreateGroup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:39 CDT" name="setUp" finished-at="2021-07-29T16:51:39 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="inputGroupTitle()[pri:142, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:41 CDT" name="inputGroupTitle" finished-at="2021-07-29T16:51:49 CDT" duration-ms="7912" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inputGroupTitle -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:41 CDT" name="setUp" finished-at="2021-07-29T16:51:41 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:49 CDT" name="setUp" finished-at="2021-07-29T16:51:49 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickSaveButton()[pri:144, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:49 CDT" name="clickSaveButton" finished-at="2021-07-29T16:51:50 CDT" duration-ms="1481" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickSaveButton -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:50 CDT" name="setUp" finished-at="2021-07-29T16:51:50 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="getNewlyCreatedUserGroup()[pri:146, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:50 CDT" name="getNewlyCreatedUserGroup" finished-at="2021-07-29T16:51:52 CDT" duration-ms="1485" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getNewlyCreatedUserGroup -->
+        <test-method signature="findMemberInputBox()[pri:148, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:52 CDT" name="findMemberInputBox" finished-at="2021-07-29T16:51:54 CDT" duration-ms="2692" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findMemberInputBox -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:52 CDT" name="setUp" finished-at="2021-07-29T16:51:52 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:54 CDT" name="setUp" finished-at="2021-07-29T16:51:54 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectGroupMember()[pri:150, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:54 CDT" name="selectGroupMember" finished-at="2021-07-29T16:51:56 CDT" duration-ms="1513" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectGroupMember -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:56 CDT" name="setUp" finished-at="2021-07-29T16:51:56 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="saveNameToGroup1()[pri:152, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:56 CDT" name="saveNameToGroup1" finished-at="2021-07-29T16:51:57 CDT" duration-ms="1465" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveNameToGroup1 -->
+        <test-method signature="getNewlyCreatedUserGroup2()[pri:154, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:57 CDT" name="getNewlyCreatedUserGroup2" finished-at="2021-07-29T16:51:59 CDT" duration-ms="1494" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getNewlyCreatedUserGroup2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:57 CDT" name="setUp" finished-at="2021-07-29T16:51:57 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:59 CDT" name="setUp" finished-at="2021-07-29T16:51:59 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="findMemberInputBox2()[pri:156, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:51:59 CDT" name="findMemberInputBox2" finished-at="2021-07-29T16:52:02 CDT" duration-ms="2667" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findMemberInputBox2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:02 CDT" name="setUp" finished-at="2021-07-29T16:52:02 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectGroupMember2()[pri:158, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:02 CDT" name="selectGroupMember2" finished-at="2021-07-29T16:52:03 CDT" duration-ms="1488" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectGroupMember2 -->
+        <test-method signature="saveNameToGroup2()[pri:160, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:03 CDT" name="saveNameToGroup2" finished-at="2021-07-29T16:52:05 CDT" duration-ms="1464" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveNameToGroup2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:03 CDT" name="setUp" finished-at="2021-07-29T16:52:03 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:05 CDT" name="setUp" finished-at="2021-07-29T16:52:05 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="getNewlyCreatedUserGroup3()[pri:162, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:05 CDT" name="getNewlyCreatedUserGroup3" finished-at="2021-07-29T16:52:06 CDT" duration-ms="1464" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getNewlyCreatedUserGroup3 -->
+        <test-method signature="getGroupMember1()[pri:164, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:06 CDT" name="getGroupMember1" finished-at="2021-07-29T16:52:08 CDT" duration-ms="2450" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getGroupMember1 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:06 CDT" name="setUp" finished-at="2021-07-29T16:52:06 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:08 CDT" name="setUp" finished-at="2021-07-29T16:52:08 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="removeGroupMember1()[pri:166, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:08 CDT" name="removeGroupMember1" finished-at="2021-07-29T16:52:11 CDT" duration-ms="2526" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- removeGroupMember1 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:11 CDT" name="setUp" finished-at="2021-07-29T16:52:11 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="getNewlyCreatedUserGroup4()[pri:168, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:11 CDT" name="getNewlyCreatedUserGroup4" finished-at="2021-07-29T16:52:12 CDT" duration-ms="1448" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getNewlyCreatedUserGroup4 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:12 CDT" name="setUp" finished-at="2021-07-29T16:52:12 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="deleteUserGroup()[pri:170, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:12 CDT" name="deleteUserGroup" finished-at="2021-07-29T16:52:14 CDT" duration-ms="1464" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteUserGroup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:14 CDT" name="setUp" finished-at="2021-07-29T16:52:14 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="cancelDeleteUserGroup()[pri:172, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:14 CDT" name="cancelDeleteUserGroup" finished-at="2021-07-29T16:52:15 CDT" duration-ms="1499" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cancelDeleteUserGroup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:15 CDT" name="setUp" finished-at="2021-07-29T16:52:15 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="deleteUserGroup2()[pri:174, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:15 CDT" name="deleteUserGroup2" finished-at="2021-07-29T16:52:17 CDT" duration-ms="1494" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteUserGroup2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:17 CDT" name="setUp" finished-at="2021-07-29T16:52:17 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="confirmDeleteUserGroup()[pri:176, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:17 CDT" name="confirmDeleteUserGroup" finished-at="2021-07-29T16:52:18 CDT" duration-ms="1480" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confirmDeleteUserGroup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:18 CDT" name="setUp" finished-at="2021-07-29T16:52:18 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectImportGroup()[pri:177, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:18 CDT" name="selectImportGroup" finished-at="2021-07-29T16:52:20 CDT" duration-ms="1487" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectImportGroup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:20 CDT" name="setUp" finished-at="2021-07-29T16:52:20 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="cancelDialogueBox()[pri:178, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:20 CDT" name="cancelDialogueBox" finished-at="2021-07-29T16:52:21 CDT" duration-ms="1492" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cancelDialogueBox -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:21 CDT" name="setUp" finished-at="2021-07-29T16:52:21 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectImportGroup2()[pri:179, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:21 CDT" name="selectImportGroup2" finished-at="2021-07-29T16:52:23 CDT" duration-ms="1514" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectImportGroup2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:23 CDT" name="setUp" finished-at="2021-07-29T16:52:23 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="inputImportGroupTitle()[pri:180, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:23 CDT" name="inputImportGroupTitle" finished-at="2021-07-29T16:52:28 CDT" duration-ms="5016" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inputImportGroupTitle -->
+        <test-method signature="selectGroupBasedOnSearch()[pri:182, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:28 CDT" name="selectGroupBasedOnSearch" finished-at="2021-07-29T16:52:29 CDT" duration-ms="1497" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectGroupBasedOnSearch -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:28 CDT" name="setUp" finished-at="2021-07-29T16:52:28 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:29 CDT" name="setUp" finished-at="2021-07-29T16:52:29 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectImportedGroupOnPage()[pri:184, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:29 CDT" name="selectImportedGroupOnPage" finished-at="2021-07-29T16:52:31 CDT" duration-ms="1386" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectImportedGroupOnPage -->
+        <test-method signature="inputImportGroupMember1()[pri:186, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:31 CDT" name="inputImportGroupMember1" finished-at="2021-07-29T16:52:34 CDT" duration-ms="2959" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inputImportGroupMember1 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:31 CDT" name="setUp" finished-at="2021-07-29T16:52:31 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:34 CDT" name="setUp" finished-at="2021-07-29T16:52:34 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="saveGroup()[pri:187, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:34 CDT" name="saveGroup" finished-at="2021-07-29T16:52:35 CDT" duration-ms="1546" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveGroup -->
+        <test-method signature="selectImportedGroupOnPage2()[pri:188, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:35 CDT" name="selectImportedGroupOnPage2" finished-at="2021-07-29T16:52:37 CDT" duration-ms="1497" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectImportedGroupOnPage2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:35 CDT" name="setUp" finished-at="2021-07-29T16:52:35 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:37 CDT" name="setUp" finished-at="2021-07-29T16:52:37 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="inputImportGroupMember2()[pri:189, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:37 CDT" name="inputImportGroupMember2" finished-at="2021-07-29T16:52:41 CDT" duration-ms="4466" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inputImportGroupMember2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:41 CDT" name="setUp" finished-at="2021-07-29T16:52:41 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="saveGroup2()[pri:190, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:41 CDT" name="saveGroup2" finished-at="2021-07-29T16:52:43 CDT" duration-ms="1484" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveGroup2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:43 CDT" name="setUp" finished-at="2021-07-29T16:52:43 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectImportedGroup()[pri:191, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:43 CDT" name="selectImportedGroup" finished-at="2021-07-29T16:52:44 CDT" duration-ms="1468" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectImportedGroup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:44 CDT" name="setUp" finished-at="2021-07-29T16:52:44 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="viewHistory()[pri:192, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:44 CDT" name="viewHistory" finished-at="2021-07-29T16:52:46 CDT" duration-ms="1514" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- viewHistory -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:46 CDT" name="setUp" finished-at="2021-07-29T16:52:46 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="closeViewHistory()[pri:193, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:46 CDT" name="closeViewHistory" finished-at="2021-07-29T16:52:47 CDT" duration-ms="1453" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeViewHistory -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:47 CDT" name="setUp" finished-at="2021-07-29T16:52:47 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="deleteUserGroup3()[pri:194, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:47 CDT" name="deleteUserGroup3" finished-at="2021-07-29T16:52:49 CDT" duration-ms="1490" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteUserGroup3 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:49 CDT" name="setUp" finished-at="2021-07-29T16:52:49 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="confirmDeleteUserGroup4()[pri:195, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:49 CDT" name="confirmDeleteUserGroup4" finished-at="2021-07-29T16:52:50 CDT" duration-ms="1493" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confirmDeleteUserGroup4 -->
+        <test-method signature="runDeleteUserGroup()[pri:196, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:50 CDT" name="runDeleteUserGroup" finished-at="2021-07-29T16:52:52 CDT" duration-ms="1460" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runDeleteUserGroup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:50 CDT" name="setUp" finished-at="2021-07-29T16:52:50 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:52 CDT" name="setUp" finished-at="2021-07-29T16:52:52 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="confirmDeleteUserGroup2()[pri:197, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:52 CDT" name="confirmDeleteUserGroup2" finished-at="2021-07-29T16:52:53 CDT" duration-ms="1480" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confirmDeleteUserGroup2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:53 CDT" name="setUp" finished-at="2021-07-29T16:52:53 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickedLeftMenuShowHistory()[pri:198, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:53 CDT" name="clickedLeftMenuShowHistory" finished-at="2021-07-29T16:52:55 CDT" duration-ms="1535" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickedLeftMenuShowHistory -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:55 CDT" name="setUp" finished-at="2021-07-29T16:52:55 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="closeShowHistory()[pri:199, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:55 CDT" name="closeShowHistory" finished-at="2021-07-29T16:52:56 CDT" duration-ms="1515" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeShowHistory -->
+        <test-method is-config="true" signature="closeDown()[pri:0, instance:Execution.adminUserAccessTest@16a0ee18]" started-at="2021-07-29T16:52:56 CDT" name="closeDown" finished-at="2021-07-29T16:52:56 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDown -->
+      </class> <!-- Execution.adminUserAccessTest -->
+    </test> <!-- User Access Groups -->
+    <test started-at="2021-07-29T16:52:56 CDT" name="Admin Page" finished-at="2021-07-29T16:54:06 CDT" duration-ms="70198">
+      <class name="Execution.adminPageTest">
+        <test-method is-config="true" signature="initializeFramework(java.lang.String,java.lang.String)[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:52:56 CDT" name="initializeFramework" finished-at="2021-07-29T16:52:58 CDT" duration-ms="1757" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://localhost/LEAF_Request_Portal/admin/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeFramework -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:52:58 CDT" name="setUp" finished-at="2021-07-29T16:52:58 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testForCertPage()[pri:1, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:52:58 CDT" name="testForCertPage" finished-at="2021-07-29T16:53:00 CDT" duration-ms="2464" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testForCertPage -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:52:58 CDT" name="setUp" finished-at="2021-07-29T16:52:58 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyAdminPageTitle()[pri:30, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:00 CDT" name="verifyAdminPageTitle" finished-at="2021-07-29T16:53:00 CDT" duration-ms="15" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAdminPageTitle -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:00 CDT" name="setUp" finished-at="2021-07-29T16:53:00 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:00 CDT" name="setUp" finished-at="2021-07-29T16:53:00 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminHeaderHome()[pri:35, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:00 CDT" name="adminHeaderHome" finished-at="2021-07-29T16:53:03 CDT" duration-ms="2432" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminHeaderHome -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:03 CDT" name="setUp" finished-at="2021-07-29T16:53:03 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminHeaderReportBuilder()[pri:38, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:03 CDT" name="adminHeaderReportBuilder" finished-at="2021-07-29T16:53:06 CDT" duration-ms="3163" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminHeaderReportBuilder -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:06 CDT" name="setUp" finished-at="2021-07-29T16:53:06 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminHeaderSiteLinks()[pri:40, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:06 CDT" name="adminHeaderSiteLinks" finished-at="2021-07-29T16:53:09 CDT" duration-ms="2440" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminHeaderSiteLinks -->
+        <test-method signature="headerAdminHomeLinks()[pri:45, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:09 CDT" name="headerAdminHomeLinks" finished-at="2021-07-29T16:53:12 CDT" duration-ms="3037" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- headerAdminHomeLinks -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:09 CDT" name="setUp" finished-at="2021-07-29T16:53:09 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:12 CDT" name="setUp" finished-at="2021-07-29T16:53:12 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="headerAdminUserAccessGroups()[pri:48, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:12 CDT" name="headerAdminUserAccessGroups" finished-at="2021-07-29T16:53:13 CDT" duration-ms="1898" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- headerAdminUserAccessGroups -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:13 CDT" name="setUp" finished-at="2021-07-29T16:53:13 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminUserAccessGroupsLink()[pri:51, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:13 CDT" name="adminUserAccessGroupsLink" finished-at="2021-07-29T16:53:16 CDT" duration-ms="2605" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminUserAccessGroupsLink -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:16 CDT" name="setUp" finished-at="2021-07-29T16:53:16 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminServiceChiefsLabel()[pri:54, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:16 CDT" name="adminServiceChiefsLabel" finished-at="2021-07-29T16:53:19 CDT" duration-ms="2810" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminServiceChiefsLabel -->
+        <test-method signature="adminWorkflowEditorButton()[pri:57, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:19 CDT" name="adminWorkflowEditorButton" finished-at="2021-07-29T16:53:21 CDT" duration-ms="2251" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminWorkflowEditorButton -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:19 CDT" name="setUp" finished-at="2021-07-29T16:53:19 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:21 CDT" name="setUp" finished-at="2021-07-29T16:53:21 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminFormEditorButton()[pri:60, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:21 CDT" name="adminFormEditorButton" finished-at="2021-07-29T16:53:24 CDT" duration-ms="3030" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminFormEditorButton -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:24 CDT" name="setUp" finished-at="2021-07-29T16:53:24 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminLeafLibraryButton()[pri:63, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:24 CDT" name="adminLeafLibraryButton" finished-at="2021-07-29T16:53:27 CDT" duration-ms="2693" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminLeafLibraryButton -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:27 CDT" name="setUp" finished-at="2021-07-29T16:53:27 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminSiteSettingsButton()[pri:66, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:27 CDT" name="adminSiteSettingsButton" finished-at="2021-07-29T16:53:29 CDT" duration-ms="2635" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminSiteSettingsButton -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:29 CDT" name="setUp" finished-at="2021-07-29T16:53:29 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminReportBuilderButton()[pri:67, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:29 CDT" name="adminReportBuilderButton" finished-at="2021-07-29T16:53:33 CDT" duration-ms="3195" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminReportBuilderButton -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:33 CDT" name="setUp" finished-at="2021-07-29T16:53:33 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminTimelineExplorerButtonl()[pri:70, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:33 CDT" name="adminTimelineExplorerButtonl" finished-at="2021-07-29T16:53:36 CDT" duration-ms="3462" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminTimelineExplorerButtonl -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:36 CDT" name="setUp" finished-at="2021-07-29T16:53:36 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminTemplateEditorButton()[pri:73, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:36 CDT" name="adminTemplateEditorButton" finished-at="2021-07-29T16:53:39 CDT" duration-ms="2857" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminTemplateEditorButton -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:39 CDT" name="setUp" finished-at="2021-07-29T16:53:39 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminEmailTemplateEditorButton()[pri:76, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:39 CDT" name="adminEmailTemplateEditorButton" finished-at="2021-07-29T16:53:42 CDT" duration-ms="2702" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminEmailTemplateEditorButton -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:42 CDT" name="setUp" finished-at="2021-07-29T16:53:42 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminLEAFProgrammerButton()[pri:79, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:42 CDT" name="adminLEAFProgrammerButton" finished-at="2021-07-29T16:53:44 CDT" duration-ms="2755" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminLEAFProgrammerButton -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:44 CDT" name="setUp" finished-at="2021-07-29T16:53:44 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminFileManagerButton()[pri:82, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:44 CDT" name="adminFileManagerButton" finished-at="2021-07-29T16:53:47 CDT" duration-ms="2588" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminFileManagerButton -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:47 CDT" name="setUp" finished-at="2021-07-29T16:53:47 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminSearchDatabaseButton()[pri:85, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:47 CDT" name="adminSearchDatabaseButton" finished-at="2021-07-29T16:53:50 CDT" duration-ms="2476" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminSearchDatabaseButton -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:50 CDT" name="setUp" finished-at="2021-07-29T16:53:50 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminSyncServicesButton()[pri:88, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:50 CDT" name="adminSyncServicesButton" finished-at="2021-07-29T16:53:52 CDT" duration-ms="2535" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminSyncServicesButton -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:52 CDT" name="setUp" finished-at="2021-07-29T16:53:52 CDT" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminUpdateDatabaseButton()[pri:90, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:52 CDT" name="adminUpdateDatabaseButton" finished-at="2021-07-29T16:53:55 CDT" duration-ms="2538" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminUpdateDatabaseButton -->
+        <test-method signature="adminImportSpreadsheetButton()[pri:93, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:55 CDT" name="adminImportSpreadsheetButton" finished-at="2021-07-29T16:53:58 CDT" duration-ms="3372" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminImportSpreadsheetButton -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:55 CDT" name="setUp" finished-at="2021-07-29T16:53:55 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:58 CDT" name="setUp" finished-at="2021-07-29T16:53:58 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminMassActionsButton()[pri:96, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:53:58 CDT" name="adminMassActionsButton" finished-at="2021-07-29T16:54:01 CDT" duration-ms="2914" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminMassActionsButton -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:54:01 CDT" name="setUp" finished-at="2021-07-29T16:54:01 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminInitiatorNewAccountButton()[pri:99, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:54:01 CDT" name="adminInitiatorNewAccountButton" finished-at="2021-07-29T16:54:04 CDT" duration-ms="2760" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminInitiatorNewAccountButton -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:54:04 CDT" name="setUp" finished-at="2021-07-29T16:54:04 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="adminSitemapEditorButton()[pri:102, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:54:04 CDT" name="adminSitemapEditorButton" finished-at="2021-07-29T16:54:06 CDT" duration-ms="2750" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminSitemapEditorButton -->
+        <test-method is-config="true" signature="closeDown()[pri:0, instance:Execution.adminPageTest@16610890]" started-at="2021-07-29T16:54:06 CDT" name="closeDown" finished-at="2021-07-29T16:54:06 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDown -->
+      </class> <!-- Execution.adminPageTest -->
+    </test> <!-- Admin Page -->
+    <test started-at="2021-07-29T16:54:06 CDT" name="New Request Workflow" finished-at="2021-07-29T16:54:43 CDT" duration-ms="36500">
+      <class name="Execution.createNewRequest">
+        <test-method is-config="true" signature="initializeFramework(java.lang.String,java.lang.String)[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:06 CDT" name="initializeFramework" finished-at="2021-07-29T16:54:08 CDT" duration-ms="1658" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://localhost/LEAF_Request_Portal/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeFramework -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:08 CDT" name="setUp" finished-at="2021-07-29T16:54:08 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:08 CDT" name="setUp" finished-at="2021-07-29T16:54:08 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testForCertPage()[pri:1, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:08 CDT" name="testForCertPage" finished-at="2021-07-29T16:54:10 CDT" duration-ms="1852" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testForCertPage -->
+        <test-method signature="selectNewRequest()[pri:202, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:10 CDT" name="selectNewRequest" finished-at="2021-07-29T16:54:11 CDT" duration-ms="1153" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectNewRequest -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:10 CDT" name="setUp" finished-at="2021-07-29T16:54:10 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectService()[pri:204, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:11 CDT" name="selectService" finished-at="2021-07-29T16:54:13 CDT" duration-ms="1493" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectService -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:11 CDT" name="setUp" finished-at="2021-07-29T16:54:11 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:13 CDT" name="setUp" finished-at="2021-07-29T16:54:13 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectServiceAcuteCare()[pri:206, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:13 CDT" name="selectServiceAcuteCare" finished-at="2021-07-29T16:54:14 CDT" duration-ms="927" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectServiceAcuteCare -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:14 CDT" name="setUp" finished-at="2021-07-29T16:54:14 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectRequestPriority()[pri:208, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:14 CDT" name="selectRequestPriority" finished-at="2021-07-29T16:54:14 CDT" duration-ms="924" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectRequestPriority -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:14 CDT" name="setUp" finished-at="2021-07-29T16:54:14 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectRequestNormalPriority()[pri:210, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:14 CDT" name="selectRequestNormalPriority" finished-at="2021-07-29T16:54:15 CDT" duration-ms="878" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectRequestNormalPriority -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:15 CDT" name="setUp" finished-at="2021-07-29T16:54:15 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="inputRequestTitle()[pri:212, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:15 CDT" name="inputRequestTitle" finished-at="2021-07-29T16:54:16 CDT" duration-ms="1022" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inputRequestTitle -->
+        <test-method signature="selectMRTestChkBox()[pri:214, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:16 CDT" name="selectMRTestChkBox" finished-at="2021-07-29T16:54:17 CDT" duration-ms="1150" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectMRTestChkBox -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:16 CDT" name="setUp" finished-at="2021-07-29T16:54:16 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:17 CDT" name="setUp" finished-at="2021-07-29T16:54:17 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectClickToProceedButton()[pri:216, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:17 CDT" name="selectClickToProceedButton" finished-at="2021-07-29T16:54:19 CDT" duration-ms="1715" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectClickToProceedButton -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:19 CDT" name="setUp" finished-at="2021-07-29T16:54:19 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="cancelRequest()[pri:218, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:19 CDT" name="cancelRequest" finished-at="2021-07-29T16:54:20 CDT" duration-ms="608" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cancelRequest -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:20 CDT" name="setUp" finished-at="2021-07-29T16:54:20 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="confirmCancelNo()[pri:220, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:20 CDT" name="confirmCancelNo" finished-at="2021-07-29T16:54:20 CDT" duration-ms="600" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confirmCancelNo -->
+        <test-method signature="cancelRequest2()[pri:222, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:20 CDT" name="cancelRequest2" finished-at="2021-07-29T16:54:21 CDT" duration-ms="640" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cancelRequest2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:20 CDT" name="setUp" finished-at="2021-07-29T16:54:20 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:21 CDT" name="setUp" finished-at="2021-07-29T16:54:21 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="confirmCancelYes()[pri:224, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:21 CDT" name="confirmCancelYes" finished-at="2021-07-29T16:54:22 CDT" duration-ms="773" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confirmCancelYes -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:22 CDT" name="setUp" finished-at="2021-07-29T16:54:22 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="returnToHomePage()[pri:226, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:22 CDT" name="returnToHomePage" finished-at="2021-07-29T16:54:23 CDT" duration-ms="1244" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- returnToHomePage -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:23 CDT" name="setUp" finished-at="2021-07-29T16:54:23 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectNewRequest2()[pri:228, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:23 CDT" name="selectNewRequest2" finished-at="2021-07-29T16:54:24 CDT" duration-ms="1013" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectNewRequest2 -->
+        <test-method signature="selectService2()[pri:230, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:24 CDT" name="selectService2" finished-at="2021-07-29T16:54:26 CDT" duration-ms="1491" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectService2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:24 CDT" name="setUp" finished-at="2021-07-29T16:54:24 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:26 CDT" name="setUp" finished-at="2021-07-29T16:54:26 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectServiceAcuteCare2()[pri:232, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:26 CDT" name="selectServiceAcuteCare2" finished-at="2021-07-29T16:54:27 CDT" duration-ms="962" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectServiceAcuteCare2 -->
+        <test-method signature="selectRequestPriority2()[pri:234, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:27 CDT" name="selectRequestPriority2" finished-at="2021-07-29T16:54:28 CDT" duration-ms="1017" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectRequestPriority2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:27 CDT" name="setUp" finished-at="2021-07-29T16:54:27 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:28 CDT" name="setUp" finished-at="2021-07-29T16:54:28 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectRequestNormalPriority2()[pri:236, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:28 CDT" name="selectRequestNormalPriority2" finished-at="2021-07-29T16:54:29 CDT" duration-ms="969" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectRequestNormalPriority2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:29 CDT" name="setUp" finished-at="2021-07-29T16:54:29 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="inputRequestTitle2()[pri:238, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:29 CDT" name="inputRequestTitle2" finished-at="2021-07-29T16:54:30 CDT" duration-ms="1030" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inputRequestTitle2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:30 CDT" name="setUp" finished-at="2021-07-29T16:54:30 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectMRTestChkBox2()[pri:240, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:30 CDT" name="selectMRTestChkBox2" finished-at="2021-07-29T16:54:31 CDT" duration-ms="988" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectMRTestChkBox2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:31 CDT" name="setUp" finished-at="2021-07-29T16:54:31 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectClickToProceedButton2()[pri:242, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:31 CDT" name="selectClickToProceedButton2" finished-at="2021-07-29T16:54:32 CDT" duration-ms="1830" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectClickToProceedButton2 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:32 CDT" name="setUp" finished-at="2021-07-29T16:54:32 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="enterFirstAndLastName()[pri:246, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:32 CDT" name="enterFirstAndLastName" finished-at="2021-07-29T16:54:33 CDT" duration-ms="989" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterFirstAndLastName -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:33 CDT" name="setUp" finished-at="2021-07-29T16:54:33 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="enterMiddleInitial()[pri:248, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:33 CDT" name="enterMiddleInitial" finished-at="2021-07-29T16:54:34 CDT" duration-ms="992" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterMiddleInitial -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:34 CDT" name="setUp" finished-at="2021-07-29T16:54:34 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectNextQuestion2()[pri:250, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:34 CDT" name="selectNextQuestion2" finished-at="2021-07-29T16:54:35 CDT" duration-ms="924" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectNextQuestion2 -->
+        <test-method signature="selectThirdQuestion()[pri:252, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:35 CDT" name="selectThirdQuestion" finished-at="2021-07-29T16:54:37 CDT" duration-ms="1240" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectThirdQuestion -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:35 CDT" name="setUp" finished-at="2021-07-29T16:54:35 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:37 CDT" name="setUp" finished-at="2021-07-29T16:54:37 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectNextQuestion()[pri:254, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:37 CDT" name="selectNextQuestion" finished-at="2021-07-29T16:54:38 CDT" duration-ms="929" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectNextQuestion -->
+        <test-method signature="selectSubmitRequest()[pri:256, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:38 CDT" name="selectSubmitRequest" finished-at="2021-07-29T16:54:40 CDT" duration-ms="2659" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectSubmitRequest -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:38 CDT" name="setUp" finished-at="2021-07-29T16:54:38 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="enterRequestCommend()[pri:258, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:40 CDT" name="enterRequestCommend" finished-at="2021-07-29T16:54:42 CDT" duration-ms="1735" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterRequestCommend -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:40 CDT" name="setUp" finished-at="2021-07-29T16:54:40 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:42 CDT" name="setUp" finished-at="2021-07-29T16:54:42 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectAcceptJob()[pri:260, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:42 CDT" name="selectAcceptJob" finished-at="2021-07-29T16:54:43 CDT" duration-ms="1013" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectAcceptJob -->
+        <test-method is-config="true" signature="closeDown()[pri:0, instance:Execution.createNewRequest@f736069]" started-at="2021-07-29T16:54:43 CDT" name="closeDown" finished-at="2021-07-29T16:54:43 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDown -->
+      </class> <!-- Execution.createNewRequest -->
+    </test> <!-- New Request Workflow -->
+    <test started-at="2021-07-29T16:54:43 CDT" name="Org Chart Workflow" finished-at="2021-07-29T16:55:04 CDT" duration-ms="21087">
+      <class name="Execution.orgChartWorkflow">
+        <test-method is-config="true" signature="initializeFramework(java.lang.String,java.lang.String)[pri:0, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:54:43 CDT" name="initializeFramework" finished-at="2021-07-29T16:54:45 CDT" duration-ms="1716" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://localhost/LEAF_Nexus/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeFramework -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:54:45 CDT" name="setUp" finished-at="2021-07-29T16:54:45 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:54:45 CDT" name="setUp" finished-at="2021-07-29T16:54:45 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testForCertPage()[pri:1, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:54:45 CDT" name="testForCertPage" finished-at="2021-07-29T16:54:47 CDT" duration-ms="2084" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testForCertPage -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:54:47 CDT" name="setUp" finished-at="2021-07-29T16:54:47 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="searchByEmployee()[pri:102, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:54:47 CDT" name="searchByEmployee" finished-at="2021-07-29T16:54:50 CDT" duration-ms="3642" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchByEmployee -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:54:50 CDT" name="setUp" finished-at="2021-07-29T16:54:50 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifySearchByEmployee()[pri:104, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:54:50 CDT" name="verifySearchByEmployee" finished-at="2021-07-29T16:54:51 CDT" duration-ms="536" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchByEmployee -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:54:51 CDT" name="setUp" finished-at="2021-07-29T16:54:51 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="searchByPosition()[pri:106, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:54:51 CDT" name="searchByPosition" finished-at="2021-07-29T16:54:57 CDT" duration-ms="5911" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchByPosition -->
+        <test-method signature="verifySearchByPosition()[pri:108, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:54:57 CDT" name="verifySearchByPosition" finished-at="2021-07-29T16:54:57 CDT" duration-ms="271" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchByPosition -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:54:57 CDT" name="setUp" finished-at="2021-07-29T16:54:57 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="searchByGroup()[pri:110, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:54:57 CDT" name="searchByGroup" finished-at="2021-07-29T16:54:59 CDT" duration-ms="2382" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchByGroup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:54:57 CDT" name="setUp" finished-at="2021-07-29T16:54:57 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:54:59 CDT" name="setUp" finished-at="2021-07-29T16:54:59 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifySearchByGroup()[pri:112, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:54:59 CDT" name="verifySearchByGroup" finished-at="2021-07-29T16:55:00 CDT" duration-ms="298" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchByGroup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:55:00 CDT" name="setUp" finished-at="2021-07-29T16:55:00 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="searchByServices()[pri:114, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:55:00 CDT" name="searchByServices" finished-at="2021-07-29T16:55:04 CDT" duration-ms="3929" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchByServices -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:55:04 CDT" name="setUp" finished-at="2021-07-29T16:55:04 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifySearchByService()[pri:116, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:55:04 CDT" name="verifySearchByService" finished-at="2021-07-29T16:55:04 CDT" duration-ms="306" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchByService -->
+        <test-method is-config="true" signature="closeDown()[pri:0, instance:Execution.orgChartWorkflow@47987356]" started-at="2021-07-29T16:55:04 CDT" name="closeDown" finished-at="2021-07-29T16:55:04 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDown -->
+      </class> <!-- Execution.orgChartWorkflow -->
+    </test> <!-- Org Chart Workflow -->
+    <test started-at="2021-07-29T16:55:04 CDT" name="Report Builder Workflow" finished-at="2021-07-29T16:55:15 CDT" duration-ms="10992">
+      <class name="Execution.reportBuilderWorkflow">
+        <test-method is-config="true" signature="initializeFramework(java.lang.String,java.lang.String)[pri:0, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:04 CDT" name="initializeFramework" finished-at="2021-07-29T16:55:06 CDT" duration-ms="1788" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://localhost/LEAF_Request_Portal/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeFramework -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:06 CDT" name="setUp" finished-at="2021-07-29T16:55:06 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testForCertPage()[pri:1, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:06 CDT" name="testForCertPage" finished-at="2021-07-29T16:55:08 CDT" duration-ms="1881" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testForCertPage -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:06 CDT" name="setUp" finished-at="2021-07-29T16:55:06 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:08 CDT" name="setUp" finished-at="2021-07-29T16:55:08 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickReportBuilder()[pri:102, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:08 CDT" name="clickReportBuilder" finished-at="2021-07-29T16:55:09 CDT" duration-ms="1453" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickReportBuilder -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:09 CDT" name="setUp" finished-at="2021-07-29T16:55:09 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="inputTextBox01()[pri:104, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:09 CDT" name="inputTextBox01" finished-at="2021-07-29T16:55:11 CDT" duration-ms="1699" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inputTextBox01 -->
+        <test-method signature="selectAnd01()[pri:106, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:11 CDT" name="selectAnd01" finished-at="2021-07-29T16:55:12 CDT" duration-ms="999" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectAnd01 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:11 CDT" name="setUp" finished-at="2021-07-29T16:55:11 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:12 CDT" name="setUp" finished-at="2021-07-29T16:55:12 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickServiceButton02()[pri:108, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:12 CDT" name="clickServiceButton02" finished-at="2021-07-29T16:55:13 CDT" duration-ms="1483" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickServiceButton02 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:13 CDT" name="setUp" finished-at="2021-07-29T16:55:13 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectOr01()[pri:110, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:13 CDT" name="selectOr01" finished-at="2021-07-29T16:55:14 CDT" duration-ms="893" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectOr01 -->
+        <test-method signature="inputTextBox03()[pri:112, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:14 CDT" name="inputTextBox03" finished-at="2021-07-29T16:55:15 CDT" duration-ms="268" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[3]/td[3]/div/a"}
+  (Session info: chrome=92.0.4515.107)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-OOHKJP3', ip: '192.168.1.168', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\MAXRIC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57436}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3058eb39326a9ebd92172758cfc75b66
+*** Element info: {Using=xpath, value=/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[3]/td[3]/div/a}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[3]/td[3]/div/a"}
+  (Session info: chrome=92.0.4515.107)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-OOHKJP3', ip: '192.168.1.168', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\MAXRIC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57436}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3058eb39326a9ebd92172758cfc75b66
+*** Element info: {Using=xpath, value=/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[3]/td[3]/div/a}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at Execution.reportBuilderWorkflow.inputTextBox03(reportBuilderWorkflow.java:188)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inputTextBox03 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:14 CDT" name="setUp" finished-at="2021-07-29T16:55:14 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:15 CDT" name="setUp" finished-at="2021-07-29T16:55:15 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="clickServiceButton03()[pri:114, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:15 CDT" name="clickServiceButton03" finished-at="2021-07-29T16:55:15 CDT" duration-ms="514" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[3]/td[5]/div/a"}
+  (Session info: chrome=92.0.4515.107)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-OOHKJP3', ip: '192.168.1.168', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\MAXRIC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57436}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3058eb39326a9ebd92172758cfc75b66
+*** Element info: {Using=xpath, value=/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[3]/td[5]/div/a}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[3]/td[5]/div/a"}
+  (Session info: chrome=92.0.4515.107)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-OOHKJP3', ip: '192.168.1.168', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\MAXRIC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57436}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3058eb39326a9ebd92172758cfc75b66
+*** Element info: {Using=xpath, value=/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[3]/td[5]/div/a}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at Execution.reportBuilderWorkflow.clickServiceButton03(reportBuilderWorkflow.java:204)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickServiceButton03 -->
+        <test-method is-config="true" signature="closeDown()[pri:0, instance:Execution.reportBuilderWorkflow@1a18644]" started-at="2021-07-29T16:55:15 CDT" name="closeDown" finished-at="2021-07-29T16:55:15 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDown -->
+      </class> <!-- Execution.reportBuilderWorkflow -->
+    </test> <!-- Report Builder Workflow -->
+  </suite> <!-- RegressionSuite -->
+</testng-results>
