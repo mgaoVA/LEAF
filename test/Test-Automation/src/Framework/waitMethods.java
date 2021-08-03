@@ -63,8 +63,12 @@ public class waitMethods {
 	
 	public static void implicitWait(int milli) {
 
-		ChromeDriver waitDriver = new ChromeDriver();
-		waitDriver.manage().timeouts().implicitlyWait(milli, TimeUnit.MILLISECONDS);
+		try {
+			ChromeDriver waitDriver = new ChromeDriver();
+			waitDriver.manage().timeouts().implicitlyWait(milli, TimeUnit.MILLISECONDS);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
