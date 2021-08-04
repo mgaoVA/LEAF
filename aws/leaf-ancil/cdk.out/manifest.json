@@ -1,0 +1,114 @@
+{
+  "version": "12.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "LeafAncilStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "LeafAncilStack.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/LeafAncilStack/project-leaf-taskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "projectleaftaskRole8B52DB89",
+            "trace": [
+              "new Role (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:199:18)",
+              "new LeafAncilStack (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\lib\\leaf-ancil-stack.ts:32:32)",
+              "Object.<anonymous> (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\bin\\leaf-ancil.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1085:14)",
+              "Module.m._compile (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1114:10)",
+              "Object.require.extensions.<computed> [as .ts] (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:950:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:790:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:76:12)",
+              "main (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1085:14)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)",
+              "Module.load (internal/modules/cjs/loader.js:950:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:790:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:76:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/LeafAncilStack/project-leaf-dbBackupVerification/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "projectleafdbBackupVerification67CC764C",
+            "trace": [
+              "new Role (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:199:18)",
+              "new LeafAncilStack (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\lib\\leaf-ancil-stack.ts:45:50)",
+              "Object.<anonymous> (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\bin\\leaf-ancil.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1085:14)",
+              "Module.m._compile (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1114:10)",
+              "Object.require.extensions.<computed> [as .ts] (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:950:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:790:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:76:12)",
+              "main (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1085:14)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)",
+              "Module.load (internal/modules/cjs/loader.js:950:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:790:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:76:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/LeafAncilStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\core\\lib\\private\\metadata-resource.ts:22:24)",
+              "D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:166:5",
+              "visit (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:231:5)",
+              "visit (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:227:5)",
+              "injectMetadataResources (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:157:3)",
+              "Object.synthesize (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:18:3)",
+              "App.synth (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\core\\lib\\stage.ts:94:23)",
+              "process.<anonymous> (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\core\\lib\\app.ts:64:45)",
+              "Object.onceWrapper (events.js:482:26)",
+              "process.emit (events.js:375:28)",
+              "process.emit (domain.js:470:12)",
+              "process.emit (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\source-map-support\\source-map-support.js:495:21)"
+            ]
+          }
+        ],
+        "/LeafAncilStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\core\\lib\\private\\metadata-resource.ts:31:27)",
+              "D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:166:5",
+              "visit (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:231:5)",
+              "visit (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:227:5)",
+              "injectMetadataResources (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:157:3)",
+              "Object.synthesize (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:18:3)",
+              "App.synth (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\core\\lib\\stage.ts:94:23)",
+              "process.<anonymous> (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\@aws-cdk\\core\\lib\\app.ts:64:45)",
+              "Object.onceWrapper (events.js:482:26)",
+              "process.emit (events.js:375:28)",
+              "process.emit (domain.js:470:12)",
+              "process.emit (D:\\OneDrive\\Coding\\Sierra7\\Leaf\\public_git\\LEAF\\aws\\leaf-ancil\\node_modules\\source-map-support\\source-map-support.js:495:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "LeafAncilStack"
+    }
+  }
+}
