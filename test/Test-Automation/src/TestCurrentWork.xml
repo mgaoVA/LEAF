@@ -21,7 +21,7 @@
 			</parameter>
 	</test>        
 	
--->
+
   
 	<test name="User Access Groups">
 		<parameter name="env" value="https://localhost/LEAF_Request_Portal/admin/?a=mod_groups">
@@ -32,7 +32,7 @@
 			</parameter>
 	</test>
 
-<!--  	  
+  	  
 	<test name="Create New Request Workflow">
 		<parameter name="env" value="https://localhost/LEAF_Request_Portal/">
 		<parameter name="browser" value="chrome"/>
@@ -51,7 +51,7 @@
 			</parameter>
 	</test>
 	
-
+-->
   	
  	<test name="Report Builder Workflow">
 		<parameter name="env" value="https://localhost/LEAF_Request_Portal/">
@@ -62,7 +62,7 @@
 		</parameter>
 	</test>    
 
-  -->	
+<!--     -->	
 	
 </suite>
 
