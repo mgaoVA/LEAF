@@ -75,29 +75,15 @@ public class reportBuilderWorkflow extends setupFramework {
 	}
     	
    
-	//First input box HTML
-	/*
-	 * <input type="text" aria-label="text" id="LeafFormSearch54_widgetMat_0" style="width: 250px">
-	//*Second Text box HTML
-	 * 
-	 * First XPath
-	 * //*[@id="LeafFormSearch54_widgetMat_0"]  //Nope, can't use
-	 * 
-	 * First full xpath - YES
-	 * /html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[1]/td[4]/input
-	 * 
-	 * <input type="text" aria-label="text" id="LeafFormSearch54_widgetMat_1" style="width: 250px">
-	 * 
-	 */
-	 
 
-	
 	@Test(priority = 104) //
 	private void inputTextBox01() {
 		waitMethods.waiter(waitMethods.w250);       
-		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[1]/td[4]/input"));
-//		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr/td[5]/input"));
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[1]/td[5]/input"));
+		//WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[1]/td[4]/input"));
+		//WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr/td[5]/input"));
     	highlightElement.highLightElement(driver, ele);
+    	waitMethods.waiter(waitMethods.w250);
     	
     	String name = "test";
    
@@ -113,35 +99,6 @@ public class reportBuilderWorkflow extends setupFramework {
 	}
 
 	
-	
-
-//	@Test(priority = 106) //
-//	private void methodTitle() {
-//		waitMethods.waiter(waitMethods.w250);       
-//		WebElement ele = driver.findElement(By.xpath("//*[text()='Report Builder']"));
-//		// Alternatively:  WebElement ele = driver.findElement(By.xpath("//*[@id=\"bodyarea\"]/div[1]/a[4]/span"));
-//    	highlightElement.highLightElement(driver, ele);
-//   		ele.click();
-//		waitMethods.waiter(waitMethods.w200);
-//    	System.out.println("Report Builder clicked from home page");
-//	}
-
-	
-//	@Test(priority = 104) //
-//	public void verifySearchByEmployee() {         
-//		//waitMethods.implicitWait(waitMethods.w300);
-//		//waitMethods.waiter(waitMethods.w1k);	
-//		WebElement ele = driver.findElement(By.partialLinkText("Wagner")); 
-//		//highlightElement.highLightElement(driver, ele);
-//		String verify = ele.toString();
-//		System.out.println(verify);
-//		Assert.assertTrue(ele.toString().contains("Wagner"));
-//	
-//		waitMethods.waiter(waitMethods.w1k);
-//		System.out.println("Search for employee name on page");
-//	}
-
-
 	@Test(priority = 106) //  1st And
 	private void selectAnd01() {
 		waitMethods.waiter(waitMethods.w250);       
@@ -212,6 +169,156 @@ public class reportBuilderWorkflow extends setupFramework {
 		System.out.println("Selected Facilities Row 3");
 	}
 	
+	
+	@Test(priority = 116) //  2nd And
+	private void selectAnd02() {
+		waitMethods.waiter(waitMethods.w250);       
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/button[2]"));
+		highlightElement.highLightElement(driver, ele);
+   		ele.click();
+		waitMethods.waiter(waitMethods.w200);
+    	System.out.println("Report Builder clicked second 'and' button");
+	}
+	
+	
+	@Test(priority = 118) //
+	public void clickTypeButton01() {         
+		//waitMethods.implicitWait(waitMethods.w300);
+		waitMethods.waiter(waitMethods.w500);			//The below opens the DDL
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[4]/td[3]/div/a"));
+		highlightElement.highLightElement(driver, ele);
+		ele.click();
+		waitMethods.waiter(waitMethods.w200);				//Select Initiator
+		WebElement ele2 = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[4]/td[3]/div/div/ul/li[5]"));
+		//WebElement ele2 = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[4]/td[3]/div/div/ul/li[4]"));
+		highlightElement.highLightElement(driver, ele2);
+		ele2.click();
+		waitMethods.waiter(waitMethods.w250);
+		System.out.println("Selected Initiator");
+	}
+	
+	
+	@Test(priority = 120) //
+	private void inputTextBox04() {
+		waitMethods.waiter(waitMethods.w250);       
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[4]/td[5]/div/div[1]/input"));
+    	highlightElement.highLightElement(driver, ele);
+    	
+    	String name = "Merry, Vittoria";
+   
+    	for(int i = 0; i < name.length(); i++) {
+    		char c = name.charAt(i);
+    		String s = new StringBuilder().append(c).toString();
+    		//ele.sendKeys(Keys.chord(name));
+    		ele.sendKeys(s);
+    		waitMethods.waiter(waitMethods.w200);
+    	}
+    	
+    	System.out.println("Input user name - V. Merry");			
+	}
+
+	
+	@Test(priority = 122) //  3rd And
+	private void selectAnd03() {
+		waitMethods.waiter(waitMethods.w250);       
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/button[2]"));
+		highlightElement.highLightElement(driver, ele);
+   		ele.click();
+		waitMethods.waiter(waitMethods.w200);
+    	System.out.println("Report Builder clicked third 'and' button");
+	}
+
+	
+	@Test(priority = 124) //
+	public void clickTypeButton02() {         
+		//waitMethods.implicitWait(waitMethods.w300);
+		waitMethods.waiter(waitMethods.w250);			//The below opens the DDL
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[5]/td[3]/div/a"));
+		highlightElement.highLightElement(driver, ele);
+		ele.click();
+		waitMethods.waiter(waitMethods.w200);				//Select Initiator
+		WebElement ele2 = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[5]/td[3]/div/div/ul/li[7]"));
+		highlightElement.highLightElement(driver, ele2);
+		ele2.click();
+		waitMethods.waiter(waitMethods.w250);
+		System.out.println("Selected Current Status");
+	}
+
+	
+	
+	@Test(priority = 126) //
+	public void clickIsNot() {         
+		//waitMethods.implicitWait(waitMethods.w300);
+		waitMethods.waiter(waitMethods.w250);			//The below opens the DDL
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[5]/td[4]/div/a"));
+		highlightElement.highLightElement(driver, ele);
+		ele.click();
+		waitMethods.waiter(waitMethods.w200);				//Select Initiator
+		WebElement ele2 = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[5]/td[4]/div/div/ul/li[2]"));
+		highlightElement.highLightElement(driver, ele2);
+		ele2.click();
+		waitMethods.waiter(waitMethods.w250);
+		System.out.println("Selected IS NOT");
+	}
+
+	
+	@Test(priority = 128) //  
+	private void selectNextStep() {
+		waitMethods.waiter(waitMethods.w250);       
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/button[4]"));
+		highlightElement.highLightElement(driver, ele);
+   		ele.click();
+		waitMethods.waiter(waitMethods.w200);
+    	System.out.println("Report Builder selected 'IS NOT'");
+	}
+
+/* Values for checkboxes
+ * 
+ * Service
+ * /html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[2]/div	
+ * 
+ * Type of Request
+ * /html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[3]/div	
+ * 
+ * Current Status
+ * /html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[4]/div
+ * 
+ * Initiator
+ * /html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[5]/div
+ * 
+ * 
+ * Action Button
+ * /html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[6]/div
+ * 
+ * Comment History
+ * /html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[7]/div
+ * 
+ * Approval History
+ * /html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[8]/div
+ * 
+ * Days since last action
+ * /html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[9]/div
+ * 
+ * Days since last Last Step Movement
+ * /html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[10]/div
+ * 
+ * 
+ * 
+ * Select Max Test Checkbox
+ * /html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[1]/div[1]
+ * 
+ * 
+ * 
+ * Generate Report
+ * ID = generateReport
+ * 
+ * */	
+	
+	
+	
+		
+	
+	
 	////////////   DDL TEMPLATE \\\\\\\\\\\\\\\\\\
 //	@Test(priority = 199) //
 //	public void DDL_Template() {         
@@ -232,7 +339,7 @@ public class reportBuilderWorkflow extends setupFramework {
 	
 //	@Test(priority = 196) //
 //	private void searchByPosition() {
-//		waitMethods.waiter(waitMethods.w500);       
+//		waitMethods.waiter(waitMethods.w250);       
 //		WebElement ele = driver.findElement(By.id("search"));
 //    	//highlightElement.highLightElement(driver, ele);
 //    	
