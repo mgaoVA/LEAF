@@ -54,7 +54,6 @@ var LeafFormGrid = function(containerID, options) {
         var delim = '<span class="nodisplay">^;</span>'; // invisible delimiters to help Excel users
         var delimLF = "\r\n";
         var tDelim = '';
-
         //finds and displays column names
         for(var i = 0; i < columns; i++){
             tDelim = (i == columns-1) ? '' : delim;
@@ -111,7 +110,11 @@ var LeafFormGrid = function(containerID, options) {
                 if(response[indicatorID].format == 'grid') {
                     data = printTableReportBuilder(data);
                 }
-                $('#' + prefixID+recordID+'_'+indicatorID).empty().html(data);
+                if(indicatorID.is_sensitive === "0") {
+                    $('#' + prefixID + recordID + '_' + indicatorID).empty().html(data);
+                } else {
+                    $('#' + prefixID + recordID + '_' + indicatorID).empty().html('******');
+                }
                 $('#' + prefixID+recordID+'_'+indicatorID).fadeOut(250, function() {
                     $('#' + prefixID+recordID+'_'+indicatorID).fadeIn(250);
                 });
@@ -506,13 +509,17 @@ var LeafFormGrid = function(containerID, options) {
                     }
 
                     if($.isNumeric(data.indicatorID)) {
-                        if(currentData[i].s1 == undefined) {
+                        if(currentData[i].s1 === undefined) {
                             currentData[i].s1 = {};
                         }
-                        data.data = currentData[i].s1['id'+headers[j].indicatorID] != undefined ? currentData[i].s1['id'+headers[j].indicatorID] : '';
+
+                        data.data = currentData[i].s1['id'+headers[j].indicatorID] !== null ? currentData[i].s1['id'+headers[j].indicatorID] : '';
+                        if (currentData[i].s1['id' + headers[j].indicatorID + '_is_sensitive'] === '1' && data.data !== '') {
+                            data.data = '******';
+                        }
                         validateHtml.innerHTML = data.data;
                         data.data = validateHtml.innerHTML;
-                        if(currentData[i].s1['id'+headers[j].indicatorID+'_htmlPrint'] != undefined) {
+                        if(currentData[i].s1['id'+headers[j].indicatorID+'_htmlPrint'] !== undefined) {
                             var htmlPrint = '<textarea id="data_'+currentData[i].recordID+'_'+headers[j].indicatorID+'_1" style="display: none">'+ data.data +'</textarea>';
                             htmlPrint += currentData[i].s1['id'+headers[j].indicatorID+'_htmlPrint']
                                             .replace(/{{ iID }}/g, currentData[i].recordID + '_' + headers[j].indicatorID)
@@ -526,14 +533,14 @@ var LeafFormGrid = function(containerID, options) {
                             buffer += '<td id="'+prefixID+currentData[i].recordID+'_'+headers[j].indicatorID+'" data-editable="'+ editable +'" data-record-id="'+currentData[i].recordID+'" data-indicator-id="'+headers[j].indicatorID+'">' + data.data + '</td>';
                         }
                     }
-                    else if(headers[j].callback != undefined) {
+                    else if(headers[j].callback !== undefined) {
                         buffer += '<td id="'+prefixID+currentData[i].recordID+'_'+headers[j].indicatorID+'" data-clickable="' + editable + '"></td>';
                     }
                     else {
                         buffer += '<td id="'+prefixID+currentData[i].recordID+'_'+headers[j].indicatorID+'"></td>';
                     }
 
-                    if(headers[j].callback != undefined) {
+                    if(headers[j].callback !== undefined) {
                         callbackBuffer.push(function(funct, data) {
                             return function() {
                                 funct(data, dataBlob);

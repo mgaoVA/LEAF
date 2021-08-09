@@ -2053,6 +2053,10 @@ class Form
                     {
                         $indicatorIdStructure['id' . $item['indicatorID'] . '_htmlPrint'] = $item['htmlPrint'];
                     }
+                    if ($item['is_sensitive'] != '')
+                    {
+                        $indicatorIdStructure['id' . $item['indicatorID'] . '_is_sensitive'] = $item['is_sensitive'];
+                    }
                 }
             }
         }
