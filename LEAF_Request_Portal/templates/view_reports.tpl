@@ -30,6 +30,7 @@
 <div id="results" style="display: none">Loading...</div>
 
 <!--{include file="site_elements/generic_dialog.tpl"}-->
+<!--{include file="site_elements/generic_confirm_xhrDialog.tpl"}-->
 <!--{include file="site_elements/generic_xhrDialog.tpl"}-->
 <script>
 var CSRFToken = '<!--{$CSRFToken}-->';
@@ -706,7 +707,8 @@ var version = 3;
 $(function() {
 	dialog = new dialogController('xhrDialog', 'xhr', 'loadIndicator', 'button_save', 'button_cancelchange');
 	dialog_message = new dialogController('genericDialog', 'genericDialogxhr', 'genericDialogloadIndicator', 'genericDialogbutton_save', 'genericDialogbutton_cancelchange');
-    leafSearch = new LeafFormSearch('searchContainer');
+    dialog_confirm = new dialogController('confirm_xhrDialog', 'confirm_xhr', 'confirm_loadIndicator', 'confirm_button_save', 'confirm_button_cancelchange');
+	leafSearch = new LeafFormSearch('searchContainer');
     leafSearch.setOrgchartPath('<!--{$orgchartPath}-->');
     leafSearch.renderUI();
 
