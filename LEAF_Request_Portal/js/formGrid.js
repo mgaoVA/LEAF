@@ -110,10 +110,13 @@ var LeafFormGrid = function(containerID, options) {
                 if(response[indicatorID].format == 'grid') {
                     data = printTableReportBuilder(data);
                 }
-                if(indicatorID.is_sensitive === "0") {
+                //data is an array for file/img uploads, string for text
+                if(response[indicatorID].is_sensitive === "0" && data.length > 0) {
                     $('#' + prefixID + recordID + '_' + indicatorID).empty().html(data);
-                } else {
+                } else if(response[indicatorID].is_sensitive === "1" && data.length > 0){
                     $('#' + prefixID + recordID + '_' + indicatorID).empty().html('******');
+                } else {
+                    $('#' + prefixID + recordID + '_' + indicatorID).empty().html('');
                 }
                 $('#' + prefixID+recordID+'_'+indicatorID).fadeOut(250, function() {
                     $('#' + prefixID+recordID+'_'+indicatorID).fadeIn(250);
