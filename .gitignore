@@ -3,7 +3,6 @@
 /.run
 /node_modules
 /aws/*/node_modules
-/aws/leaf-ancil/node_modules/
 /aws/la_old
 .buildpath
 .vs
