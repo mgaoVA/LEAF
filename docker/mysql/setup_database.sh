@@ -14,6 +14,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'tester'@'%' IDENTIFIED BY 'tester';
 GRANT_PRIVILEGES
 mysql -utester -p$MYSQL_ROOT_PASSWORD leaf_users < /orgchart_boilerplate_empty.sql;
 mysql -utester -p$MYSQL_ROOT_PASSWORD leaf_portal < /resource_database_boilerplate.sql;
+mysql -utester -p$MYSQL_ROOT_PASSWORD leaf_portal < /leaf_portal_tracking.sql;
 
 printf '\n\nInserting data to tables...'
 mysql -utester -p$MYSQL_ROOT_PASSWORD <<INSERT_DATA

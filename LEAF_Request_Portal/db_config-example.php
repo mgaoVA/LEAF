@@ -53,10 +53,12 @@ class Config
     public static $emailBCC = array();    // BCCed for every email
 
     public $phonedbHost = 'phoneSERVER_HOSTNAME';
-
     public $phonedbName = 'phoneDATABASE_NAME';
-
     public $phonedbUser = 'phoneDATABASE_USERNAME';
-
     public $phonedbPass = 'phoneDATABASE_PASSWORD';
+
+    public $trackingHost = 'trackingSERVER_HOSTNAME';
+    public $trackingName = 'trackingDATABASE_NAME';
+    public $trackingUser = 'trackingDATABASE_USERNAME';
+    public $trackingPass = 'trackingDATABASE_PASSWORD';
 }

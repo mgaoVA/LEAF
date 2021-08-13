@@ -23,6 +23,7 @@ $config = new Config();
 
 $db = new DB($db_config->dbHost, $db_config->dbUser, $db_config->dbPass, $db_config->dbName);
 $db_phonebook = new DB($config->phonedbHost, $config->phonedbUser, $config->phonedbPass, $config->phonedbName);
+$db_tracking = new DB($config->trackingHost, $config->trackingUser, $config->trackingPass, $config->trackingName);
 unset($db_config);
 
 $login = new Login($db_phonebook, $db);
@@ -169,6 +170,12 @@ $controllerMap->register('open', function() use ($db, $login, $action) {
 $controllerMap->register('userActivity', function() use ($db, $login, $action) {
     require 'controllers/UserActivity.php';
     $SignatureController = new UserActivity($db, $login);
+    $SignatureController->handler($action);
+});
+
+$controllerMap->register('tracker', function() use ($db_tracking, $login, $action) {
+    require 'controllers/TrackingController.php';
+    $SignatureController = new TrackingController($db_tracking, $login);
     $SignatureController->handler($action);
 });
 
