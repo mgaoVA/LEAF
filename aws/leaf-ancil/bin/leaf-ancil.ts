@@ -9,5 +9,4 @@ new LeafAncilStack(app, 'LeafAncilStack', {
     account: '456456143286', 
     region: 'us-east-1' 
   },
-
 });
