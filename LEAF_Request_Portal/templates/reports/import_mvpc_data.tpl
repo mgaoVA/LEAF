@@ -39,28 +39,23 @@
     <h4>Choose a Spreadsheet</h4>
     The first row of the file must be headers for the columns.
     <br/>
-
     <input id="sheet_upload" type="file"/>
-
     <br />
     <br />
 </div>
 
 
-<div id="import_data_existing_form" style="display: block;">
+<div id="import_data_existing_form" style="display: none;">
     <h4>Select a Form</h4>
     <select id="category_select"></select>
-
     <button id="import_btn_existing" type="button">Import</button>
     <input id="preserve_existing" type="checkbox" name="preserve_existing"/>
     <label for="preserve_existing">Preserve Row Order?</label>
-
     <br/><br/>
 
     <label for="title_input_existing"><b>Title of Requests</b></label>
     <input type="text" id="title_input_existing" />
     (Required) This will be the title for all imported requests.
-
     <br/><br/>
 
     <table id="category_indicators">
@@ -79,34 +74,53 @@
     </table>
 </div>
 <div id="request_status" style="padding: 20px;"></div>
+
 <!--{include file="site_elements/generic_confirm_xhrDialog.tpl"}-->
             <div id="dialog" title="Import Status" style="z-index:100;">
                 <div class="progress-label">Starting import...</div>
                 <div id="progressbar"></div>
             </div>
 <div id="modal-background"></div>
+
+
 <script>
-    /*
-    $.ajax({
-            type: 'POST',
-            url: '<!--{$orgchartPath}-->/api/?a=group',
-            data: {title: facility cell,
-                    CSRFToken: '<!--{$CSRFToken}-->'},
-            success: function(res) {
-                res = res || 0;
-                if(res !== 0 ) {
-                    ok
+
+    /**
+     * Purpose: Merge Stapled Forms
+     * @param categoryID
+     */
+    function mergeForm(categoryID) {
+        // when cell 1 chosen
+        dialog.setTitle('Staple other form');
+        dialog.setContent('Select a form to staple: <div id="formOptions"></div>');
+        dialog.indicateBusy();
+
+        $.ajax({
+            type: 'GET',
+            url: '<!--{$orgchartPath}-->/api/formStack/categoryList/all',
+            success: function (res) {
+                var buffer = '<select id="stapledCategoryID">';
+                for (let i in res) {
+                    if (res[i].workflowID == 0
+                        && res[i].categoryID != categoryID
+                        && res[i].parentID == '') {
+                        buffer += '<option value="' + res[i].categoryID + '">' + res[i].categoryName + '</option>';
+                    }
                 }
-                else {
-                    halp;
-                }
+                buffer += '</select>';
+                $('#formOptions').html(buffer);
+                dialog.indicateIdle();
             },
             cache: false
         });
-     */
+    }
+
+    document.getElementById('sheet_upload').addEventListener('change', function(){
+        document.getElementById('import_data_existing_form').style.display = 'block';
+    })
+
     var CSRFToken = '<!--{$CSRFToken}-->';
     var orgChartPath = '<!--{$orgchartPath}-->';
-    //nexusAPI.Employee.getByEmail(email, succesf, failf);
     var nexusAPI = LEAFNexusAPI();
     nexusAPI.setBaseURL(orgChartPath + '/api/?a=');
     nexusAPI.setCSRFToken(CSRFToken);
@@ -119,12 +133,10 @@
     var categoryIndicators = $('#category_indicators tbody');
     var fileSelect = $('#file_select');
     var importBtnExisting = $('#import_btn_existing');
-    var importBtnNew = $('#import_btn_new');
     var titleInputExisting = $('#title_input_existing');
     var titleInputNew = $('#title_input_new');
     var formTitle = $('#formTitleInput');
     var formDescription = $('#formDescription');
-    var newForm = $('#import_data_new_form');
     var existingForm = $('#import_data_existing_form');
     var requestStatus = $('#request_status');
     var sheetUpload = $('#sheet_upload');
@@ -141,7 +153,7 @@
     var blankIndicators = [];
     var sheet_data = {};
     var dialog_confirm = new dialogController('confirm_xhrDialog', 'confirm_xhr', 'confirm_loadIndicator', 'confirm_button_save', 'confirm_button_cancelchange');
-    let mvpc_type = 'str';
+
 
     function checkFormatExisting(column) {
         for (var i = 1; i < sheet_data.cells.length; i++) {
@@ -191,7 +203,6 @@
                 '</tr>';
         });
         table += '</tbody></table>';
-        newForm.append(table);
     }
 
     function alphaToNum(alpha) {
@@ -437,8 +448,7 @@
         function closeImport() {
             $("#modal-background").removeClass("modalBackground");
             clearTimeout( progressTimer );
-            dialog
-                .dialog( "close" );
+            dialog.dialog( "close" );
             progressbar.progressbar( "value", false );
             progressLabel.text( "Starting import..." );
             progressbar.progressbar( "value", 0);
@@ -509,13 +519,15 @@
                             switch (currentFormat) {
                                 case 'orgchart_employee':
                                     var sheetEmp = typeof (row[indicatorColumn]) !== "undefined" && row[indicatorColumn] !== null ? row[indicatorColumn].toString() : '';
-                                    nexusAPI.Employee.getByEmailNational({
+                                    nexusAPI.Employee.getByEmailNational({ //ok if in6 in employee_data leaf_users/nex
                                         'onSuccess': function (user) {
                                             var res = Object.keys(user);
                                             var emp = user[res[0]];
+                                            console.log(res, user[res], emp);
                                             if (typeof (emp) !== "undefined" && emp !== null && res.length === 1) {
                                                 nexusAPI.Employee.importFromNational({
                                                     'onSuccess': function (results) {
+                                                        console.log(results);
                                                         if (!isNaN(results)) {
                                                             requestData[currentIndicator] = parseInt(results);
                                                         } else {
@@ -554,12 +566,30 @@
                                     nexusAPI.Groups.searchGroups({
                                         'onSuccess': function (groups) {
                                             if (groups.length === 1) {
-                                                var grp = groups[Object.keys(groups)[0]];
+                                                let grp = groups[Object.keys(groups)[0]];
+                                                console.log('grp', grp);
                                                 requestData[currentIndicator] = parseInt(grp.groupID);
                                             } else if (groups.length > 1) {
                                                 requestData['failed'] = indicatorColumn + titleIndex + ': Multiple groups found for ' + sheetGroup + '.  Make sure that the name is exact.';
                                             } else {
-                                                requestData['failed'] = indicatorColumn + titleIndex + ': Group ' + sheetGroup + ' not found.';
+                                                //requestData['failed'] = indicatorColumn + titleIndex + ': Group ' + sheetGroup + ' not found.';
+                                                //  post a new group if needed ...
+                                                $.ajax({
+                                                    type: 'POST',
+                                                    url: '<!--{$orgchartPath}-->/api/?a=group',
+                                                        data: {title: sheetGroup,
+                                                                CSRFToken: '<!--{$CSRFToken}-->'},
+                                                        success: function(strGroupID) {
+                                                            strGroupID = strGroupID || 0;
+                                                            if(strGroupID !== 0 ) {
+                                                                requestData[currentIndicator] = parseInt(strGroupID);
+                                                            }
+                                                            else {
+                                                                console.warn('group did not post')
+                                                            }
+                                                        },
+                                                        cache: false
+                                                    });
                                             }
                                             completed++;
                                             answerQuestions().then(function(){resolve();})
@@ -610,16 +640,22 @@
                                     answerQuestions().then(function(){resolve();})
                                     break;
                                 default:
+                                    //VA Admin Office is not on the spreadsheet, from ind 1 selection
+                                    if (currentIndicator === "1"){
+                                        requestData[currentIndicator] = document.getElementById('1_sheet_column').value;
+                                        completed++;
+                                        answerQuestions().then(function (){resolve();})
+                                        break;
+                                    }
                                     requestData[currentIndicator] = row[indicatorColumn];
                                     completed++;
-                                    answerQuestions().then(function(){resolve();})
+                                    answerQuestions().then(function (){resolve();})
                                     break;
                             }
                         }
                     }
                     })
                 }
-
             
                  answerQuestions().then(function(){resolve();})
                 });
@@ -649,7 +685,7 @@
 
             }
             else{
-                for (var i = 1; i <= sheet_data.cells.length - 1; i+=2) {
+                for (let i = 1; i <= sheet_data.cells.length - 1; i+=2) {
                     
                     var doublet = [];
                     doublet.push(selectRowToAnswer(i));
@@ -678,7 +714,7 @@
 
                 categorySelect.append(opt);
 
-                for (var i = 0; i < results.length; i++) {
+                for (let i = 0; i < results.length; i++) {
                     var category = results[i];
                     var opt = $(document.createElement('option'))
                         .attr('value', category.categoryID)
@@ -720,7 +756,6 @@
             });
             dialog_confirm.show();
         });
-
 
         categorySelect.on('change', function () {
             categoryIndicators.html('');
@@ -769,7 +804,6 @@
                 /* insures spreadsheet has filename */
                 if(typeof (rawSheet) === "undefined"){
                     existingForm.css('display', 'none');
-                    newForm.css('display', 'none');
                     alert('Unsupported file: file requires name');
                     return;
                 }
@@ -780,11 +814,11 @@
                 var headers = new Object();
 
                 /* converts schema */
-                for(var i = 0; i <= rows; i++) {
+                for(let i = 0; i <= rows; i++) {
                     if(i !== 0){
                         cells[i.toString()] = {};
                     }
-                    for (var j = 0; j < columnNames.length; j++) {
+                    for (let j = 0; j < columnNames.length; j++) {
                         if (i === 0){
                             if (typeof (rawSheet[columnNames[j] + (i + 1).toString()]) === "undefined") {                                
                             } else {
@@ -809,8 +843,6 @@
             };
             fileReader.readAsArrayBuffer(file);
         });
-
     });
-
 
 </script>
