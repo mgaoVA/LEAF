@@ -175,8 +175,8 @@ $controllerMap->register('userActivity', function() use ($db, $login, $action) {
 
 $controllerMap->register('tracker', function() use ($db_tracking, $login, $action) {
     require 'controllers/TrackingController.php';
-    $SignatureController = new TrackingController($db_tracking, $login);
-    $SignatureController->handler($action);
+    $TrackingController = new TrackingController($db_tracking, $login);
+    $TrackingController->handler($action);
 });
 
 $controllerMap->runControl($key);

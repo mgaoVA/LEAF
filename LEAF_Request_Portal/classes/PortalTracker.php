@@ -4,8 +4,8 @@
  */
 
 /*
-    Emailer
-    Date Created: September 19, 2008
+   Portal Tracker
+   Purpose: API to track file upload, access, and other parameters
 
 */
 include_once __DIR__ . '/../../libs/smarty/Smarty.class.php';
@@ -14,7 +14,7 @@ require_once '../VAMC_Directory.php';
 
 class PortalTracker
 {
-    private $db
+    private $db;
     private $login;
     private $uploadFile;
 

@@ -43,10 +43,26 @@ CREATE TABLE leaf_portal_tracking.`file_uploads` (
     `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
     `last_updated` timestamp NOT NULL DEFAULT current_timestamp(),
     `upload_user` varchar(25) NOT NULL,
+    `status` varchar(25) NOT NULL,
     CONSTRAINT `fk_file_location`
         FOREIGN KEY (location_id) REFERENCES leaf_portal_tracking.file_location (location_id),
     CONSTRAINT `fk_file_type`
         FOREIGN KEY (type) REFERENCES leaf_portal_tracking.file_types (type_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Create table `file_access`
+--
+DROP TABLE IF EXISTS leaf_portal_tracking.`file_access`;
+CREATE TABLE leaf_portal_tracking.`file_access` (
+    `access_id` int(10) unsigned NOT NULL AUTO_INCREMENT
+        primary key,
+    `file_id` int(10) unsigned NOT NULL,
+    `access_time` timestamp NOT NULL DEFAULT current_timestamp(),
+    `accessed_by` varchar(25) NOT NULL,
+    `file_action` varchar(25) NOT NULL,
+     CONSTRAINT `fk_file_id`
+         FOREIGN KEY (file_id) REFERENCES leaf_portal_tracking.file_uploads (file_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 COMMIT;
