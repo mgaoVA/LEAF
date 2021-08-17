@@ -120,9 +120,7 @@
     var indicatorArray = [];
     var blankIndicators = [];
     var sheet_data = {};
-    let currentGroup = 0;
-    let employeesForGroup = [];
-    let groupsAndEmployees = [];
+    let groupsAndEmployees = []; //to hold elements [groupID, [employeeIDs]] for each imported row
     var dialog_confirm = new dialogController('confirm_xhrDialog', 'confirm_xhr', 'confirm_loadIndicator', 'confirm_button_save', 'confirm_button_cancelchange');
 
 
@@ -265,13 +263,32 @@
         return select;
     }
 
-    function getUniqueArray(val,index,self) {
-        return self.indexOf(val) === index;
-    }
 
-    function addEmployeesToGroups(groupID, orgchartEmployee){
-        console.log('test');
+    function addEmployeeToGroup(groupID, employeeID){
+        let url = '<!--{$orgchartPath}-->/api/group/'+ groupID + '/employee/';
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+                empUID: employeeID,
+                CSRFToken: '<!--{$CSRFToken}-->'
+            },
+            success: function(response) {
+                //returns undef.  posts to relation_group_employee, even if neither groupID nor empID exists
+                console.log(response);
+                response = response || 0;
+                if(response !== 0 ) {
+                    console.log(response);
+                }
+                else { ///*******************
+                    console.warn('response 0')
+                }
+            },
+            cache: false
+        });
+        console.log('empAdd test', groupID, employeeID, url);
     };
+
 
     /* build the table row and data (<tr> and <td>) for the given indicator */
     function buildIndicatorRow(indicator, classname) {
@@ -341,54 +358,49 @@
 
     function makeRequests(categoryID, requestData) {
         return new Promise(function(resolve, reject){
-        var title = titleInputExisting.val();
+            var title = titleInputExisting.val();
 
-        if (typeof (requestData['failed']) !== "undefined") {
-            failedRequests.push(requestData['failed']);
-        } else {
-            portalAPI.Forms.newRequest(
-                categoryID,
-                requestData,
-                function (recordID) {
-                    /* recordID is the recordID of the newly created request, it's 0 if there was an error */
-                    if (recordID > 0) {
-                        createdRequests++;
-
-                        if(createdRequests === totalRecords){
-                            let empUnique = employeesForGroup.filter(getUniqueArray);
-                            groupsAndEmployees.push([currentGroup, empUnique]);
+            if (typeof (requestData['failed']) !== "undefined") {
+                failedRequests.push(requestData['failed']);
+            } else {
+                portalAPI.Forms.newRequest(
+                    categoryID,
+                    requestData,
+                    function (recordID) {
+                        /* recordID is the recordID of the newly created request, it's 0 if there was an error */
+                        if (recordID > 0) {
+                            createdRequests++;
+                            requestStatus.html(createdRequests + ' out of ' + (sheet_data.cells.length - 1) + ' requests completed, ' + failedRequests.length + ' failures.');
+                        } else {
+                            failedRequests.push('Error creating request for the following data: ' + requestData);
                         }
-                        requestStatus.html(createdRequests + ' out of ' + (sheet_data.cells.length - 1) + ' requests completed, ' + failedRequests.length + ' failures.');
-                    } else {
-                        failedRequests.push('Error creating request for the following data: ' + requestData);
+                        if (createdRequests + failedRequests.length === (sheet_data.cells.length - 1)) {
+                            generateReport(title);
+                            createdRequests = 0;
+                            failedRequests = new Array();
+
+                        }
+                        resolve();
+                    },
+                    function (error) {
+                        failedRequests.push(requestData);
+                        resolve();
                     }
-                    if (createdRequests + failedRequests.length === (sheet_data.cells.length - 1)) {
-                        generateReport(title);
-                        createdRequests = 0;
-                        failedRequests = new Array();
-                        
-                    }
-                    resolve();
-                },
-                function (error) {
-                    failedRequests.push(requestData);
-                    resolve();
-                }
-            );
-        }
-        requestStatus.html(createdRequests + ' out of ' + (sheet_data.cells.length - 1) + ' requests completed, ' + failedRequests.length + ' failures.');
-        if (failedRequests.length === (sheet_data.cells.length - 1)) {
-            requestStatus.html('All requests failed!  See log for details.');
-            requestStatus.append(
-                '<br/><br/>' +
-                'Failed to import values: <br/>' + failedRequests.join("<br/>"));
-            $('#status').html('Import has failed');
-            failedRequests = new Array();
-        } else if (createdRequests + failedRequests.length === (sheet_data.cells.length - 1)) {
-            generateReport(title);
-            createdRequests = 0;
-            failedRequests = new Array();
-        }
+                );
+            }
+            requestStatus.html(createdRequests + ' out of ' + (sheet_data.cells.length - 1) + ' requests completed, ' + failedRequests.length + ' failures.');
+            if (failedRequests.length === (sheet_data.cells.length - 1)) {
+                requestStatus.html('All requests failed!  See log for details.');
+                requestStatus.append(
+                    '<br/><br/>' +
+                    'Failed to import values: <br/>' + failedRequests.join("<br/>"));
+                $('#status').html('Import has failed');
+                failedRequests = new Array();
+            } else if (createdRequests + failedRequests.length === (sheet_data.cells.length - 1)) {
+                generateReport(title);
+                createdRequests = 0;
+                failedRequests = new Array();
+            }
         });
     }
 
@@ -484,17 +496,12 @@
                     if (completed === indicatorArray.length) {
                         requestData['title'] = titleInputExisting.val() + '_' + titleIndex;
                         makeRequests(categorySelect.val(), requestData).then(function(){
-                            console.log(requestData); //row data. check employees and groups
-                            if (currentGroup !== requestData[3]){  //new orgchart or final row
-                                if (employeesForGroup.length !== 0) { //skip if arr is empty
-                                    let empUnique = employeesForGroup.filter(getUniqueArray);
-                                    groupsAndEmployees.push([currentGroup, empUnique]);
-                                }
-                                employeesForGroup = [];
-                                currentGroup = requestData[3];
-                            }
-                            //keys of reqData are either an indicatorID or CSRFToken. If it's a indID, get the
-                            //currentIndicators object that it corresponds to. If the format for that object is
+                            console.log(requestData); //row data.
+                            let currentGroup = requestData['3']; //indicatorID 3: Facility / Office Name
+                            let employeesForGroup = [];
+                            //For each row(set of reqData), associate all orgchart employees to the row's group.
+                            //Keys of reqData are either an indicatorID or CSRFToken. If it's a indID, get the
+                            //currentIndicators object that the ID corresponds to. If the format for that object is
                             //orgchart_employee, add requestData key's value (empUID) to employeesForGroups array
                             for (let key in requestData){
                                 let indicatorObject = currentIndicators.filter(function(obj){
@@ -503,6 +510,13 @@
                                 if (key !== 'CSRFToken' && indicatorObject.format === "orgchart_employee"){
                                     employeesForGroup.push(requestData[key]);
                                 }
+                            }
+                            //add groupID and unique set of employee empUIDs to groupsAndEmployees array
+                            if (employeesForGroup.length !== 0) {
+                                let empUnique = employeesForGroup.filter(function(val,index,self) {
+                                    return self.indexOf(val) === index;
+                                });
+                                groupsAndEmployees.push([currentGroup, empUnique]);
                             }
                             resolve();
                         });
@@ -526,7 +540,8 @@
                                     if (commaIndex !== -1){
                                         sheetEmp = sheetEmp.slice(0, commaIndex);
                                     }
-                                    nexusAPI.Employee.getByEmailNational({ //  ok if in6 in employee_data leaf_users/nex
+                                    //if it's an email (in6 in employee_data leaf_users/nex)
+                                    nexusAPI.Employee.getByEmailNational({
                                         'onSuccess': function (user) {
                                             let res = Object.keys(user);
                                             //there should only be 1 email.
@@ -567,6 +582,9 @@
                                         'async': true
                                     }, sheetEmp);
                                     break;
+                                    //otherwise try to get by name
+
+
                                 case 'orgchart_group':
                                     let sheetGroup = typeof (row[indicatorColumn]) !== "undefined" && row[indicatorColumn] !== null ? row[indicatorColumn].toString() : '';
                                     nexusAPI.Groups.searchGroups({
@@ -744,12 +762,12 @@
 
         /**
          * Purpose: Add indicators according to additional form selection
-         * @param categoryID (portal category ID)
+         * @param categoryID (portal category ID, )
          */
         function addChosenFormIndicators(categoryID) {
             $.ajax({
                 type: 'GET',
-                url: './api/formStack/categoryList/all',
+                url: './api/formStack/categoryList/all', //'./api/form/'+categoryID 'controller is undefined'
                 success: function (categories) {
                     let selectedForm = document.getElementById('1_sheet_column').value;
                     let chosenForm = categories.find(function(cat) {
@@ -809,7 +827,7 @@
                             while(prevMergedIndicatorRows[0]) {
                                 prevMergedIndicatorRows[0].parentNode.removeChild(prevMergedIndicatorRows[0]);
                             }
-                            addChosenFormIndicators(categorySelect.val()); //value of initial selection (port categoryID formID)
+                            addChosenFormIndicators(categorySelect.val()); //value (formID) of initial selection (portal categoryID)
                         });
                     }
                 },
