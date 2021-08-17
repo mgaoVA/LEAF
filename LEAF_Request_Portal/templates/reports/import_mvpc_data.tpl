@@ -73,6 +73,8 @@
         <tbody></tbody>
     </table>
 </div>
+<div id="testContent"></div>
+
 <div id="request_status" style="padding: 20px;"></div>
 
 <!--{include file="site_elements/generic_confirm_xhrDialog.tpl"}-->
@@ -85,46 +87,11 @@
 
 <script>
 
-    /**
-     * Purpose: Merge Stapled Forms
-     * @param categoryID
-     */
-    function mergeForm(categoryID) {
-        // when cell 1 chosen
-        dialog.setTitle('Staple other form');
-        dialog.setContent('Select a form to staple: <div id="formOptions"></div>');
-        dialog.indicateBusy();
-
-        $.ajax({
-            type: 'GET',
-            url: '<!--{$orgchartPath}-->/api/formStack/categoryList/all',
-            success: function (res) {
-                var buffer = '<select id="stapledCategoryID">';
-                for (let i in res) {
-                    if (res[i].workflowID == 0
-                        && res[i].categoryID != categoryID
-                        && res[i].parentID == '') {
-                        buffer += '<option value="' + res[i].categoryID + '">' + res[i].categoryName + '</option>';
-                    }
-                }
-                buffer += '</select>';
-                $('#formOptions').html(buffer);
-                dialog.indicateIdle();
-            },
-            cache: false
-        });
-    }
-
-    document.getElementById('sheet_upload').addEventListener('change', function(){
-        document.getElementById('import_data_existing_form').style.display = 'block';
-    })
-
     var CSRFToken = '<!--{$CSRFToken}-->';
     var orgChartPath = '<!--{$orgchartPath}-->';
     var nexusAPI = LEAFNexusAPI();
     nexusAPI.setBaseURL(orgChartPath + '/api/?a=');
     nexusAPI.setCSRFToken(CSRFToken);
-    //portalAPI
     var portalAPI = LEAFRequestPortalAPI();
     portalAPI.setBaseURL('./api/?a=');
     portalAPI.setCSRFToken(CSRFToken);
@@ -149,15 +116,19 @@
     var createdRequests = 0;
     var failedRequests = [];
     var currentIndicators = [];
+    let numberBaseIndicators = 0;
     var indicatorArray = [];
     var blankIndicators = [];
     var sheet_data = {};
+    let currentGroup = 0;
+    let employeesForGroup = [];
+    let groupsAndEmployees = [];
     var dialog_confirm = new dialogController('confirm_xhrDialog', 'confirm_xhr', 'confirm_loadIndicator', 'confirm_button_save', 'confirm_button_cancelchange');
 
 
     function checkFormatExisting(column) {
-        for (var i = 1; i < sheet_data.cells.length; i++) {
-            var value = typeof (sheet_data.cells[i]) !== "undefined" && typeof (sheet_data.cells[i][column]) !== "undefined" ? sheet_data.cells[i][column].toString() : '';
+        for (let i = 1; i < sheet_data.cells.length; i++) {
+            let value = typeof (sheet_data.cells[i]) !== "undefined" && typeof (sheet_data.cells[i][column]) !== "undefined" ? sheet_data.cells[i][column].toString() : '';
             if (value.indexOf('@va.gov') === -1 && value.indexOf(' ') === -1 && value.indexOf(',') === -1 && value.indexOf('VHA') === -1 && value.indexOf('VACO') === -1) {
                 alert('The column for employees should be either an email, username, or "Last name, First Name".');
                 break;
@@ -167,7 +138,7 @@
 
     function buildFormat(spreadSheet) {
         $('#new_form_indicators').remove();
-        var table =
+        let table =
             '<table id="new_form_indicators" style="text-align: center;">' +
             '   <thead>' +
             '       <tr>' +
@@ -180,7 +151,7 @@
             '   <thead>' +
             '   <tbody>';
         $.each(spreadSheet.headers, function(key, value) {
-            var requiredCheckbox = blankIndicators.indexOf(key) === -1 ? '<input type="checkbox"/>' : '<input type="checkbox" onclick="return false;" disabled="disabled" title="Cannot set as required when a row in this column is blank."/>';
+            let requiredCheckbox = blankIndicators.indexOf(key) === -1 ? '<input type="checkbox"/>' : '<input type="checkbox" onclick="return false;" disabled="disabled" title="Cannot set as required when a row in this column is blank."/>';
             table +=
                 '<tr>' +
                 '   <td>' + key + '</td>' +
@@ -199,7 +170,7 @@
                 '       </select>' +
                 '   </td>' +
                 '   <td>' + requiredCheckbox + '</td>' +
-                '   <td><input type="checkbox"></input></td>' +
+                '   <td><input type="checkbox"/></td>' +
                 '</tr>';
         });
         table += '</tbody></table>';
@@ -254,7 +225,7 @@
     /* build the select input with options for the given indicator
     the indicatorID corresponds to the select input id */
     function buildSheetSelect(indicatorID, sheetData, required, format, indicatorOptions) {
-        var select = $(document.createElement('select'))
+        let select = $(document.createElement('select'))
             .attr('id', indicatorID + '_sheet_column')
             .attr('class', 'indicator_column_select');
 
@@ -263,20 +234,19 @@
         }
 
         /* "blank" option */
-        var option = $(document.createElement('option'))
+        let option = $(document.createElement('option'))
             .attr('value', '-1')
             .html('');
 
         select.append(option);
 
-        /* the value of each option is the column header, which is the key of the sheetData.headers object */
-        //console.log(sheetData.headers);
-        var keys = Object.keys(sheetData.headers);
+        let keys = Object.keys(sheetData.headers);
         if (indicatorID === "1") {
-            indicatorOptions.forEach(function(item){
+            //would be better to enforce form title and indID 1 option naming
+            indicatorOptions.forEach(function(opt){
                 let option = $(document.createElement('option'))
-                    .attr('value', item)
-                    .html(item);
+                    .attr('value', opt + ' MVPC')
+                    .html(opt);
                 select.append(option);
             });
         }
@@ -285,7 +255,6 @@
                 let option = $(document.createElement('option'))
                     .attr('value', keys[i])
                     .html(keys[i] + ': ' + sheetData.headers[keys[i]]);
-
                 select.append(option);
             }
         }
@@ -296,13 +265,25 @@
         return select;
     }
 
+    function getUniqueArray(val,index,self) {
+        return self.indexOf(val) === index;
+    }
+
+    function addEmployeesToGroups(groupID, orgchartEmployee){
+        console.log('test');
+    };
+
     /* build the table row and data (<tr> and <td>) for the given indicator */
-    function buildIndicatorRow(indicator) {
+    function buildIndicatorRow(indicator, classname) {
+        classname = classname || '';
         if (indicator.format === '') {
             return '';
         }
 
         var row = $(document.createElement('tr'));
+        if (classname !== '') {
+            row.addClass(classname);
+        }
 
         var iid = $(document.createElement('td'))
             .html(indicator.indicatorID)
@@ -369,10 +350,14 @@
                 categoryID,
                 requestData,
                 function (recordID) {
-
                     /* recordID is the recordID of the newly created request, it's 0 if there was an error */
                     if (recordID > 0) {
                         createdRequests++;
+
+                        if(createdRequests === totalRecords){
+                            let empUnique = employeesForGroup.filter(getUniqueArray);
+                            groupsAndEmployees.push([currentGroup, empUnique]);
+                        }
                         requestStatus.html(createdRequests + ' out of ' + (sheet_data.cells.length - 1) + ' requests completed, ' + failedRequests.length + ' failures.');
                     } else {
                         failedRequests.push('Error creating request for the following data: ' + requestData);
@@ -455,9 +440,7 @@
         }
 
         function progress() {
-                        
             var val = progressbar.progressbar( "value" ) || 0;
-            
              
             progressbar.progressbar( "value", Math.floor( totalImported/totalRecords *100) );
         
@@ -498,11 +481,29 @@
                 var requestData = new Object();
                 function answerQuestions() {
                     return new Promise(function(resolve, reject){
-                        
                     if (completed === indicatorArray.length) {
                         requestData['title'] = titleInputExisting.val() + '_' + titleIndex;
                         makeRequests(categorySelect.val(), requestData).then(function(){
-                            
+                            console.log(requestData); //row data. check employees and groups
+                            if (currentGroup !== requestData[3]){  //new orgchart or final row
+                                if (employeesForGroup.length !== 0) { //skip if arr is empty
+                                    let empUnique = employeesForGroup.filter(getUniqueArray);
+                                    groupsAndEmployees.push([currentGroup, empUnique]);
+                                }
+                                employeesForGroup = [];
+                                currentGroup = requestData[3];
+                            }
+                            //keys of reqData are either an indicatorID or CSRFToken. If it's a indID, get the
+                            //currentIndicators object that it corresponds to. If the format for that object is
+                            //orgchart_employee, add requestData key's value (empUID) to employeesForGroups array
+                            for (let key in requestData){
+                                let indicatorObject = currentIndicators.filter(function(obj){
+                                    return obj.indicatorID === key;
+                                })[0];
+                                if (key !== 'CSRFToken' && indicatorObject.format === "orgchart_employee"){
+                                    employeesForGroup.push(requestData[key]);
+                                }
+                            }
                             resolve();
                         });
                     } else {
@@ -516,18 +517,23 @@
                         } else {
                             var currentIndicator = indicatorArray[completed].indicatorID;
                             var currentFormat = indicatorArray[completed].format;
+
                             switch (currentFormat) {
                                 case 'orgchart_employee':
-                                    var sheetEmp = typeof (row[indicatorColumn]) !== "undefined" && row[indicatorColumn] !== null ? row[indicatorColumn].toString() : '';
-                                    nexusAPI.Employee.getByEmailNational({ //ok if in6 in employee_data leaf_users/nex
+                                    let sheetEmp = typeof (row[indicatorColumn]) !== "undefined" && row[indicatorColumn] !== null ? row[indicatorColumn].toString() : '';
+                                    //format should be either: email or First Last.  Entries often have F L, Title (get F L only)
+                                    let commaIndex = sheetEmp.indexOf(',');
+                                    if (commaIndex !== -1){
+                                        sheetEmp = sheetEmp.slice(0, commaIndex);
+                                    }
+                                    nexusAPI.Employee.getByEmailNational({ //  ok if in6 in employee_data leaf_users/nex
                                         'onSuccess': function (user) {
-                                            var res = Object.keys(user);
-                                            var emp = user[res[0]];
-                                            console.log(res, user[res], emp);
+                                            let res = Object.keys(user);
+                                            //there should only be 1 email.
+                                            let emp = user[res[0]];
                                             if (typeof (emp) !== "undefined" && emp !== null && res.length === 1) {
                                                 nexusAPI.Employee.importFromNational({
                                                     'onSuccess': function (results) {
-                                                        console.log(results);
                                                         if (!isNaN(results)) {
                                                             requestData[currentIndicator] = parseInt(results);
                                                         } else {
@@ -562,34 +568,34 @@
                                     }, sheetEmp);
                                     break;
                                 case 'orgchart_group':
-                                    var sheetGroup = typeof (row[indicatorColumn]) !== "undefined" && row[indicatorColumn] !== null ? row[indicatorColumn].toString() : '';
+                                    let sheetGroup = typeof (row[indicatorColumn]) !== "undefined" && row[indicatorColumn] !== null ? row[indicatorColumn].toString() : '';
                                     nexusAPI.Groups.searchGroups({
                                         'onSuccess': function (groups) {
                                             if (groups.length === 1) {
                                                 let grp = groups[Object.keys(groups)[0]];
-                                                console.log('grp', grp);
                                                 requestData[currentIndicator] = parseInt(grp.groupID);
                                             } else if (groups.length > 1) {
                                                 requestData['failed'] = indicatorColumn + titleIndex + ': Multiple groups found for ' + sheetGroup + '.  Make sure that the name is exact.';
                                             } else {
-                                                //requestData['failed'] = indicatorColumn + titleIndex + ': Group ' + sheetGroup + ' not found.';
                                                 //  post a new group if needed ...
                                                 $.ajax({
                                                     type: 'POST',
                                                     url: '<!--{$orgchartPath}-->/api/?a=group',
-                                                        data: {title: sheetGroup,
-                                                                CSRFToken: '<!--{$CSRFToken}-->'},
-                                                        success: function(strGroupID) {
-                                                            strGroupID = strGroupID || 0;
-                                                            if(strGroupID !== 0 ) {
-                                                                requestData[currentIndicator] = parseInt(strGroupID);
-                                                            }
-                                                            else {
-                                                                console.warn('group did not post')
-                                                            }
-                                                        },
-                                                        cache: false
-                                                    });
+                                                    data: {
+                                                        title: sheetGroup,
+                                                        CSRFToken: '<!--{$CSRFToken}-->'
+                                                    },
+                                                    success: function(strGroupID) {
+                                                        strGroupID = strGroupID || 0;
+                                                        if(strGroupID !== 0 ) {
+                                                            requestData[currentIndicator] = parseInt(strGroupID);
+                                                        }
+                                                        else { ///*******************
+                                                            console.warn('group did not post')
+                                                        }
+                                                    },
+                                                    cache: false
+                                                });
                                             }
                                             completed++;
                                             answerQuestions().then(function(){resolve();})
@@ -654,7 +660,7 @@
                             }
                         }
                     }
-                    })
+                    });
                 }
             
                  answerQuestions().then(function(){resolve();})
@@ -686,18 +692,14 @@
             }
             else{
                 for (let i = 1; i <= sheet_data.cells.length - 1; i+=2) {
-                    
-                    var doublet = [];
+                    let doublet = [];
                     doublet.push(selectRowToAnswer(i));
                     
-                    var addAnother = i+1 <= sheet_data.cells.length - 1;
-                    
+                    let addAnother = i+1 <= sheet_data.cells.length - 1;
                     if(addAnother){
                         doublet.push(selectRowToAnswer(i+1));
                     }
-                    
                     Promise.all(doublet).then(function(results){
-                        
                         totalImported += results.length;
                     });
                 }
@@ -708,41 +710,70 @@
         portalAPI.Forms.getAllForms(
             function (results) {
                 /* build a select options for each form */
-                var opt = $(document.createElement('option'))
+                let opt = $(document.createElement('option'))
                     .attr('value', '-1')
                     .html('');
-
                 categorySelect.append(opt);
-
                 for (let i = 0; i < results.length; i++) {
-                    var category = results[i];
-                    var opt = $(document.createElement('option'))
+                    let category = results[i];
+                    let opt = $(document.createElement('option'))
                         .attr('value', category.categoryID)
                         .html(category.categoryName + ' : ' + category.categoryDescription);
-
                     categorySelect.append(opt);
                 }
-
             },
             function (error) {
             }
         );
 
-
         /*  build the rows for the given indicator data, also processes its children if present */
-        function buildRows(indicator) {
+        function buildRows(indicator, classname) {
+            classname = classname || '';
             if (typeof (indicator) !== "undefined" && indicator !== null) {
-                categoryIndicators.append(buildIndicatorRow(indicator));
+                categoryIndicators.append(buildIndicatorRow(indicator, classname));
 
                 if (typeof (indicator.child) !== "undefined" && indicator.child != null) {
-                    var children = Object.keys(indicator.child);
-                    for (var i = 0; i < children.length; i++) {
-                        var child = indicator.child[children[i]];
-
+                    let children = Object.keys(indicator.child);
+                    for (let i = 0; i < children.length; i++) {
+                        let child = indicator.child[children[i]];
                         buildRows(child);
                     }
                 }
             }
+        }
+
+        /**
+         * Purpose: Add indicators according to additional form selection
+         * @param categoryID (portal category ID)
+         */
+        function addChosenFormIndicators(categoryID) {
+            $.ajax({
+                type: 'GET',
+                url: './api/formStack/categoryList/all',
+                success: function (categories) {
+                    let selectedForm = document.getElementById('1_sheet_column').value;
+                    let chosenForm = categories.find(function(cat) {
+                        return cat.categoryName === selectedForm;
+                    });
+                    if (chosenForm !== undefined) {
+                        portalAPI.Forms.getIndicatorsForForm(chosenForm.categoryID,
+                            function (results) {
+                                currentIndicators = currentIndicators.concat(results);
+                                for (let i = 0; i < results.length; i++) {
+                                    let indicator = results[i];
+                                    buildRows(indicator, 'merged-indicator');
+                                }
+                            },
+                            function (error) {
+                                console.warn('An error has occurred.');
+                            }
+                        );
+                    } else {
+                        //chosen form not found
+                    }
+                },
+                cache: false
+            });
         }
 
         importBtnExisting.on('click', function () {
@@ -759,15 +790,27 @@
 
         categorySelect.on('change', function () {
             categoryIndicators.html('');
-
             portalAPI.Forms.getIndicatorsForForm(categorySelect.val(),
                 function (results) {
                     currentIndicators = results;
+                    numberBaseIndicators = currentIndicators.length;
                     indicatorArray = new Array();
 
-                    for (var i = 0; i < results.length; i++) {
-                        var indicator = results[i];
+                    for (let i = 0; i < results.length; i++) {
+                        let indicator = results[i];
                         buildRows(indicator);
+                    }
+                    let elIndicator1Select = document.getElementById('1_sheet_column');
+                    if(elIndicator1Select) {
+                        document.getElementById('1_sheet_column').addEventListener('change', function () {
+                            currentIndicators = currentIndicators.slice(0,numberBaseIndicators);
+                            indicatorArray = indicatorArray.slice(0,numberBaseIndicators);
+                            let prevMergedIndicatorRows = document.getElementsByClassName('merged-indicator');
+                            while(prevMergedIndicatorRows[0]) {
+                                prevMergedIndicatorRows[0].parentNode.removeChild(prevMergedIndicatorRows[0]);
+                            }
+                            addChosenFormIndicators(categorySelect.val()); //value of initial selection (port categoryID formID)
+                        });
                     }
                 },
                 function (error) {
@@ -778,13 +821,13 @@
         sheetUpload.on('change', function (e) {
             categorySelect.val("-1");
             categoryIndicators.html('');
-            var files = e.target.files,file;
+            let files = e.target.files,file;
             if (!files || files.length === 0) return;
             file = files[0];
-            var fileReader = new FileReader();
+            const fileReader = new FileReader();
             fileReader.onload = function (e) {
-                var cells = [];
-                var data = new Uint8Array(e.target.result);
+                let cells = [];
+                let data = new Uint8Array(e.target.result);
 
                 /* passes file through js-xlsx library */
                 try {
@@ -842,6 +885,7 @@
                 }
             };
             fileReader.readAsArrayBuffer(file);
+            existingForm.css('display', 'block');
         });
     });
 
