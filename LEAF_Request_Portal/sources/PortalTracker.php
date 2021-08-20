@@ -46,7 +46,7 @@ class PortalTracker
      * @return array - contains TODO
      */
     public function getFileData($getFile = array()): array {
-        $name = '';
+        $name = array();
 
         return $name;
     }
@@ -93,6 +93,17 @@ class PortalTracker
         $fileLocation = '';
 
         return $fileLocation;
+    }
+
+    /**
+     * Purpose: Given file information, return file's creation date
+     * @param array $getFile - contains file_id
+     * @return DateTime - timestamp of last update date of file
+     */
+    public function getFileCreatedDate($getFile = array()): DateTime {
+        $updateDate = new DateTime();
+
+        return $updateDate;
     }
 
     /**

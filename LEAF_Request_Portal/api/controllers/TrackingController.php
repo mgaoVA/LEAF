@@ -61,7 +61,7 @@ class TrackingController extends RESTfulResponse
             $getFile['file_id'] = (int)($args[0]);
             $getFile['access_user'] = $this->login->getUserId();
 
-            return $this->tracker->getFile($getFile);
+            return $tracker->getFile($getFile);
         });
 
         // Get all file info
@@ -70,7 +70,7 @@ class TrackingController extends RESTfulResponse
 
             $getFile['file_id'] = (int)($args[0]);
 
-            return $this->tracker->getFileData($getFile);
+            return $tracker->getFileData($getFile);
         });
 
         // Get file name
@@ -79,7 +79,7 @@ class TrackingController extends RESTfulResponse
 
             $getFile['file_id'] = (int)($args[0]);
 
-            return $this->tracker->getFileName($getFile);
+            return $tracker->getFileName($getFile);
         });
 
         // Get file size
@@ -88,7 +88,7 @@ class TrackingController extends RESTfulResponse
 
             $getFile['file_id'] = (int)($args[0]);
 
-            return $this->tracker->getFileSize($getFile);
+            return $tracker->getFileSize($getFile);
         });
 
         // Get file type
@@ -97,7 +97,7 @@ class TrackingController extends RESTfulResponse
 
             $getFile['file_id'] = (int)($args[0]);
 
-            return $this->tracker->getFileType($getFile);
+            return $tracker->getFileType($getFile);
         });
 
         // Get file location
@@ -106,7 +106,7 @@ class TrackingController extends RESTfulResponse
 
             $getFile['file_id'] = (int)($args[0]);
 
-            return $this->tracker->getFileLocation($getFile);
+            return $tracker->getFileLocation($getFile);
         });
 
         // Get date file created
@@ -115,7 +115,7 @@ class TrackingController extends RESTfulResponse
 
             $getFile['file_id'] = (int)($args[0]);
 
-            return $this->tracker->getFileCreatedDate($getFile);
+            return $tracker->getFileCreatedDate($getFile);
         });
 
         // Get date file updated
@@ -124,7 +124,7 @@ class TrackingController extends RESTfulResponse
 
             $getFile['file_id'] = (int)($args[0]);
 
-            return $this->tracker->getFileLastUpdatedDate($getFile);
+            return $tracker->getFileLastUpdatedDate($getFile);
         });
 
         // Get user who uploaded file information
@@ -133,7 +133,7 @@ class TrackingController extends RESTfulResponse
 
             $getFile['file_id'] = (int)($args[0]);
 
-            return $this->tracker->getFileUploader($getFile);
+            return $tracker->getFileUploader($getFile);
         });
 
         // Get file storage status
@@ -142,7 +142,7 @@ class TrackingController extends RESTfulResponse
 
             $getFile['file_id'] = (int)($args[0]);
 
-            return $this->tracker->getFileStorageStatus($getFile);
+            return $tracker->getFileStorageStatus($getFile);
         });
 
         return $this->index['GET']->runControl($act['key'], $act['args']);
