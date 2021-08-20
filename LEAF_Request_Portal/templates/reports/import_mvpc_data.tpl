@@ -2,19 +2,15 @@
     #import_data_existing_form, #uploadBox, {
         padding: 20px;
     }
-
-    #category_indicators thead tr, #new_form_indicators thead tr {
+    #category_indicators thead tr, #new_form_indicators thead tr
         background-color: rgb(185, 185, 185);
     }
-
-    #category_indicators thead tr th, #new_form_indicators thead tr th {
+    #category_indicators thead tr th, #new_form_indicators thead tr th
         padding: 7px;
     }
-
-    #category_indicators td, #new_form_indicators td {
+    #category_indicators td, #new_form_indicators td
         padding: 7px;
     }
-
     .modalBackground {
         width: 100%;
         height: 100%;
@@ -25,12 +21,10 @@
         margin-left: 0px;
         opacity: 0.5;
     }
-
 </style>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SheetJS/js-xlsx@1eb1ec/dist/xlsx.full.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SheetJS/js-xlsx@64798fd/shim.js"></script>
 <script type="text/javascript" src="js/lz-string/lz-string.min.js"></script>
-
 <script src="../../../libs/js/jquery/jquery-ui.custom.min.js"></script>
 <script src="../../../libs/js/promise-pollyfill/polyfill.min.js"></script>
 
@@ -43,7 +37,6 @@
     <br />
     <br />
 </div>
-
 
 <div id="import_data_existing_form" style="display: none;">
     <h4>Select a Form</h4>
@@ -86,7 +79,6 @@
 
 
 <script>
-
     var CSRFToken = '<!--{$CSRFToken}-->';
     var orgChartPath = '<!--{$orgchartPath}-->';
     var nexusAPI = LEAFNexusAPI();
@@ -109,9 +101,7 @@
     var sheetUpload = $('#sheet_upload');
     var nameOfSheet = '';
     var placeInOrder;
-
     var totalRecords;
-
     var totalImported = 0;
     var createdRequests = 0;
     var failedRequests = [];
@@ -120,9 +110,8 @@
     var indicatorArray = [];
     var blankIndicators = [];
     var sheet_data = {};
-    let groupsAndEmployees = []; //to hold elements [groupID, [employeeIDs]] for each imported row
     var dialog_confirm = new dialogController('confirm_xhrDialog', 'confirm_xhr', 'confirm_loadIndicator', 'confirm_button_save', 'confirm_button_cancelchange');
-
+    let groupsAndEmployees = []; //to hold elements [groupID, [employeeIDs]] for each imported row
 
     function checkFormatExisting(column) {
         for (let i = 1; i < sheet_data.cells.length; i++) {
@@ -133,7 +122,6 @@
             }
         }
     }
-
     function buildFormat(spreadSheet) {
         $('#new_form_indicators').remove();
         let table =
@@ -175,29 +163,22 @@
     }
 
     function alphaToNum(alpha) {
-
         var i = 0,
             num = 0,
             len = alpha.length;
-
         for (; i < len; i++) {
             num = num * 26 + alpha.charCodeAt(i) - 0x40;
         }
-
         return num - 1;
     }
     function numToAlpha(num) {
-
         var alpha = '';
-
         for (; num >= 0; num = parseInt(num / 26, 10) - 1) {
             alpha = String.fromCharCode(num % 26 + 0x41) + alpha;
         }
-
         return alpha;
     }
     function _buildColumnsArray(range) {
-
         var i,
             res = [],
             rangeNum = range.split(':').map(function (val) {
@@ -205,11 +186,9 @@
             }),
             start = rangeNum[0],
             end = rangeNum[1] + 1;
-
         for (i = start; i < end; i++) {
             res.push(numToAlpha(i));
         }
-
         return res;
     }
 
@@ -239,8 +218,9 @@
         select.append(option);
 
         let keys = Object.keys(sheetData.headers);
-        if (indicatorID === "1") {
+        if (indicatorID === "1") {  //'1 preprod, 25 local
             //would be better to enforce form title and indID 1 option naming
+            console.log(indicatorOptions);
             indicatorOptions.forEach(function(opt){
                 let option = $(document.createElement('option'))
                     .attr('value', opt + ' MVPC')
@@ -497,7 +477,7 @@
                         requestData['title'] = titleInputExisting.val() + '_' + titleIndex;
                         makeRequests(categorySelect.val(), requestData).then(function(){
                             console.log(requestData); //row data.
-                            let currentGroup = requestData['3']; //indicatorID 3: Facility / Office Name
+                            let currentGroup = requestData['3']; //indicatorID 3: Facility / Office Name preprod 3
                             let employeesForGroup = [];
                             //For each row(set of reqData), associate all orgchart employees to the row's group.
                             //Keys of reqData are either an indicatorID or CSRFToken. If it's a indID, get the
@@ -526,7 +506,8 @@
                         /* skips indicators that aren't set*/
                         if (indicatorColumn === "-1") {
                             completed++;
-                            answerQuestions().then(function(){resolve();});
+                            answerQuestions().then(function(){
+                                resolve();});
                             
                         } else {
                             var currentIndicator = indicatorArray[completed].indicatorID;
@@ -534,56 +515,62 @@
 
                             switch (currentFormat) {
                                 case 'orgchart_employee':
-                                    let sheetEmp = typeof (row[indicatorColumn]) !== "undefined" && row[indicatorColumn] !== null ? row[indicatorColumn].toString() : '';
-                                    //format should be either: email or First Last.  Entries often have F L, Title (get F L only)
-                                    let commaIndex = sheetEmp.indexOf(',');
-                                    if (commaIndex !== -1){
-                                        sheetEmp = sheetEmp.slice(0, commaIndex);
-                                    }
-                                    //if it's an email (in6 in employee_data leaf_users/nex)
+                                    let sheetEmp = typeof (row[indicatorColumn]) !== "undefined" && row[indicatorColumn] !== null ? row[indicatorColumn].toString().trim() : '';
+
+                                    //use email to get username, then import w username
+
+                                    //GET, fetchURL = apiBaseURL + 'national/employee/search&q=' + emailAddress + '&noLimit=0'
                                     nexusAPI.Employee.getByEmailNational({
                                         'onSuccess': function (user) {
                                             let res = Object.keys(user);
-                                            //there should only be 1 email.
-                                            let emp = user[res[0]];
+                                            let emp = user[res[0]]; //res[0] is empUID
+                                            //console.log('emp', emp); object w user and other info, has userName prop
                                             if (typeof (emp) !== "undefined" && emp !== null && res.length === 1) {
+                                                //POST fetchURL = apiURL + '/import/_' + userName;  emp.userName
                                                 nexusAPI.Employee.importFromNational({
                                                     'onSuccess': function (results) {
+                                                        console.log('import from Nat results', results); //same as emp
                                                         if (!isNaN(results)) {
                                                             requestData[currentIndicator] = parseInt(results);
                                                         } else {
                                                             requestData['failed'] = indicatorColumn + titleIndex + ': Employee ' + sheetEmp + ' not found. Error: '+ results;
                                                         }
                                                         completed++;
-                                                        answerQuestions().then(function(){resolve();})
+                                                        answerQuestions().then(function(){
+                                                            resolve();})
                                                     },
                                                     'onFail': function (err) {
                                                         requestData['failed'] = indicatorColumn + titleIndex + ": Error retrieving employee on sheet row " + titleIndex + " for indicator " + index;
                                                         completed++;
-                                                        answerQuestions().then(function(){resolve();})
+                                                        answerQuestions().then(function(){
+                                                            resolve();})
                                                     },
                                                     'async': true
                                                 }, emp.userName);
                                             } else if (res.length > 1) {
                                                 requestData['failed'] = indicatorColumn + titleIndex + ': Multiple employees found for ' + sheetEmp + '.  Make sure it is in the correct format.';
                                                 completed++;
-                                                answerQuestions().then(function(){resolve();})
+                                                answerQuestions().then(function(){
+                                                    resolve();})
                                             } else {
                                                 requestData['failed'] = indicatorColumn + titleIndex + ': Employee ' + sheetEmp + ' not found.';
                                                 completed++;
-                                                answerQuestions().then(function(){resolve();})
+                                                answerQuestions().then(function(){
+                                                    resolve();
+                                                })
                                             }
                                         },
                                         'onFail': function (err) {
+                                            console.log(err);
                                             requestData['failed'] = indicatorColumn + titleIndex + ": Error retrieving email for employee on sheet row " + titleIndex + " indicator " + index;
                                             completed++;
-                                            answerQuestions().then(function(){resolve();})
+                                            answerQuestions().then(function(){
+                                                resolve();
+                                            })
                                         },
                                         'async': true
                                     }, sheetEmp);
                                     break;
-                                    //otherwise try to get by name
-
 
                                 case 'orgchart_group':
                                     let sheetGroup = typeof (row[indicatorColumn]) !== "undefined" && row[indicatorColumn] !== null ? row[indicatorColumn].toString() : '';
@@ -616,12 +603,14 @@
                                                 });
                                             }
                                             completed++;
-                                            answerQuestions().then(function(){resolve();})
+                                            answerQuestions().then(function(){
+                                                resolve();})
                                         },
                                         'onFail': function (err) {
                                             requestData['failed'] = indicatorColumn + titleIndex + ": Error retrieving group on sheet row " + titleIndex + " indicator " + index;
                                             completed++;
-                                            answerQuestions().then(function(){resolve();})
+                                            answerQuestions().then(function(){
+                                                resolve();})
                                         },
                                         'async': true
                                     }, sheetGroup);
@@ -639,12 +628,14 @@
                                                 requestData['failed'] = indicatorColumn + titleIndex + ': Position ' + sheetPosition + ' not found.';
                                             }
                                             completed++;
-                                            answerQuestions().then(function(){resolve();})
+                                            answerQuestions().then(function(){
+                                                resolve();})
                                         },
                                         'onFail': function (err) {
                                             requestData['failed'] = indicatorColumn + titleIndex + ": Error retrieving group on sheet row " + titleIndex + " indicator " + index;
                                             completed++;
-                                            answerQuestions().then(function(){resolve();})
+                                            answerQuestions().then(function(){
+                                                resolve();})
                                         },
                                         'async': true
                                     }, sheetPosition);
@@ -661,19 +652,23 @@
                                     }
 
                                     completed++;
-                                    answerQuestions().then(function(){resolve();})
+                                    answerQuestions().then(function(){
+                                        resolve();})
                                     break;
                                 default:
-                                    //VA Admin Office is not on the spreadsheet, from ind 1 selection
-                                    if (currentIndicator === "1"){
-                                        requestData[currentIndicator] = document.getElementById('1_sheet_column').value;
+                                    //VA Admin Office is not on the spreadsheet
+                                    //for custom import only
+                                    if (currentIndicator === "1"){  //TODO: 25 local, 1 preprod, update prod
+                                        requestData[currentIndicator] = document.getElementById('25_sheet_column').value;
                                         completed++;
-                                        answerQuestions().then(function (){resolve();})
+                                        answerQuestions().then(function (){
+                                            resolve();})
                                         break;
                                     }
                                     requestData[currentIndicator] = row[indicatorColumn];
                                     completed++;
-                                    answerQuestions().then(function (){resolve();})
+                                    answerQuestions().then(function (){
+                                        resolve();})
                                     break;
                             }
                         }
@@ -681,7 +676,8 @@
                     });
                 }
             
-                 answerQuestions().then(function(){resolve();})
+                 answerQuestions().then(function(){
+                     resolve();})
                 });
 
             }
