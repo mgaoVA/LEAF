@@ -86,11 +86,24 @@ class TrackingController extends RESTfulResponse
      */
     public function post($act) {
 
+        $tracker = $this->tracker;
+        $login = $this->login;
+
         /**
          * FILE POST ACTIONS
          */
 
         // Add file
+        $this->index['POST']->register('tracker/file/add', function ($args) use ($tracker) {
+            $newFile = array();
+            // Get info about file before we pass to function
+            $newFile['file'] = $_POST['file'];
+            $newFile['type'] = $_POST['type'];
+            $newFile['name'] = XSSHelpers::scrubFilename($_POST['name']);
+
+
+            return $this->tracker->addFile($newFile);
+        });
 
         // Move file
 

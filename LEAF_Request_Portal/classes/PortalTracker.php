@@ -25,4 +25,12 @@ class PortalTracker
         $this->uploadFile = new UploadFile($db, $login);
     }
 
+    /**
+     * File upload function
+     */
+
+    public function addFile($newFile) {
+
+    }
+
 }
