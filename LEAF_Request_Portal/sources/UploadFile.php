@@ -37,12 +37,4 @@ class UploadFile
         $this->lastUpdated = time();
     }
 
-    public function getAllUploadFileTypes() {
-//        $vars = '';
-//        $strSQL = "SELECT e.deleted FROM employee as e ".
-//            "INNER JOIN employee_data ed on e.empUID = ed.empUID ".
-//            "WHERE e.deleted = 0 ".
-//            "AND ed.data=:emailAddress";
-//        $res = $this->db_tracker->prepared_query($strSQL, $vars);
-    }
 }
