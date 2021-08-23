@@ -387,7 +387,7 @@ public class reportBuilderWorkflow extends setupFramework {
 	@Test(priority = 148) //  
 	private void selectCheckboxMaxTest() {
 		waitMethods.waiter(waitMethods.w250);       
-		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[1]/div[1]"));
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[3]/div[1]"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
 		waitMethods.waiter(waitMethods.w200);
@@ -395,6 +395,17 @@ public class reportBuilderWorkflow extends setupFramework {
 	}
 
 
+	@Test(priority = 149) //  
+	private void selectMaxTestFields() {
+		waitMethods.waiter(waitMethods.w250);       
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[3]/div[2]/div"));
+		highlightElement.highLightElement(driver, ele);
+   		ele.click();
+		waitMethods.waiter(waitMethods.w200);
+    	System.out.println("Frequency checkbox for Max Test selected");
+	}
+
+	
 	
 	@Test(priority = 150) //  
 	private void selectGenerateReport() {  //Generate Report
