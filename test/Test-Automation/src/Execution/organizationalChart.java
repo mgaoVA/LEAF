@@ -120,11 +120,19 @@ public class organizationalChart extends setupFramework {
  		WebElement ele = driver.findElement(By.cssSelector("#search")); //this is the line change
 	    highlightElement.highLightElement(driver, ele);
 //	    ele.click();
-	    ele.sendKeys("Steel Beauty"); 
-//	    ele.clear(); // clears out the search bar
-//	    ele.sendKeys(Keys.ENTER);
-		waitMethods.waiter(waitMethods.w1k);
-//		driver.navigate().back();    //navigate back
+
+    	String name = "Steel Beauty";
+    	   
+    	for(int i = 0; i < name.length(); i++) {
+    		char c = name.charAt(i);
+    		String s = new StringBuilder().append(c).toString();
+    		//ele.sendKeys(Keys.chord(name));
+    		ele.sendKeys(s);
+    		waitMethods.waiter(waitMethods.w100);
+    	}
+	    
+	    waitMethods.waiter(waitMethods.w250);
+
 	    System.out.println("Clicked Search box");
 	} 
 

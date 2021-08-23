@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -130,15 +131,25 @@ public class createNewRequest extends setupFramework {
 	
 	
 	
+	
+    
 	@Test(priority = 212) //
 	private void inputRequestTitle() {
 		//waitMethods.implicitWait(waitMethods.w300);	
-		
 			
 		waitMethods.waiter(waitMethods.w300);
 		WebElement ele = driver.findElement(By.name("title")); //.click();  
 	    highlightElement.highLightElement(driver, ele);
-	    ele.sendKeys("Test Automation " + getDate());
+
+    	String name = "Test Automation " + getDate().toString();
+    	   
+    	for(int i = 0; i < name.length(); i++) {
+    		char c = name.charAt(i);
+    		String s = new StringBuilder().append(c).toString();
+    		ele.sendKeys(s);
+    		waitMethods.waiter(waitMethods.w100);
+    	}
+	   
 		waitMethods.waiter(waitMethods.w250);
 	    System.out.println("Input Request Title: 'Test Automation");
 	} 
@@ -153,9 +164,17 @@ public class createNewRequest extends setupFramework {
 	//HTML Incorrect box <div class="icheckbox_square-blue icheck-item icheck[vivgd]"><input name="numform_3ac37" type="checkbox" class="ischecked icheck-input icheck[vivgd]" id="numform_3ac37" style="font-family: Courier; font-size: 24px; font-weight: bold; margin: 4px"></div>
 
 	// *********** THIS XPATH MAY CHANGE !!!!!!!!!!!!!
+	
+	// It DID change
+	// <div class="icheckbox_square-blue icheck-item icheck[4vvai]"><input name="numform_491f2" 
+	//type="checkbox" class="ischecked icheck-input icheck[4vvai]" id="numform_491f2" 
+	//style="font-family: Courier; font-size: 24px; font-weight: bold; margin: 4px"></div>
+	
+	
 	@Test(priority = 214) //
 	private void selectMRTestChkBox() {
-	    WebElement ele = driver.findElement(By.xpath("//*[@id=\"record\"]/div[2]/div[2]/div/div[2]/span/div[10]"));
+		WebElement ele = driver.findElement(By.xpath("*[@id=\"record\"]/div[2]/div[2]/div/div[2]/span/div[11]"));
+		//WebElement ele = driver.findElement(By.xpath("//*[@id=\"record\"]/div[2]/div[2]/div/div[2]/span/div[10]"));
 	    highlightElement.highLightElement(driver, ele);
 	    waitMethods.waiter(waitMethods.w250);
 	    ele.click();   
@@ -167,7 +186,7 @@ public class createNewRequest extends setupFramework {
 
 	@Test(priority = 216) 
 	private void selectClickToProceedButton() {
-		//waitMethods.implicitWait(waitMethods.w300);	
+		waitMethods.implicitWait(waitMethods.w300);	
 		waitMethods.waiter(waitMethods.w250);
 		WebElement ele = driver.findElement(By.xpath("//*[@id=\"record\"]/div[2]/div[2]/div/div[3]/button")); 
 	    highlightElement.highLightElement(driver, ele);     
@@ -314,9 +333,17 @@ public class createNewRequest extends setupFramework {
 		waitMethods.waiter(waitMethods.w250);
 		WebElement ele = driver.findElement(By.name("title")); //.click();  
 	    highlightElement.highLightElement(driver, ele);
-	    ele.sendKeys("Test Automation " + getDate());
-	    //ele.sendKeys("Test Automation " + Date());
-		waitMethods.waiter(waitMethods.w250);
+
+    	String name = "Test Automation " + getDate().toString();
+    	   
+    	for(int i = 0; i < name.length(); i++) {
+    		char c = name.charAt(i);
+    		String s = new StringBuilder().append(c).toString();
+    		//ele.sendKeys(Keys.chord(name));
+    		ele.sendKeys(s);
+    		waitMethods.waiter(waitMethods.w100);
+    	}
+	    
 	    System.out.println("Input Request Title: 'Test Automation (2)");
 	} 
 
@@ -325,7 +352,8 @@ public class createNewRequest extends setupFramework {
 	
 	@Test(priority = 240) //
 	private void selectMRTestChkBox2() {
-	    WebElement ele = driver.findElement(By.xpath("//*[@id=\"record\"]/div[2]/div[2]/div/div[2]/span/div[10]"));
+		WebElement ele = driver.findElement(By.xpath("*[@id=\"record\"]/div[2]/div[2]/div/div[2]/span/div[11]"));
+		//WebElement ele = driver.findElement(By.xpath("//*[@id=\"record\"]/div[2]/div[2]/div/div[2]/span/div[10]"));
 	    highlightElement.highLightElement(driver, ele);
 	    waitMethods.waiter(waitMethods.w250);
 	    ele.click();   
@@ -356,8 +384,17 @@ public class createNewRequest extends setupFramework {
 		waitMethods.waiter(waitMethods.w250);
 		WebElement ele = driver.findElement(By.id("2")); 
 	    highlightElement.highLightElement(driver, ele);     
-	    ele.sendKeys("Test Automation");
-		waitMethods.waiter(waitMethods.w250);
+
+    	String name = "Test Automation";
+    	   
+    	for(int i = 0; i < name.length(); i++) {
+    		char c = name.charAt(i);
+    		String s = new StringBuilder().append(c).toString();
+    		//ele.sendKeys(Keys.chord(name));
+    		ele.sendKeys(s);
+    		waitMethods.waiter(waitMethods.w100);
+    	}
+		
 	    System.out.println("Entered First and Last Name");
 	} 
 	
@@ -369,8 +406,17 @@ public class createNewRequest extends setupFramework {
 		waitMethods.waiter(waitMethods.w250);
 		WebElement ele = driver.findElement(By.id("3")); 
 	    highlightElement.highLightElement(driver, ele);     
-	    ele.sendKeys("Q");
-		waitMethods.waiter(waitMethods.w250);
+
+    	String name = "Q";
+    	   
+    	for(int i = 0; i < name.length(); i++) {
+    		char c = name.charAt(i);
+    		String s = new StringBuilder().append(c).toString();
+    		//ele.sendKeys(Keys.chord(name));
+    		ele.sendKeys(s);
+    		waitMethods.waiter(waitMethods.w100);
+    	}
+	    
 	    System.out.println("Entered Middle Initial");
 	} 
 	
@@ -430,9 +476,18 @@ public class createNewRequest extends setupFramework {
 		waitMethods.waiter(waitMethods.w1k);
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[1]/div[3]/div/form/div[2]/textarea")); 
 	    highlightElement.highLightElement(driver, ele);     
-	    ele.sendKeys("Automated Test Comment");
-		waitMethods.waiter(waitMethods.w250);
-	    System.out.println("Request Comment Added");
+
+    	String name = "Automated Test Comment";
+    	   
+    	for(int i = 0; i < name.length(); i++) {
+    		char c = name.charAt(i);
+    		String s = new StringBuilder().append(c).toString();
+    		//ele.sendKeys(Keys.chord(name));
+    		ele.sendKeys(s);
+    		waitMethods.waiter(waitMethods.w100);
+    	}
+	    
+	     System.out.println("Request Comment Added");
 	} 
 
 
@@ -442,8 +497,17 @@ public class createNewRequest extends setupFramework {
 		waitMethods.waiter(waitMethods.w250);
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[1]/div[3]/div/form/div[2]/div/button")); 
 	    highlightElement.highLightElement(driver, ele);     
-	    ele.sendKeys("Automated Test Comment");
-		waitMethods.waiter(waitMethods.w250);
+
+    	String name = "Automated Test Comment";
+    	   
+    	for(int i = 0; i < name.length(); i++) {
+    		char c = name.charAt(i);
+    		String s = new StringBuilder().append(c).toString();
+    		//ele.sendKeys(Keys.chord(name));
+    		ele.sendKeys(s);
+    		waitMethods.waiter(waitMethods.w100);
+    	}
+	    
 	    System.out.println("selected 'Accept Job'");
 	} 
 

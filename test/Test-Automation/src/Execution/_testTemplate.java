@@ -81,7 +81,16 @@ public class _testTemplate extends setupFramework {
 //	} 
 	
 
-
+//Add this for Text Box Input
+//
+//String name = "test";
+//		   
+//for(int i = 0; i < name.length(); i++) {
+//	char c = name.charAt(i);
+//	String s = new StringBuilder().append(c).toString();
+//	ele.sendKeys(s);
+//	waitMethods.waiter(waitMethods.w100);
+//}
 
 
 

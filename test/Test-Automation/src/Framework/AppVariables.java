@@ -34,8 +34,6 @@ public class AppVariables {
 	//public final static String URI = "https://www.google.com/";
 
 	
-	public final static String GOOGLEURL = "http://www,google.com/";
-	public final static String NULLURL = "http://www,google.com/";
 
 // ***************************************************************** 
  public final static String LOCALURI = "http://localhost/LEAF_Request_Portal/";

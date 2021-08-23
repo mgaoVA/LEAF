@@ -136,8 +136,17 @@ public class homePageTest extends setupFramework {
     	waitMethods.waiter(waitMethods.w1k);    				//REMOVE
     	WebElement ele = driver.findElement(By.cssSelector("[title^='Enter your search text']"));
     	highlightElement.highLightElement(driver, ele);
-    	ele.sendKeys(TestData.SB_REQNUM);
-    	waitMethods.waiter(waitMethods.w1k);
+
+    	String name = TestData.SB_REQNUM.toString();
+    	   
+    	for(int i = 0; i < name.length(); i++) {
+    		char c = name.charAt(i);
+    		String s = new StringBuilder().append(c).toString();
+    		ele.sendKeys(s);
+    		waitMethods.waiter(waitMethods.w100);
+    	}
+    	
+    	waitMethods.waiter(waitMethods.w500);
     	driver.findElement(By.name("searchtxt")).clear();
 		System.out.println("Basic search found or not?");						// Add search of records retrieved
 	}
@@ -149,11 +158,21 @@ public class homePageTest extends setupFramework {
 		//waitMethods.implicitWait(waitMethods.w300);
 		waitMethods.waiter(waitMethods.w1k);								//REMOVE
 		WebElement ele = driver.findElement(By.name("searchtxt"));
-		ele.sendKeys("excel");
+
+    	String name = "excel";
+    	   
+    	for(int i = 0; i < name.length(); i++) {
+    		char c = name.charAt(i);
+    		String s = new StringBuilder().append(c).toString();
+    		//ele.sendKeys(Keys.chord(name));
+    		ele.sendKeys(s);
+    		waitMethods.waiter(waitMethods.w100);
+    	}
+		
 		highlightElement.highLightElement(driver, ele);
-		waitMethods.waiter(waitMethods.w1k);
+		waitMethods.waiter(waitMethods.w500);
    	 	driver.findElement(By.name("searchtxt")).clear();
-   	 	waitMethods.waiter(waitMethods.w1k);
+   	 	waitMethods.waiter(waitMethods.w500);
 	}
 
 

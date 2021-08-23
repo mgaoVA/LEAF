@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="RegressionSuite">
 	
- <!-- 
+ <!--
 	<test name="Home Page">
 		<parameter name="env" value="https://localhost/LEAF_Request_Portal/">
 		<parameter name="browser" value="chrome"/>
@@ -51,7 +51,7 @@
 			</parameter>
 	</test>
 	
--->
+ -->
   	
  	<test name="Report Builder Workflow">
 		<parameter name="env" value="https://localhost/LEAF_Request_Portal/">

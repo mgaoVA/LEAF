@@ -15,7 +15,7 @@ public class highlightElement {
 		int i = 0;	
 		int j = 50;
 		if (AppVariables.demoMode) {   //Set T/F in Framework.AppVariables.demoMode
-			JavascriptExecutor js=(JavascriptExecutor)driver; 
+			JavascriptExecutor js = (JavascriptExecutor)driver; 
 		 
 			for(i = 0; i <3; i++) {
 				//if(i == 3) {j =200;}
