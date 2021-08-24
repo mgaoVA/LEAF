@@ -173,7 +173,8 @@ public class createNewRequest extends setupFramework {
 	
 	@Test(priority = 214) //
 	private void selectMRTestChkBox() {
-		WebElement ele = driver.findElement(By.xpath("*[@id=\"record\"]/div[2]/div[2]/div/div[2]/span/div[11]"));
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/form/div[2]/div[2]/div/div[2]/span/div[12]"));
+		//WebElement ele = driver.findElement(By.xpath("*[@id=\"record\"]/div[2]/div[2]/div/div[2]/span/div[11]"));
 		//WebElement ele = driver.findElement(By.xpath("//*[@id=\"record\"]/div[2]/div[2]/div/div[2]/span/div[10]"));
 	    highlightElement.highLightElement(driver, ele);
 	    waitMethods.waiter(waitMethods.w250);
@@ -187,6 +188,7 @@ public class createNewRequest extends setupFramework {
 	@Test(priority = 216) 
 	private void selectClickToProceedButton() {
 		waitMethods.implicitWait(waitMethods.w300);	
+		//waitMethods.implicitWait(waitMethods.w300);	
 		waitMethods.waiter(waitMethods.w250);
 		WebElement ele = driver.findElement(By.xpath("//*[@id=\"record\"]/div[2]/div[2]/div/div[3]/button")); 
 	    highlightElement.highLightElement(driver, ele);     
@@ -352,7 +354,8 @@ public class createNewRequest extends setupFramework {
 	
 	@Test(priority = 240) //
 	private void selectMRTestChkBox2() {
-		WebElement ele = driver.findElement(By.xpath("*[@id=\"record\"]/div[2]/div[2]/div/div[2]/span/div[11]"));
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/form/div[2]/div[2]/div/div[2]/span/div[12]"));
+		//WebElement ele = driver.findElement(By.xpath("*[@id=\"record\"]/div[2]/div[2]/div/div[2]/span/div[11]"));
 		//WebElement ele = driver.findElement(By.xpath("//*[@id=\"record\"]/div[2]/div[2]/div/div[2]/span/div[10]"));
 	    highlightElement.highLightElement(driver, ele);
 	    waitMethods.waiter(waitMethods.w250);
@@ -512,6 +515,17 @@ public class createNewRequest extends setupFramework {
 	} 
 
 	
+//		DAMM DELINTER
+//		waitMethods.waiter(waitMethods.w250);				//
+//		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[1]/div[3]/div/form/div[2]/div/button"));
+//		//WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[1]/div[2]/div[2]/button")); 
+//	    highlightElement.highLightElement(driver, ele);     
+//   		waitMethods.waiter(waitMethods.w100);
+//	    System.out.println("selected 'Accept Job'");
+//	} 
+
+
+
 	public String getDate() {
 	      String pattern = "MM/dd HH:mm";
 	      SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);

@@ -1,5 +1,9 @@
+<<<<<<< Updated upstream
 bin/
 /bin/
 *.class
 test-output/
 /test-output/
+=======
+/bin/
+>>>>>>> Stashed changes

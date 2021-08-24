@@ -33,7 +33,8 @@ public class AppVariables {
 	public final static String PRODURI ="";
 	//public final static String URI = "https://www.google.com/";
 
-	
+	public final static String NULLURL = "https://";
+
 
 // ***************************************************************** 
  public final static String LOCALURI = "http://localhost/LEAF_Request_Portal/";
@@ -46,6 +47,6 @@ public class AppVariables {
 //Change this variable to to true to run in headless mode with correct parameters, resolution,
  public final static boolean headless = false;	
 
-//TEST GitHub
+
 
 }  //class
