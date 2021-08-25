@@ -385,29 +385,54 @@ public class reportBuilderWorkflow extends setupFramework {
 
 	
 	@Test(priority = 148) //  
-	private void selectCheckboxMaxTest() {
+	private void selectCheckboxMRTest() {
 		waitMethods.waiter(waitMethods.w250);       
-		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[3]/div[1]"));
+		WebElement ele = driver.findElement(By.xpath("//*[@id=\"indicatorList\"]/div[2]/div[4]/div[1]"));
+		//WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[3]/div[1]"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
 		waitMethods.waiter(waitMethods.w200);
-    	System.out.println("Report Builder checkbox for Max Test");
+    	System.out.println("Report Builder checkbox for MR - Test");
 	}
 
 
-	@Test(priority = 149) //  
-	private void selectMaxTestFields() {
-		waitMethods.waiter(waitMethods.w250);       
-		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[3]/div[2]/div"));
+	@Test(priority = 150) // FREQUENCY 
+	private void selectMRTestField1() {
+		waitMethods.waiter(waitMethods.w250);         
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[4]/div[2]/div"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
 		waitMethods.waiter(waitMethods.w200);
-    	System.out.println("Frequency checkbox for Max Test selected");
+    	System.out.println("Frequency checkbox for MR - Test selected");
+	}
+
+
+	@Test(priority = 152) // Middle Initial 
+	private void selectMRTestField2() {
+		waitMethods.waiter(waitMethods.w250);       
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[4]/div[3]/div"));
+		highlightElement.highLightElement(driver, ele);
+   		ele.click();
+		waitMethods.waiter(waitMethods.w200);
+    	System.out.println("Middle Initial checkbox for  MR - Test selected");
+	}
+
+
+	@Test(priority = 154) // Name 
+	private void selectMRTestField3() {
+		waitMethods.waiter(waitMethods.w250);       
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[4]/div[4]/div"));
+		highlightElement.highLightElement(driver, ele);
+   		ele.click();
+		waitMethods.waiter(waitMethods.w200);
+    	System.out.println("Name checkbox for  MR - Test selected");
 	}
 
 	
 	
-	@Test(priority = 150) //  
+	
+	
+	@Test(priority = 156) //  
 	private void selectGenerateReport() {  //Generate Report
 		waitMethods.waiter(waitMethods.w250);       
 		WebElement ele = driver.findElement(By.id("generateReport"));
@@ -419,7 +444,7 @@ public class reportBuilderWorkflow extends setupFramework {
 
 	
 	
-	@Test(priority = 152) //
+	@Test(priority = 158) //
 	private void inputReportName() {
 		waitMethods.waiter(waitMethods.w250);       
 		WebElement ele = driver.findElement(By.id("reportTitle"));
@@ -439,7 +464,7 @@ public class reportBuilderWorkflow extends setupFramework {
 	}
 	
 	
-	@Test(priority = 154) //  
+	@Test(priority = 160) //  
 	private void selectModifyReport() {  //Generate Report
 		waitMethods.waiter(waitMethods.w250);       
 		WebElement ele = driver.findElement(By.id("editReport"));
@@ -450,7 +475,7 @@ public class reportBuilderWorkflow extends setupFramework {
 	}
 	
 	
-	@Test(priority = 156) //  
+	@Test(priority = 162) //  
 	private void removeInitiator() {  //Delete Merry Vittoria
 		waitMethods.waiter(waitMethods.w250);       
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[4]/td[1]/button"));
@@ -462,7 +487,7 @@ public class reportBuilderWorkflow extends setupFramework {
 	
 
 	
-	@Test(priority = 158) //  4th And
+	@Test(priority = 164) //  4th And
 	private void selectAnd04() {
 		waitMethods.waiter(waitMethods.w250);       
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/button[2]"));
@@ -473,7 +498,7 @@ public class reportBuilderWorkflow extends setupFramework {
 	}
 
 	
-	@Test(priority = 160) //
+	@Test(priority = 166) //
 	public void clickTypeButton03() {         
 		//waitMethods.implicitWait(waitMethods.w300);
 		waitMethods.waiter(waitMethods.w250);			//The below opens the DDL
@@ -489,7 +514,7 @@ public class reportBuilderWorkflow extends setupFramework {
 	}
 	
 	
-	@Test(priority = 162) //
+	@Test(priority = 168) //
 	private void inputTextBox05() {
 		waitMethods.waiter(waitMethods.w250);       
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[5]/td[5]/div/div[1]/input"));
@@ -512,7 +537,7 @@ public class reportBuilderWorkflow extends setupFramework {
 	
 		
 	
-	@Test(priority = 164) //  
+	@Test(priority = 170) //  
 	private void selectNextStep02() {
 		waitMethods.waiter(waitMethods.w250);       
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/button[4]"));
@@ -523,7 +548,7 @@ public class reportBuilderWorkflow extends setupFramework {
 	}
 	
 	
-	@Test(priority = 166) //  
+	@Test(priority = 172) //  
 	private void selectGenerateReport02() {  //Generate Report
 		waitMethods.waiter(waitMethods.w250);       
 		WebElement ele = driver.findElement(By.id("generateReport"));
@@ -534,7 +559,7 @@ public class reportBuilderWorkflow extends setupFramework {
 	}
 	
 	
-	@Test(priority = 168) //  
+	@Test(priority = 174) //  
 	private void selectEditLabels() {  
 		waitMethods.waiter(waitMethods.w250);       
 		WebElement ele = driver.findElement(By.id("editLabels"));
@@ -613,7 +638,7 @@ public class reportBuilderWorkflow extends setupFramework {
 	/* Need to find a way to validate that file has downloaded as .csv */
 
 	
-	@Test(priority = 192) //  
+	@Test(priority = 186) //  
 	private void selectJSON() {  
 		waitMethods.waiter(waitMethods.w250);       
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[4]/div[1]/div[1]/div/button[5]"));
@@ -623,8 +648,29 @@ public class reportBuilderWorkflow extends setupFramework {
     	System.out.println("Report Builder - JSON");
 	}
 
+
 	
-	
+	@Test(priority = 188) //  
+	private void jsonShortenLink() {  
+		waitMethods.waiter(waitMethods.w250);       
+		WebElement ele = driver.findElement(By.id("shortenLink"));
+		highlightElement.highLightElement(driver, ele);
+   		ele.click();
+		waitMethods.waiter(waitMethods.w200);
+    	System.out.println("Report Builder - JSON Shorten Link");
+	}
+
+
+	@Test(priority = 190) //  
+	private void jsonCloseForm() {  
+		waitMethods.waiter(waitMethods.w250);       
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[6]/div[1]/button/span[1]"));
+		highlightElement.highLightElement(driver, ele);
+   		ele.click();
+		waitMethods.waiter(waitMethods.w200);
+    	System.out.println("Report Builder - JSON Close Formx");
+	}
+
 	
 	
 	/* 

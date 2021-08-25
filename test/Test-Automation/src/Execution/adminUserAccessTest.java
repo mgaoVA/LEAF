@@ -23,8 +23,7 @@ import Framework.highlightElement;
 
 public class adminUserAccessTest extends setupFramework {
 
-	
-	
+		
 	@BeforeMethod
 	@BeforeClass
 	public void setUp()  {
@@ -164,7 +163,8 @@ public class adminUserAccessTest extends setupFramework {
     	WebElement ele = driver.findElement(By.id("userGroupSearch"));
     	highlightElement.highLightElement(driver, ele);
 
-    	String name = "Max Automated Testing";
+    	//String name = "Max Automated Testing";
+    	String name = "Baristas";
     	   
     	for(int i = 0; i < name.length(); i++) {
     		char c = name.charAt(i);
@@ -174,7 +174,7 @@ public class adminUserAccessTest extends setupFramework {
     		waitMethods.waiter(waitMethods.w100);
     	}
     	
-    	waitMethods.waiter(waitMethods.w500);
+    	waitMethods.waiter(waitMethods.w200);
     	System.out.println("Filtered by group");			
 	}
 
@@ -206,7 +206,7 @@ public class adminUserAccessTest extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w200);
+    		waitMethods.waiter(waitMethods.w100);
     	}
     	
     	driver.findElement(By.id("userGroupSearch")).clear();
@@ -219,7 +219,8 @@ public class adminUserAccessTest extends setupFramework {
 	private void selectedSysAdmin() {
 		//waitMethods.implicitWait(waitMethods.w300);
 		waitMethods.waiter(waitMethods.w200);
-		WebElement ele = driver.findElement(By.id("groupTitle1"));    //userGroupSearch
+		WebElement ele = driver.findElement(By.id("1"));
+		//WebElement ele = driver.findElement(By.id("groupTitle1"));    //userGroupSearch
         highlightElement.highLightElement(driver, ele);
         ele.click();
 		waitMethods.waiter(waitMethods.w200);
@@ -285,7 +286,7 @@ public class adminUserAccessTest extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w200);
+    		waitMethods.waiter(waitMethods.w100);
     	}
     	
     	driver.findElement(By.id("userGroupSearch")).clear();
@@ -298,7 +299,8 @@ public class adminUserAccessTest extends setupFramework {
 	public void selectedSysAdmin2() {
 		//waitMethods.implicitWait(waitMethods.w300);
 		waitMethods.waiter(waitMethods.w1k);
-		WebElement ele = driver.findElement(By.id("groupTitle1"));
+		WebElement ele = driver.findElement(By.id("1"));
+		//WebElement ele = driver.findElement(By.id("groupTitle1"));
         highlightElement.highLightElement(driver, ele);
         ele.click();
 		waitMethods.waiter(waitMethods.w1k);
@@ -323,7 +325,7 @@ public class adminUserAccessTest extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w200);
+    		waitMethods.waiter(waitMethods.w100);
     	}
 	}
 
@@ -332,11 +334,11 @@ public class adminUserAccessTest extends setupFramework {
 	@Test(priority = 124) //
 	private void selectAdminCandidate() {
 		//waitMethods.implicitWait(waitMethods.w300);
-		waitMethods.waiter(waitMethods.w1k);
+		waitMethods.waiter(waitMethods.w500);
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[3]/div[2]/form/div/main/div[1]/div[2]/table/tbody/tr/td[1]"));
     	highlightElement.highLightElement(driver, ele);
     	ele.click();
-		waitMethods.waiter(waitMethods.w1k);
+		waitMethods.waiter(waitMethods.w500);
 		//driver.navigate().back();    //navigate back
         System.out.println("Selected Admin Record based on search");
 	} 
@@ -346,11 +348,11 @@ public class adminUserAccessTest extends setupFramework {
 	@Test(priority = 126) //
 	private void clickAddAdministrator() {
 		//waitMethods.implicitWait(waitMethods.w300);
-		waitMethods.waiter(waitMethods.w1k);
+		waitMethods.waiter(waitMethods.w500);
 		WebElement ele = driver.findElement(By.id("button_save"));
     	highlightElement.highLightElement(driver, ele);
     	ele.click();
-		waitMethods.waiter(waitMethods.w1k);
+		waitMethods.waiter(waitMethods.w500);
 		//driver.navigate().back();    //navigate back
         System.out.println("'Add' (Administrator) clicked");
 	} 
@@ -365,11 +367,11 @@ public class adminUserAccessTest extends setupFramework {
 	@Test(priority = 130) //
 	private void verifyAddAdministrator() {
 		//waitMethods.implicitWait(waitMethods.w300);
-		waitMethods.waiter(waitMethods.w1k);
+		waitMethods.waiter(waitMethods.w500);
 		WebElement ele = driver.findElement(By.partialLinkText("Bowles"));								//("Mason, Minerva"));
 		highlightElement.highLightElement(driver, ele);
 		//ele.click();
-		waitMethods.waiter(waitMethods.w1k);
+		waitMethods.waiter(waitMethods.w500);
 		//driver.navigate().back();    //navigate back
         System.out.println("Newly added Administrator found");
 	} 
@@ -382,7 +384,7 @@ public class adminUserAccessTest extends setupFramework {
 		//waitMethods.implicitWait(waitMethods.w300);
 		waitMethods.waiter(waitMethods.w1k);
 		//Need to find better element descriptor. If someone is added above
-		WebElement ele = driver.findElement(By.cssSelector("#removeAdmin_5"));
+		WebElement ele = driver.findElement(By.cssSelector("#removeAdmin_3"));
 		
 		highlightElement.highLightElement(driver, ele);
 		ele.click();
