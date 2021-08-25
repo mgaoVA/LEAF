@@ -26,7 +26,7 @@ import Framework.setupFramework;
 import Framework.waitMethods;
 import Framework.highlightElement;
 
-public class formBuilderWorkflow extends setupFramework {
+public class formsWorkflow extends setupFramework {
 
 	//private static final DateFormat Calendar = null;
 	Date date = new Date();
@@ -36,7 +36,7 @@ public class formBuilderWorkflow extends setupFramework {
 	public void setUp()  {
 		if(driver!= null) {
 			driver=getDriver();   //   Also have a valid ChromeDriver here
-			//System.out.println("Driver established for: " + driver.getClass());
+			System.out.println("Driver established for: " + driver.getClass());
 			//driver.manage().timeouts().wait(Framework.waitMethods.w100);
 		}
 	}
@@ -62,7 +62,7 @@ public class formBuilderWorkflow extends setupFramework {
 	    } 
 	} 
  
-// Report Builder Workflow
+// Forms Workflow
 	
 //	@Test(priority = 102) //
 //	private void clickReportBuilder() {

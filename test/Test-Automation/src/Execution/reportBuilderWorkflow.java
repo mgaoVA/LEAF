@@ -672,15 +672,7 @@ public class reportBuilderWorkflow extends setupFramework {
 	}
 
 	
-	
-	/* 
- * 
- * 			ON JSON Page - 1) Verify  2) Click 'Shorten Link'
- * */	
-	
-	
-	
-	
+
 	
 	
 	////////////   DDL TEMPLATE \\\\\\\\\\\\\\\\\\
