@@ -1,4 +1,4 @@
-FROM pelentan/leaf-app-base:1.0 as base
+FROM pelentan/leaf-app-base:1.1 as base
 
 ARG SMTP_HOST 
 
@@ -10,9 +10,9 @@ RUN sed -i  "s/localhost/$SMTP_HOST/g" /etc/ssmtp/ssmtp.conf
 
 FROM base as dev 
 # xdebug
-RUN pecl config-set php_ini "$PHP_INI_DIR/php.ini"
-RUN pecl install xdebug && docker-php-ext-enable xdebug
-COPY /docker/php/etc/xdebug.ini "$PHP_INI_DIR/conf.d/xdebug.ini"
+# RUN pecl config-set php_ini "$PHP_INI_DIR/php.ini"
+# RUN pecl install xdebug && docker-php-ext-enable xdebug
+# COPY /docker/php/etc/xdebug.ini "$PHP_INI_DIR/conf.d/xdebug.ini"
 
 FROM base as prod
 COPY ./LEAF_Nexus /var/www/html/LEAF_Nexus

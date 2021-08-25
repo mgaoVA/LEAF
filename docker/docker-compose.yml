@@ -26,7 +26,7 @@ services:
       - ../health_checks:/var/www/html/health_checks
       - ../libs:/var/www/html/libs
       - ../test:/var/www/html/test
-      - ./docker/php/conf.d/xdebug.ini
+      # - ./docker/php/conf.d/xdebug.ini
     networks:
       traefik:
       code-network:

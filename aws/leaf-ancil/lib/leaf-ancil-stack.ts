@@ -43,26 +43,26 @@ export class LeafAncilStack extends cdk.Stack {
 
     leaf_efs.addAccessPoint('app-files', {
       path: '/leaf-app-files/', 
-      posixUser: {
-        uid: 'www-data', 
-        gid: 'www-data'
-      }
+      // posixUser: {
+      //   uid: 'www-data', 
+      //   gid: 'www-data'
+      // }
     });
 
     leaf_efs.addAccessPoint('sql', {
       path: '/leaf-sql/', 
-      posixUser: {
-        uid: 'www-data', 
-        gid: 'www-data'
-      }
+      // posixUser: {
+      //   uid: 'www-data', 
+      //   gid: 'www-data'
+      // }
     });
 
     leaf_efs.addAccessPoint('user-files', {
       path: '/leaf-user-files/', 
-      posixUser: {
-        uid: 'www-data', 
-        gid: 'www-data'
-      }
+      // posixUser: {
+      //   uid: 'www-data', 
+      //   gid: 'www-data'
+      // }
     });
     
     // const efs_accessPoints = new efs.AccessPoint(this, 'efs-acc-points', {

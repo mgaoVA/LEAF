@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y wget libpng-dev zlib1g-dev libzip-dev g
 # PHP installs
 RUN docker-php-ext-install zip mysqli pdo pdo_mysql gd
 
-COPY /docker/php/trust_ca_certs.sh /tmp/
+COPY trust_ca_certs.sh /tmp/
 RUN bash -xc "bash /tmp/trust_ca_certs.sh"
 
 RUN a2enmod rewrite &&\
@@ -33,7 +33,10 @@ RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/certs/l
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
-RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+COPY etc/php-prod.ini "$PHP_INI_DIR/php.ini"
+COPY etc/php-prod.ini "$PHP_INI_DIR/php-prod.ini"
+
+# RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 
 RUN composer global require phpunit/phpunit ^7.4
 RUN composer global require robmorgan/phinx ^0.9.2
@@ -52,15 +55,15 @@ RUN apt-get install -y ssmtp && \
   echo "FromLineOverride=YES" >> /etc/ssmtp/ssmtp.conf && \
   echo 'sendmail_path = "/usr/sbin/ssmtp -t"' > /usr/local/etc/php/conf.d/mail.ini
 
-COPY /docker/php/ssmtp/ssmtp.conf /etc/ssmtp/
-COPY /docker/php/swagger-proxy.conf /etc/apache2/conf-enabled/
-COPY /docker/php/000-default.conf /etc/apache2/sites-enabled/
-COPY /docker/php/default-ssl.conf /etc/apache2/sites-enabled/
-COPY /docker/php/apache2.conf /etc/apache2/
+COPY ssmtp/ssmtp.conf /etc/ssmtp/
+COPY swagger-proxy.conf /etc/apache2/conf-enabled/
+COPY 000-default.conf /etc/apache2/sites-enabled/
+COPY default-ssl.conf /etc/apache2/sites-enabled/
+COPY apache2.conf /etc/apache2/
 ## not sure if this is needed but...
 RUN service apache2 restart 
 
-COPY /docker/php/docker-php-entrypoint /usr/local/bin/docker-php-entrypoint
+COPY docker-php-entrypoint /usr/local/bin/docker-php-entrypoint
 RUN chmod +x /usr/local/bin/docker-php-entrypoint
 
 RUN chmod +x /var/www/html/
@@ -69,4 +72,8 @@ RUN chmod -R g+rwX /var/www
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 # USER build_user
+
+FROM base as legacy
+RUN apt-get install -y subversion libapache2-mod-svn
+
 
