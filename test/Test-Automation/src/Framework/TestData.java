@@ -21,20 +21,6 @@ public class TestData {
 //	public final static String VARNAME = "";
 //	public final static String VARNAME = "";
 //	public final static String VARNAME = "";
-//	public final static String VARNAME = "";
-//	public final static String VARNAME = "";
-//	public final static String VARNAME = "";
-//	public final static String VARNAME = "";
-//	public final static String VARNAME = "";
-//	public final static String VARNAME = "";
-//	public final static String VARNAME = "";
-//	public final static String VARNAME = "";
-//	public final static String VARNAME = "";
-//	public final static String VARNAME = "";
-//	public final static String VARNAME = "";
-//	public final static String VARNAME = "";
-//	public final static String VARNAME = "";
-//	public final static String VARNAME = "";
 	
 	
 			

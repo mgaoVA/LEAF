@@ -64,44 +64,35 @@ public class formsWorkflow extends setupFramework {
  
 // Forms Workflow
 	
+	By.partialLinkText("Form Editor"
+
+		@Test(priority = 102) //
+		private void clickReportBuilder() {
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.xpath("//*[text()='Report Builder']"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w200);
+	    	System.out.println("Report Builder clicked from home page");
+		}
+
+			
+			
+			
+			
+///////////////  Normal Template \\\\\\\\\\\\\\\\\\\\	
 //	@Test(priority = 102) //
 //	private void clickReportBuilder() {
 //		waitMethods.waiter(waitMethods.w250);       
 //		WebElement ele = driver.findElement(By.xpath("//*[text()='Report Builder']"));
-//		// Alternatively:  WebElement ele = driver.findElement(By.xpath("//*[@id=\"bodyarea\"]/div[1]/a[4]/span"));
 //    	highlightElement.highLightElement(driver, ele);
 //   		ele.click();
 //		waitMethods.waiter(waitMethods.w200);
 //    	System.out.println("Report Builder clicked from home page");
 //	}
-//    	
-//   
 //
 //
-//	
-//	@Test(priority = 104) //
-//	private void inputTextBox01() {
-//		waitMethods.waiter(waitMethods.w300);       
-//		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[1]/td[5]/input"));
-//		//WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr[1]/td[4]/input"));
-//		//WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[2]/div/div[1]/fieldset/table/tr/td[5]/input"));
-//    	highlightElement.highLightElement(driver, ele);
-//    	waitMethods.waiter(waitMethods.w250);
-//    	
-//    	String name = "test";
-//   
-//    	for(int i = 0; i < name.length(); i++) {
-//    		char c = name.charAt(i);
-//    		String s = new StringBuilder().append(c).toString();
-//    		//ele.sendKeys(Keys.chord(name));
-//    		ele.sendKeys(s);
-//    		waitMethods.waiter(waitMethods.w100);
-//    	}
-//    	
-//    	System.out.println("Input text to first textbox");			
-//	}
-
-	
+//			
 ////////////////   DDL TEMPLATE \\\\\\\\\\\\\\\\\\
 //	@Test(priority = 199) //
 //	public void DDL_Template() {         
