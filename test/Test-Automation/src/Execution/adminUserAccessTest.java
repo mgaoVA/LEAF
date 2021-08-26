@@ -171,7 +171,7 @@ public class adminUserAccessTest extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w100);
+    		waitMethods.waiter(waitMethods.w50);
     	}
     	
     	waitMethods.waiter(waitMethods.w200);
@@ -206,7 +206,7 @@ public class adminUserAccessTest extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w100);
+    		waitMethods.waiter(waitMethods.w50);
     	}
     	
     	driver.findElement(By.id("userGroupSearch")).clear();
@@ -286,7 +286,7 @@ public class adminUserAccessTest extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w100);
+    		waitMethods.waiter(waitMethods.w50);
     	}
     	
     	driver.findElement(By.id("userGroupSearch")).clear();
@@ -325,7 +325,7 @@ public class adminUserAccessTest extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w100);
+    		waitMethods.waiter(waitMethods.w50);
     	}
 	}
 
@@ -568,7 +568,7 @@ public class adminUserAccessTest extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w100);
+    		waitMethods.waiter(waitMethods.w50);
     	}
 	} 
 	
@@ -743,7 +743,7 @@ public class adminUserAccessTest extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w100);
+    		waitMethods.waiter(waitMethods.w50);
     	}
 	} 
     
@@ -785,7 +785,7 @@ public class adminUserAccessTest extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w100);
+    		waitMethods.waiter(waitMethods.w50);
     	}
 	} 
 
@@ -821,7 +821,7 @@ public class adminUserAccessTest extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w100);
+    		waitMethods.waiter(waitMethods.w50);
     	}
 	} 
 

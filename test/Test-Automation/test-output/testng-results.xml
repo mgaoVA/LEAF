@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="46" passed="46" failed="0" skipped="0">
+<testng-results ignored="0" total="9" passed="5" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-08-25T11:51:38 CDT" name="RegressionSuite" finished-at="2021-08-25T11:52:44 CDT" duration-ms="65667">
+  <suite started-at="2021-08-26T17:23:30 CDT" name="RegressionSuite" finished-at="2021-08-26T17:23:49 CDT" duration-ms="19476">
     <groups>
     </groups>
-    <test started-at="2021-08-25T11:51:38 CDT" name="Report Builder Workflow" finished-at="2021-08-25T11:52:44 CDT" duration-ms="65667">
-      <class name="Execution.reportBuilderWorkflow">
-        <test-method is-config="true" signature="initializeFramework(java.lang.String,java.lang.String)[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:38 CDT" name="initializeFramework" finished-at="2021-08-25T11:51:41 CDT" duration-ms="2292" status="PASS">
+    <test started-at="2021-08-26T17:23:30 CDT" name="Forms Workflow" finished-at="2021-08-26T17:23:49 CDT" duration-ms="19476">
+      <class name="Execution.formsWorkflow">
+        <test-method is-config="true" signature="initializeFramework(java.lang.String,java.lang.String)[pri:0, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:30 CDT" name="initializeFramework" finished-at="2021-08-26T17:23:32 CDT" duration-ms="2321" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -16,390 +16,372 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[https://localhost/LEAF_Request_Portal/]]>
+                <![CDATA[https://localhost/LEAF_Request_Portal/admin/?a=form#]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeFramework -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:41 CDT" name="setUp" finished-at="2021-08-25T11:51:41 CDT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:32 CDT" name="setUp" finished-at="2021-08-26T17:23:32 CDT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:41 CDT" name="setUp" finished-at="2021-08-25T11:51:41 CDT" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:32 CDT" name="setUp" finished-at="2021-08-26T17:23:32 CDT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testForCertPage()[pri:1, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:41 CDT" name="testForCertPage" finished-at="2021-08-25T11:51:43 CDT" duration-ms="1910" status="PASS">
+        <test-method signature="testForCertPage()[pri:1, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:32 CDT" name="testForCertPage" finished-at="2021-08-26T17:23:35 CDT" duration-ms="2305" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testForCertPage -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:43 CDT" name="setUp" finished-at="2021-08-25T11:51:43 CDT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:35 CDT" name="setUp" finished-at="2021-08-26T17:23:35 CDT" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="clickReportBuilder()[pri:102, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:43 CDT" name="clickReportBuilder" finished-at="2021-08-25T11:51:44 CDT" duration-ms="1462" status="PASS">
+        <test-method signature="clickCreateForm()[pri:102, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:35 CDT" name="clickCreateForm" finished-at="2021-08-26T17:23:35 CDT" duration-ms="815" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickReportBuilder -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:44 CDT" name="setUp" finished-at="2021-08-25T11:51:44 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="inputTextBox01()[pri:104, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:44 CDT" name="inputTextBox01" finished-at="2021-08-25T11:51:46 CDT" duration-ms="1701" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- inputTextBox01 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:46 CDT" name="setUp" finished-at="2021-08-25T11:51:46 CDT" duration-ms="0" status="PASS">
+        </test-method> <!-- clickCreateForm -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:35 CDT" name="setUp" finished-at="2021-08-26T17:23:35 CDT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="selectAnd01()[pri:106, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:46 CDT" name="selectAnd01" finished-at="2021-08-25T11:51:47 CDT" duration-ms="1034" status="PASS">
+        <test-method signature="inputFormLabel()[pri:104, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:35 CDT" name="inputFormLabel" finished-at="2021-08-26T17:23:37 CDT" duration-ms="1957" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#search"}
+  (Session info: chrome=92.0.4515.159)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-OOHKJP3', ip: '172.19.128.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\MAXRIC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55435}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e54086fdb7a447f0d32b1faf4f9150bf
+*** Element info: {Using=id, value=search}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#search"}
+  (Session info: chrome=92.0.4515.159)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-OOHKJP3', ip: '172.19.128.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\MAXRIC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55435}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e54086fdb7a447f0d32b1faf4f9150bf
+*** Element info: {Using=id, value=search}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+at org.openqa.selenium.By$ById.findElement(By.java:188)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at Execution.formsWorkflow.inputFormLabel(formsWorkflow.java:96)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- selectAnd01 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:47 CDT" name="setUp" finished-at="2021-08-25T11:51:47 CDT" duration-ms="0" status="PASS">
+        </test-method> <!-- inputFormLabel -->
+        <test-method signature="inputFormDesc()[pri:106, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:37 CDT" name="inputFormDesc" finished-at="2021-08-26T17:23:41 CDT" duration-ms="3437" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#search"}
+  (Session info: chrome=92.0.4515.159)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-OOHKJP3', ip: '172.19.128.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\MAXRIC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55435}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e54086fdb7a447f0d32b1faf4f9150bf
+*** Element info: {Using=id, value=search}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#search"}
+  (Session info: chrome=92.0.4515.159)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-OOHKJP3', ip: '172.19.128.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\MAXRIC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55435}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e54086fdb7a447f0d32b1faf4f9150bf
+*** Element info: {Using=id, value=search}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+at org.openqa.selenium.By$ById.findElement(By.java:188)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at Execution.formsWorkflow.inputFormDesc(formsWorkflow.java:116)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="clickServiceButton02()[pri:108, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:47 CDT" name="clickServiceButton02" finished-at="2021-08-25T11:51:49 CDT" duration-ms="1614" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickServiceButton02 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:49 CDT" name="setUp" finished-at="2021-08-25T11:51:49 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectOr01()[pri:110, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:49 CDT" name="selectOr01" finished-at="2021-08-25T11:51:49 CDT" duration-ms="906" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectOr01 -->
-        <test-method signature="inputTextBox03()[pri:112, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:49 CDT" name="inputTextBox03" finished-at="2021-08-25T11:51:51 CDT" duration-ms="1644" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- inputTextBox03 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:49 CDT" name="setUp" finished-at="2021-08-25T11:51:49 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:51 CDT" name="setUp" finished-at="2021-08-25T11:51:51 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="clickServiceButton03()[pri:114, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:51 CDT" name="clickServiceButton03" finished-at="2021-08-25T11:51:53 CDT" duration-ms="2128" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickServiceButton03 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:53 CDT" name="setUp" finished-at="2021-08-25T11:51:53 CDT" duration-ms="3" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectAnd02()[pri:116, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:53 CDT" name="selectAnd02" finished-at="2021-08-25T11:51:54 CDT" duration-ms="1085" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectAnd02 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:54 CDT" name="setUp" finished-at="2021-08-25T11:51:54 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="clickTypeButton01()[pri:118, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:54 CDT" name="clickTypeButton01" finished-at="2021-08-25T11:51:56 CDT" duration-ms="2206" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickTypeButton01 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:57 CDT" name="setUp" finished-at="2021-08-25T11:51:57 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="inputTextBox04()[pri:120, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:51:57 CDT" name="inputTextBox04" finished-at="2021-08-25T11:52:00 CDT" duration-ms="3495" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- inputTextBox04 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:00 CDT" name="setUp" finished-at="2021-08-25T11:52:00 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectAnd03()[pri:122, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:00 CDT" name="selectAnd03" finished-at="2021-08-25T11:52:01 CDT" duration-ms="1015" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectAnd03 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:01 CDT" name="setUp" finished-at="2021-08-25T11:52:01 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="clickTypeButton02()[pri:124, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:01 CDT" name="clickTypeButton02" finished-at="2021-08-25T11:52:03 CDT" duration-ms="1921" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickTypeButton02 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:03 CDT" name="setUp" finished-at="2021-08-25T11:52:03 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="clickIsNot()[pri:126, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:03 CDT" name="clickIsNot" finished-at="2021-08-25T11:52:05 CDT" duration-ms="1916" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickIsNot -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:05 CDT" name="setUp" finished-at="2021-08-25T11:52:05 CDT" duration-ms="3" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectNextStep()[pri:128, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:05 CDT" name="selectNextStep" finished-at="2021-08-25T11:52:06 CDT" duration-ms="1107" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectNextStep -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:06 CDT" name="setUp" finished-at="2021-08-25T11:52:06 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectCheckboxService()[pri:130, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:06 CDT" name="selectCheckboxService" finished-at="2021-08-25T11:52:07 CDT" duration-ms="1052" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectCheckboxService -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:07 CDT" name="setUp" finished-at="2021-08-25T11:52:07 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectCheckboxRequestType()[pri:132, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:07 CDT" name="selectCheckboxRequestType" finished-at="2021-08-25T11:52:08 CDT" duration-ms="1065" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectCheckboxRequestType -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:08 CDT" name="setUp" finished-at="2021-08-25T11:52:08 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectCheckboxCurrentStatus()[pri:134, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:08 CDT" name="selectCheckboxCurrentStatus" finished-at="2021-08-25T11:52:09 CDT" duration-ms="1023" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectCheckboxCurrentStatus -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:09 CDT" name="setUp" finished-at="2021-08-25T11:52:09 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectCheckboxInitiator()[pri:136, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:09 CDT" name="selectCheckboxInitiator" finished-at="2021-08-25T11:52:10 CDT" duration-ms="805" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectCheckboxInitiator -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:10 CDT" name="setUp" finished-at="2021-08-25T11:52:10 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectCheckboxActionButton()[pri:138, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:10 CDT" name="selectCheckboxActionButton" finished-at="2021-08-25T11:52:11 CDT" duration-ms="1070" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectCheckboxActionButton -->
-        <test-method signature="selectCheckboxCommentHistory()[pri:140, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:11 CDT" name="selectCheckboxCommentHistory" finished-at="2021-08-25T11:52:12 CDT" duration-ms="1046" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectCheckboxCommentHistory -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:11 CDT" name="setUp" finished-at="2021-08-25T11:52:11 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:12 CDT" name="setUp" finished-at="2021-08-25T11:52:12 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectCheckboxApprovalHistory()[pri:142, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:12 CDT" name="selectCheckboxApprovalHistory" finished-at="2021-08-25T11:52:13 CDT" duration-ms="1044" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectCheckboxApprovalHistory -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:13 CDT" name="setUp" finished-at="2021-08-25T11:52:13 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectCheckboxLastAction()[pri:144, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:13 CDT" name="selectCheckboxLastAction" finished-at="2021-08-25T11:52:14 CDT" duration-ms="1001" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectCheckboxLastAction -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:14 CDT" name="setUp" finished-at="2021-08-25T11:52:14 CDT" duration-ms="1" status="PASS">
+        </test-method> <!-- inputFormDesc -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:37 CDT" name="setUp" finished-at="2021-08-26T17:23:37 CDT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="selectCheckboxLastMovement()[pri:146, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:14 CDT" name="selectCheckboxLastMovement" finished-at="2021-08-25T11:52:15 CDT" duration-ms="1041" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectCheckboxLastMovement -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:15 CDT" name="setUp" finished-at="2021-08-25T11:52:15 CDT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:41 CDT" name="setUp" finished-at="2021-08-26T17:23:41 CDT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="selectCheckboxMRTest()[pri:148, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:15 CDT" name="selectCheckboxMRTest" finished-at="2021-08-25T11:52:16 CDT" duration-ms="1089" status="PASS">
+        <test-method signature="selectCancel()[pri:108, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:41 CDT" name="selectCancel" finished-at="2021-08-26T17:23:41 CDT" duration-ms="748" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- selectCheckboxMRTest -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:16 CDT" name="setUp" finished-at="2021-08-25T11:52:16 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectMRTestField1()[pri:150, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:16 CDT" name="selectMRTestField1" finished-at="2021-08-25T11:52:17 CDT" duration-ms="1042" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectMRTestField1 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:17 CDT" name="setUp" finished-at="2021-08-25T11:52:17 CDT" duration-ms="1" status="PASS">
+        </test-method> <!-- selectCancel -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:41 CDT" name="setUp" finished-at="2021-08-26T17:23:41 CDT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="selectMRTestField2()[pri:152, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:17 CDT" name="selectMRTestField2" finished-at="2021-08-25T11:52:18 CDT" duration-ms="1059" status="PASS">
+        <test-method signature="clickCreateForm02()[pri:110, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:41 CDT" name="clickCreateForm02" finished-at="2021-08-26T17:23:42 CDT" duration-ms="811" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- selectMRTestField2 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:18 CDT" name="setUp" finished-at="2021-08-25T11:52:18 CDT" duration-ms="1" status="PASS">
+        </test-method> <!-- clickCreateForm02 -->
+        <test-method signature="inputFormLabel02()[pri:112, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:42 CDT" name="inputFormLabel02" finished-at="2021-08-26T17:23:44 CDT" duration-ms="2087" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#search"}
+  (Session info: chrome=92.0.4515.159)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-OOHKJP3', ip: '172.19.128.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\MAXRIC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55435}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e54086fdb7a447f0d32b1faf4f9150bf
+*** Element info: {Using=id, value=search}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#search"}
+  (Session info: chrome=92.0.4515.159)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-OOHKJP3', ip: '172.19.128.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\MAXRIC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55435}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e54086fdb7a447f0d32b1faf4f9150bf
+*** Element info: {Using=id, value=search}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+at org.openqa.selenium.By$ById.findElement(By.java:188)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at Execution.formsWorkflow.inputFormLabel(formsWorkflow.java:96)
+at Execution.formsWorkflow.inputFormLabel02(formsWorkflow.java:141)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectMRTestField3()[pri:154, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:18 CDT" name="selectMRTestField3" finished-at="2021-08-25T11:52:19 CDT" duration-ms="1065" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectMRTestField3 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:19 CDT" name="setUp" finished-at="2021-08-25T11:52:19 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectGenerateReport()[pri:156, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:19 CDT" name="selectGenerateReport" finished-at="2021-08-25T11:52:21 CDT" duration-ms="1124" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectGenerateReport -->
-        <test-method signature="inputReportName()[pri:158, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:21 CDT" name="inputReportName" finished-at="2021-08-25T11:52:24 CDT" duration-ms="3820" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- inputReportName -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:21 CDT" name="setUp" finished-at="2021-08-25T11:52:21 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:24 CDT" name="setUp" finished-at="2021-08-25T11:52:24 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectModifyReport()[pri:160, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:24 CDT" name="selectModifyReport" finished-at="2021-08-25T11:52:25 CDT" duration-ms="986" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectModifyReport -->
-        <test-method signature="removeInitiator()[pri:162, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:25 CDT" name="removeInitiator" finished-at="2021-08-25T11:52:26 CDT" duration-ms="992" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- removeInitiator -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:25 CDT" name="setUp" finished-at="2021-08-25T11:52:25 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:26 CDT" name="setUp" finished-at="2021-08-25T11:52:26 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectAnd04()[pri:164, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:26 CDT" name="selectAnd04" finished-at="2021-08-25T11:52:27 CDT" duration-ms="1059" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectAnd04 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:27 CDT" name="setUp" finished-at="2021-08-25T11:52:27 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="clickTypeButton03()[pri:166, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:27 CDT" name="clickTypeButton03" finished-at="2021-08-25T11:52:29 CDT" duration-ms="1900" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickTypeButton03 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:29 CDT" name="setUp" finished-at="2021-08-25T11:52:29 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="inputTextBox05()[pri:168, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:29 CDT" name="inputTextBox05" finished-at="2021-08-25T11:52:32 CDT" duration-ms="2748" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- inputTextBox05 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:32 CDT" name="setUp" finished-at="2021-08-25T11:52:32 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectNextStep02()[pri:170, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:32 CDT" name="selectNextStep02" finished-at="2021-08-25T11:52:33 CDT" duration-ms="1062" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectNextStep02 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:33 CDT" name="setUp" finished-at="2021-08-25T11:52:33 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectGenerateReport02()[pri:172, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:33 CDT" name="selectGenerateReport02" finished-at="2021-08-25T11:52:34 CDT" duration-ms="1006" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectGenerateReport02 -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:34 CDT" name="setUp" finished-at="2021-08-25T11:52:34 CDT" duration-ms="0" status="PASS">
+        </test-method> <!-- inputFormLabel02 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:42 CDT" name="setUp" finished-at="2021-08-26T17:23:42 CDT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="selectEditLabels()[pri:174, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:34 CDT" name="selectEditLabels" finished-at="2021-08-25T11:52:35 CDT" duration-ms="1093" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectEditLabels -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:35 CDT" name="setUp" finished-at="2021-08-25T11:52:35 CDT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:44 CDT" name="setUp" finished-at="2021-08-26T17:23:44 CDT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="saveEditLabels()[pri:176, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:35 CDT" name="saveEditLabels" finished-at="2021-08-25T11:52:36 CDT" duration-ms="1047" status="PASS">
+        <test-method signature="inputFormDesc02()[pri:114, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:44 CDT" name="inputFormDesc02" finished-at="2021-08-26T17:23:49 CDT" duration-ms="4154" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#search"}
+  (Session info: chrome=92.0.4515.159)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-OOHKJP3', ip: '172.19.128.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\MAXRIC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55435}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e54086fdb7a447f0d32b1faf4f9150bf
+*** Element info: {Using=id, value=search}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#search"}
+  (Session info: chrome=92.0.4515.159)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-OOHKJP3', ip: '172.19.128.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\MAXRIC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55435}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e54086fdb7a447f0d32b1faf4f9150bf
+*** Element info: {Using=id, value=search}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+at org.openqa.selenium.By$ById.findElement(By.java:188)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at Execution.formsWorkflow.inputFormDesc(formsWorkflow.java:116)
+at Execution.formsWorkflow.inputFormDesc02(formsWorkflow.java:148)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- saveEditLabels -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:36 CDT" name="setUp" finished-at="2021-08-25T11:52:36 CDT" duration-ms="1" status="PASS">
+        </test-method> <!-- inputFormDesc02 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:49 CDT" name="setUp" finished-at="2021-08-26T17:23:49 CDT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="selectShareReport()[pri:178, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:36 CDT" name="selectShareReport" finished-at="2021-08-25T11:52:37 CDT" duration-ms="1087" status="PASS">
+        <test-method signature="selectSave()[pri:116, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:49 CDT" name="selectSave" finished-at="2021-08-26T17:23:49 CDT" duration-ms="777" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- selectShareReport -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:37 CDT" name="setUp" finished-at="2021-08-25T11:52:37 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="clickEmailReport()[pri:180, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:37 CDT" name="clickEmailReport" finished-at="2021-08-25T11:52:38 CDT" duration-ms="1064" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickEmailReport -->
-        <test-method signature="closeEmailDialogue()[pri:182, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:38 CDT" name="closeEmailDialogue" finished-at="2021-08-25T11:52:39 CDT" duration-ms="946" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeEmailDialogue -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:38 CDT" name="setUp" finished-at="2021-08-25T11:52:38 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:39 CDT" name="setUp" finished-at="2021-08-25T11:52:39 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="selectExportReport()[pri:184, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:39 CDT" name="selectExportReport" finished-at="2021-08-25T11:52:40 CDT" duration-ms="922" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectExportReport -->
-        <test-method signature="selectJSON()[pri:186, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:40 CDT" name="selectJSON" finished-at="2021-08-25T11:52:41 CDT" duration-ms="957" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectJSON -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:40 CDT" name="setUp" finished-at="2021-08-25T11:52:40 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:41 CDT" name="setUp" finished-at="2021-08-25T11:52:41 CDT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="jsonShortenLink()[pri:188, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:41 CDT" name="jsonShortenLink" finished-at="2021-08-25T11:52:42 CDT" duration-ms="1001" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- jsonShortenLink -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:42 CDT" name="setUp" finished-at="2021-08-25T11:52:42 CDT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="jsonCloseForm()[pri:190, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:42 CDT" name="jsonCloseForm" finished-at="2021-08-25T11:52:43 CDT" duration-ms="968" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- jsonCloseForm -->
-        <test-method is-config="true" signature="closeDown()[pri:0, instance:Execution.reportBuilderWorkflow@49912c99]" started-at="2021-08-25T11:52:43 CDT" name="closeDown" finished-at="2021-08-25T11:52:44 CDT" duration-ms="808" status="PASS">
+        </test-method> <!-- selectSave -->
+        <test-method is-config="true" signature="closeDown()[pri:0, instance:Execution.formsWorkflow@34f5090e]" started-at="2021-08-26T17:23:49 CDT" name="closeDown" finished-at="2021-08-26T17:23:49 CDT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDown -->
-      </class> <!-- Execution.reportBuilderWorkflow -->
-    </test> <!-- Report Builder Workflow -->
+      </class> <!-- Execution.formsWorkflow -->
+    </test> <!-- Forms Workflow -->
   </suite> <!-- RegressionSuite -->
 </testng-results>

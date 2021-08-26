@@ -17,6 +17,7 @@ public class waitMethods {
 	//String var;				//For testing commits only, delete
 	
 		//Vars for demo
+		public final static int w50 = 50;		//50	
 		public final static int w100 = 100;		//100
 		public final static int w200 = 200;		//200
 		public final static int w250 = 250;		//300
@@ -35,6 +36,7 @@ public class waitMethods {
 	
 	
 		//Headless values
+//		public final static int w50 = 50;		//50
 //		public final static int w100 = 100;		//100
 //		public final static int w200 = 200;		//200
 //		public final static int w250 = 250;		//250

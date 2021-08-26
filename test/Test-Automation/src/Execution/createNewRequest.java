@@ -147,7 +147,7 @@ public class createNewRequest extends setupFramework {
     		char c = name.charAt(i);
     		String s = new StringBuilder().append(c).toString();
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w100);
+    		waitMethods.waiter(waitMethods.w50);
     	}
 	   
 		waitMethods.waiter(waitMethods.w250);
@@ -343,7 +343,7 @@ public class createNewRequest extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w100);
+    		waitMethods.waiter(waitMethods.w50);
     	}
 	    
 	    System.out.println("Input Request Title: 'Test Automation (2)");
@@ -395,7 +395,7 @@ public class createNewRequest extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w100);
+    		waitMethods.waiter(waitMethods.w50);
     	}
 		
 	    System.out.println("Entered First and Last Name");
@@ -417,7 +417,7 @@ public class createNewRequest extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w100);
+    		waitMethods.waiter(waitMethods.w50);
     	}
 	    
 	    System.out.println("Entered Middle Initial");
@@ -487,7 +487,7 @@ public class createNewRequest extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w100);
+    		waitMethods.waiter(waitMethods.w50);
     	}
 	    
 	     System.out.println("Request Comment Added");
@@ -508,7 +508,7 @@ public class createNewRequest extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w100);
+    		waitMethods.waiter(waitMethods.w50);
     	}
 	    
 	    System.out.println("selected 'Accept Job'");

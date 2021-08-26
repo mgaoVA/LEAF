@@ -64,21 +64,112 @@ public class formsWorkflow extends setupFramework {
  
 // Forms Workflow
 	
-	By.partialLinkText("Form Editor"
+	
 
 		@Test(priority = 102) //
-		private void clickReportBuilder() {
+		private void clickCreateForm() {
 			waitMethods.waiter(waitMethods.w250);       
-			WebElement ele = driver.findElement(By.xpath("//*[text()='Report Builder']"));
+			WebElement ele = driver.findElement(By.id("createFormButton"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
-			waitMethods.waiter(waitMethods.w200);
-	    	System.out.println("Report Builder clicked from home page");
+			waitMethods.waiter(waitMethods.w50);
+	    	System.out.println("Forms - clicked Create Form");
+		}
+		
+		
+		@Test(priority = 104) //
+		private void inputFormLabel() {
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("name"));
+	    	//highlightElement.highLightElement(driver, ele);
+	    	
+	    	String name = "Automation Test Form";
+	   
+	    	for(int i = 0; i < name.length(); i++) {
+	    		char c = name.charAt(i);
+	    		String s = new StringBuilder().append(c).toString();
+	    		//ele.sendKeys(Keys.chord(name));
+	    		ele.sendKeys(s);
+	    		waitMethods.waiter(waitMethods.w50);
+	    	}
+	    	
+	    	driver.findElement(By.id("search")).clear();
+	    	System.out.println("Input Form Label");			
 		}
 
+
+		@Test(priority = 106) //
+		private void inputFormDesc() {
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("description"));
+	    	//highlightElement.highLightElement(driver, ele);
+	    	
+	    	String name = "Automation Test Description " + getDate().toString();
+	   
+	    	for(int i = 0; i < name.length(); i++) {
+	    		char c = name.charAt(i);
+	    		String s = new StringBuilder().append(c).toString();
+	    		ele.sendKeys(s);
+	    		waitMethods.waiter(waitMethods.w50);
+	    	}
+	    	
+	    	driver.findElement(By.id("search")).clear();
+	    	System.out.println("Populate Form Description");			
+		}
+		
+		
+		@Test(priority = 108) //
+		private void selectCancel() {
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("button_cancelchange"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w50);
+	    	System.out.println("Forms - clicked Cancel");
+		}
+
+
+		@Test(priority = 110) //
+		private void clickCreateForm02() {
+			clickCreateForm();
+			System.out.println("Forms - clicked Create Form");
+		}
+		
+		
+		@Test(priority = 112) //
+		private void inputFormLabel02() {
+			inputFormLabel();
+			System.out.println("Input Form Label");			
+		}
+
+
+		@Test(priority = 114) //
+		private void inputFormDesc02() {
+			inputFormDesc();
+			System.out.println("Populate Form Description");			
+		}
+		
+		
+		@Test(priority = 116) //
+		private void selectSave() {
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("button_cancelchange"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w50);
+	    	System.out.println("Forms - clicked Save");
+		}
+
+
+		
+		
+		
+/*
+
+	
+
 			
-			
-			
+*/			
 			
 ///////////////  Normal Template \\\\\\\\\\\\\\\\\\\\	
 //	@Test(priority = 102) //
@@ -87,7 +178,7 @@ public class formsWorkflow extends setupFramework {
 //		WebElement ele = driver.findElement(By.xpath("//*[text()='Report Builder']"));
 //    	highlightElement.highLightElement(driver, ele);
 //   		ele.click();
-//		waitMethods.waiter(waitMethods.w200);
+//		waitMethods.waiter(waitMethods.w50);
 //    	System.out.println("Report Builder clicked from home page");
 //	}
 //
@@ -101,7 +192,7 @@ public class formsWorkflow extends setupFramework {
 //		WebElement ele = driver.findElement(By.xpath(""));
 //		highlightElement.highLightElement(driver, ele);
 //		ele.click();
-//		waitMethods.waiter(waitMethods.w200);
+//		waitMethods.waiter(waitMethods.w50);
 //		WebElement ele2 = driver.findElement(By.xpath(""));
 //		highlightElement.highLightElement(driver, ele2);
 //		ele2.click();
@@ -122,9 +213,8 @@ public class formsWorkflow extends setupFramework {
 //    	for(int i = 0; i < name.length(); i++) {
 //    		char c = name.charAt(i);
 //    		String s = new StringBuilder().append(c).toString();
-//    		//ele.sendKeys(Keys.chord(name));
 //    		ele.sendKeys(s);
-//    		waitMethods.waiter(waitMethods.w200);
+//    		waitMethods.waiter(waitMethods.w50);
 //    	}
 //    	
 //    	driver.findElement(By.id("search")).clear();

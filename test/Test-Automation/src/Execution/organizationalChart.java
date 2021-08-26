@@ -128,7 +128,7 @@ public class organizationalChart extends setupFramework {
     		String s = new StringBuilder().append(c).toString();
     		//ele.sendKeys(Keys.chord(name));
     		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w100);
+    		waitMethods.waiter(waitMethods.w50);
     	}
 	    
 	    waitMethods.waiter(waitMethods.w250);
