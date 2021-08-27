@@ -20,7 +20,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Select;			//Select Method
 
 import Framework.TestData;
 import Framework.setupFramework;
@@ -160,7 +160,7 @@ public class formsWorkflow extends setupFramework {
 	    	System.out.println("Forms - clicked Save");
 		}
 
-		//// Form Created \\\ 
+	////// Form Created w Title: Automation Test Description + getDate().toString();
 		
 		
 		@Test(priority = 118) //
@@ -181,21 +181,133 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.id("workflowID"));
 			highlightElement.highLightElement(driver, ele);
 			ele.click();
-//			waitMethods.waiter(waitMethods.w50);
-//			
-//			
-//			<option value="76">Max Workflow w Org Input (ID: #76)</option>
-//			
-//			
-//			WebElement ele2 = driver.findElement(By.xpath(""));
-//			highlightElement.highLightElement(driver, ele2);
-//			ele2.click();
-//			waitMethods.waiter(waitMethods.w250);
+			waitMethods.waiter(waitMethods.w50);
+			Select select = new Select(driver.findElement(By.id("workflowID")));
+			highlightElement.highLightElement(driver, ele);
+			select.selectByValue("76");
+			waitMethods.waiter(waitMethods.w250);
 			System.out.println("Forms-Selected Workflow");
 		}
 		
+
 		
-////// Form Created w Title: Automation Test Description + getDate().toString();
+		@Test(priority = 122) //
+		public void selectNeedToKnow() {         
+			//waitMethods.implicitWait(waitMethods.w300);
+			waitMethods.waiter(waitMethods.w200);			//The below opens the DDL
+			WebElement ele = driver.findElement(By.id("needToKnow"));
+			highlightElement.highLightElement(driver, ele);
+			ele.click();
+			waitMethods.waiter(waitMethods.w50);
+			Select select = new Select(driver.findElement(By.id("needToKnow")));
+			highlightElement.highLightElement(driver, ele);
+			select.selectByValue("0");
+			waitMethods.waiter(waitMethods.w200);
+			System.out.println("Forms-Selected Need to Know");
+		}
+
+
+		
+		@Test(priority = 124) //
+		public void selectAvailability() {         
+			//waitMethods.implicitWait(waitMethods.w300);
+			waitMethods.waiter(waitMethods.w200);			//The below opens the DDL
+			WebElement ele = driver.findElement(By.id("visible"));
+			highlightElement.highLightElement(driver, ele);
+			ele.click();
+			waitMethods.waiter(waitMethods.w50);
+			Select select = new Select(driver.findElement(By.id("visible")));
+			highlightElement.highLightElement(driver, ele);
+			select.selectByValue("1");
+			waitMethods.waiter(waitMethods.w200);
+			System.out.println("Forms-Selected Availability");
+		}
+
+		
+
+		
+		@Test(priority = 126) //  Accepts pos & neg integers - not sure what it does though...
+		private void selectSortPriority() {			// Leaving Blank for now
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("sort"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		//ele.click();
+			waitMethods.waiter(waitMethods.w50);
+	    	System.out.println("Forms-Selected Sort Priority");
+		}
+		
+		
+		@Test(priority = 128) //
+		public void selectType() {         
+			//waitMethods.implicitWait(waitMethods.w300);
+			waitMethods.waiter(waitMethods.w200);			//The below opens the DDL
+			WebElement ele = driver.findElement(By.id("formType"));
+			highlightElement.highLightElement(driver, ele);
+			ele.click();
+			waitMethods.waiter(waitMethods.w50);
+			Select select = new Select(driver.findElement(By.id("formType")));
+			highlightElement.highLightElement(driver, ele);
+			//select.selectByValue("Standard");		
+			select.selectByIndex(0);			//0= Standard; 1=Parallel Processing   (I suppose??)
+			waitMethods.waiter(waitMethods.w200);
+			System.out.println("Forms-Selected Type");
+		}
+
+/*		
+ 		Need to come back and add: 
+ 		- Pete's test for Parallel Processing
+		Index: 1=Parallel Process	
+*/		
+		
+		
+		@Test(priority = 130) //  
+		private void selectSaveProperties() {	
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("button_save"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w50);
+	    	System.out.println("Forms-Selected Save (Properties)");
+		}
+
+		
+		@Test(priority = 132) //  
+		private void selectEditCollaborators() {	
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("editFormPermissions"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w50);
+	    	System.out.println("Forms-Selected Edit Collaborators)");
+		}
+
+		
+		
+//>>>>>>>>>>>>>>  Pickup here
+		// Add group - Info is below
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		@Test(priority = 198) //  
+		private void closeEditCollaborators() {	
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.xpath("/html/body/div[5]/div[1]/button/span[1]"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w50);
+	    	System.out.println("Forms-Selected Edit Collaborators)");
+		}
+
+		
+		
+		
+		
 		
 		
 		
@@ -204,50 +316,43 @@ public class formsWorkflow extends setupFramework {
 	Edit Properties 		ID = editFormData  (<div>)
 							CSS = #editFormData
 	Edit Collaborators = 	ID = editFormPermissions
-	
 	+ AddSection Heading	CSS = #formEditor_form > div > div
 							XPath = /html/body/div[1]/div/div/div[2]/div[2]/div/div
 							
-	View all forms:			
-	
+	View all forms:	TODO		
 	+ Add Internal=Use		CSS = #menu > div:nth-child(4)
-	
 	Staple Other Form:		CSS = #menu > div:nth-child(7)
-	
 	View History:			CSS = #menu > div:nth-child(11)
-	
 	Delete this form:		CSS = #menu > div:nth-child(18)
-	
 	Restore Fields:			CSS = #menu > div:nth-child(21)
 							
 	
 				/// Edit Properties Dialogue \\\
 
-	Workflow:				ID = workflowID
+			Workflow:		ID = workflowID
+			Need to Know:	ID = needToKnow
+			Availability:	ID = visible
+			Sort Priority:	IE = sort
+			Type:			ID = formType
 	
-	Need to know:			ID = needToKnow
-	
-	Availability:			ID = visible
-							XPath = /html/body/div[3]/div[2]/form/div/main/table/tbody/tr[5]/td[2]/select
-	
-	Sort Priority:			ID = sort
-							Xpath = /html/body/div[3]/div[2]/form/div/main/table/tbody/tr[6]/td[2]/input
-	
-	Type:					ID = formType	
-							CSS = 
-	
+
 	Save:					button_save
-	
 	Cancel:					button_cancelchange
 	
-			Probably will not use:
-			
-				Name:  ID = name
-				Desc:	ID = description
+	Name:  ID = name
+	Desc:	ID = description
 			
 			
-				/// Edit Colaborators Dialogue \\\
+				/// Edit Colaborators Dialogue \\\      TODO
+
+			Add Group:	XPath = /html/body/div[5]/div[2]/div/main/div/span
+
+					Edit Collaborators:		ID = groupID		//Use Select Method for DDL
+					`````````Value = 121
+					Save:		    ID =   button_save
+					Cancel: 		ID = button_cancelchange
 			
+			Close x:    XPath = /html/body/div[5]/div[1]/button/span[1]
 */			
 			
 ///////////////  Normal Template \\\\\\\\\\\\\\\\\\\\	
@@ -261,13 +366,32 @@ public class formsWorkflow extends setupFramework {
 //    	System.out.println("Report Builder clicked from home page");
 //	}
 //
+//		
+////////////////DDL SELECT TEMPLATE \\\\\\\\\\\\\\\\\\
+//		@Test(priority = 199) //
+//		public void methodName() {         
+//			//waitMethods.implicitWait(waitMethods.w300);
+//			waitMethods.waiter(waitMethods.w200);			//The below opens the DDL
+//			WebElement ele = driver.findElement(By.id(""));
+//			highlightElement.highLightElement(driver, ele);
+//			ele.click();
+//			waitMethods.waiter(waitMethods.w50);
+//			Select select = new Select(driver.findElement(By.id("")));
+//			highlightElement.highLightElement(driver, ele);
+//			select.selectByValue("1");
+//			waitMethods.waiter(waitMethods.w200);
+//			System.out.println("Selected ");
+//		}
+//		
+//		
+//		
 //
 //			
 ////////////////   DDL TEMPLATE \\\\\\\\\\\\\\\\\\
 //	@Test(priority = 199) //
 //	public void DDL_Template() {         
 //		//waitMethods.implicitWait(waitMethods.w300);
-//		waitMethods.waiter(waitMethods.w250);			//The below opens the DDL
+//		waitMethods.waiter(waitMethods.w200);			//The below opens the DDL
 //		WebElement ele = driver.findElement(By.xpath(""));
 //		highlightElement.highLightElement(driver, ele);
 //		ele.click();
@@ -275,7 +399,7 @@ public class formsWorkflow extends setupFramework {
 //		WebElement ele2 = driver.findElement(By.xpath(""));
 //		highlightElement.highLightElement(driver, ele2);
 //		ele2.click();
-//		waitMethods.waiter(waitMethods.w250);
+//		waitMethods.waiter(waitMethods.w200);
 //		System.out.println("");
 //	}
 //
