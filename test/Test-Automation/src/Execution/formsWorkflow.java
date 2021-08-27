@@ -20,6 +20,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.openqa.selenium.support.ui.Select;
 
 import Framework.TestData;
 import Framework.setupFramework;
@@ -36,7 +37,7 @@ public class formsWorkflow extends setupFramework {
 	public void setUp()  {
 		if(driver!= null) {
 			driver=getDriver();   //   Also have a valid ChromeDriver here
-			System.out.println("Driver established for: " + driver.getClass());
+			//System.out.println("Driver established for: " + driver.getClass());
 			//driver.manage().timeouts().wait(Framework.waitMethods.w100);
 		}
 	}
@@ -93,7 +94,7 @@ public class formsWorkflow extends setupFramework {
 	    		waitMethods.waiter(waitMethods.w50);
 	    	}
 	    	
-	    	driver.findElement(By.id("search")).clear();
+	    	//driver.findElement(By.id("search")).clear();
 	    	System.out.println("Input Form Label");			
 		}
 
@@ -113,7 +114,6 @@ public class formsWorkflow extends setupFramework {
 	    		waitMethods.waiter(waitMethods.w50);
 	    	}
 	    	
-	    	driver.findElement(By.id("search")).clear();
 	    	System.out.println("Populate Form Description");			
 		}
 		
@@ -153,21 +153,100 @@ public class formsWorkflow extends setupFramework {
 		@Test(priority = 116) //
 		private void selectSave() {
 			waitMethods.waiter(waitMethods.w250);       
-			WebElement ele = driver.findElement(By.id("button_cancelchange"));
+			WebElement ele = driver.findElement(By.id("button_save"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
 			waitMethods.waiter(waitMethods.w50);
 	    	System.out.println("Forms - clicked Save");
 		}
 
+		//// Form Created \\\ 
+		
+		
+		@Test(priority = 118) //
+		private void selectEditProperties() {
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("editFormData"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w50);
+	    	System.out.println("Forms - clicked Edit Properties");
+		}
 
 		
+		@Test(priority = 120) //
+		public void selectWorkflow() {         
+			//waitMethods.implicitWait(waitMethods.w300);
+			waitMethods.waiter(waitMethods.w250);			//The below opens the DDL
+			WebElement ele = driver.findElement(By.id("workflowID"));
+			highlightElement.highLightElement(driver, ele);
+			ele.click();
+//			waitMethods.waiter(waitMethods.w50);
+//			
+//			
+//			<option value="76">Max Workflow w Org Input (ID: #76)</option>
+//			
+//			
+//			WebElement ele2 = driver.findElement(By.xpath(""));
+//			highlightElement.highLightElement(driver, ele2);
+//			ele2.click();
+//			waitMethods.waiter(waitMethods.w250);
+			System.out.println("Forms-Selected Workflow");
+		}
 		
 		
-/*
+////// Form Created w Title: Automation Test Description + getDate().toString();
+		
+		
+		
+/*  /////// FORM EDITOR Main Screen Element Locators \\\\\\
 
+	Edit Properties 		ID = editFormData  (<div>)
+							CSS = #editFormData
+	Edit Collaborators = 	ID = editFormPermissions
 	
+	+ AddSection Heading	CSS = #formEditor_form > div > div
+							XPath = /html/body/div[1]/div/div/div[2]/div[2]/div/div
+							
+	View all forms:			
+	
+	+ Add Internal=Use		CSS = #menu > div:nth-child(4)
+	
+	Staple Other Form:		CSS = #menu > div:nth-child(7)
+	
+	View History:			CSS = #menu > div:nth-child(11)
+	
+	Delete this form:		CSS = #menu > div:nth-child(18)
+	
+	Restore Fields:			CSS = #menu > div:nth-child(21)
+							
+	
+				/// Edit Properties Dialogue \\\
 
+	Workflow:				ID = workflowID
+	
+	Need to know:			ID = needToKnow
+	
+	Availability:			ID = visible
+							XPath = /html/body/div[3]/div[2]/form/div/main/table/tbody/tr[5]/td[2]/select
+	
+	Sort Priority:			ID = sort
+							Xpath = /html/body/div[3]/div[2]/form/div/main/table/tbody/tr[6]/td[2]/input
+	
+	Type:					ID = formType	
+							CSS = 
+	
+	Save:					button_save
+	
+	Cancel:					button_cancelchange
+	
+			Probably will not use:
+			
+				Name:  ID = name
+				Desc:	ID = description
+			
+			
+				/// Edit Colaborators Dialogue \\\
 			
 */			
 			
