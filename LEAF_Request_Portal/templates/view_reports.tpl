@@ -888,6 +888,7 @@ var indicatorSort = {}; // object = indicatorID : sortID
 var grid;
 let gridColorData = {}; //object updated with id: color
 let tempColorData = {}; //object updated with id: color
+let isOneFormType = false;
 
 var version = 3;
 /* URL formats
@@ -906,6 +907,19 @@ function buildURLComponents(baseURL){
         url += '&title=' + encodeURIComponent(btoa($('#reportTitle').val()));
     }
     window.history.pushState('', '', url);
+}
+
+function checkIfOneTypeSearchedAndUpdate(searchQuery){
+    let categoriesSearched = searchQuery.terms.filter(function(term){
+        return term.id === "categoryID";
+    });
+    if (categoriesSearched.length === 1 && categoriesSearched[0].gate === "AND"){
+        isOneFormType = true;
+        categoryID = categoriesSearched[0].match;
+    } else {
+        isOneFormType = false;
+        categoryID = 'strCatID';
+    }
 }
 
 $(function() {
@@ -1058,18 +1072,8 @@ $(function() {
                 }
             	grid.loadData(recordIDs);
             }
-            let results = grid.getCurrentData();
-            let filteredResults = results.filter(function(r) {
-                return r.categoryID != undefined
-            });
-            if (filteredResults.length > 0) {
-                categoryID = filteredResults[0].categoryID;
-                let isOneFormType = filteredResults.every(function(fr){ return fr.categoryID === categoryID});
-                if (isOneFormType){
-                    $('#newRequestButton').css('display', 'inline-block');
-                } else {
-                    $('#newRequestButton').css('display', 'none');
-                }
+            if (isOneFormType){
+                $('#newRequestButton').css('display', 'inline-block');
             } else {
                 $('#newRequestButton').css('display', 'none');
             }
@@ -1109,7 +1113,10 @@ $(function() {
     	else {
     		$('#editLabels').css('display', 'inline');
     	}
-    	urlQuery = LZString.compressToBase64(JSON.stringify(leafSearch.getLeafFormQuery().getQuery()));
+    	let leafSearchQuery = leafSearch.getLeafFormQuery().getQuery();
+        checkIfOneTypeSearchedAndUpdate(leafSearchQuery);
+
+    	urlQuery = LZString.compressToBase64(JSON.stringify(leafSearchQuery));
     	urlIndicators = LZString.compressToBase64(JSON.stringify(selectedIndicators));
 
     	if(isNewQuery) {
@@ -1168,6 +1175,9 @@ $(function() {
                 indicators = indicators.replace(/ /g, '+');
                 colors = colors.replace(/ /g, '+');
                 inQuery = JSON.parse(LZString.decompressFromBase64(query));
+                //if refreshed or not a new report
+                checkIfOneTypeSearchedAndUpdate(inQuery);
+
                 t_inIndicators = JSON.parse(LZString.decompressFromBase64(indicators));
                 let queryColors = JSON.parse(LZString.decompressFromBase64(colors));
                 if (queryColors !== null) {
