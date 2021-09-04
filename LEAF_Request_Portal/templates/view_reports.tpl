@@ -909,11 +909,17 @@ function buildURLComponents(baseURL){
     window.history.pushState('', '', url);
 }
 
+/**
+ * Purpose: Check if only one type of form exists and
+ * update global variables to store boolean and ID of that type
+ * @param searchQuery - variable with result of leafSearch.getLeafFormQuery().getQuery()
+ */
 function checkIfOneTypeSearchedAndUpdate(searchQuery){
+    console.log(searchQuery.terms);
     let categoriesSearched = searchQuery.terms.filter(function(term){
         return term.id === "categoryID";
     });
-    if (categoriesSearched.length === 1 && categoriesSearched[0].gate === "AND"){
+    if (categoriesSearched.length === 1 && categoriesSearched[0].operator === "=" && categoriesSearched[0].gate === "AND"){
         isOneFormType = true;
         categoryID = categoriesSearched[0].match;
     } else {
