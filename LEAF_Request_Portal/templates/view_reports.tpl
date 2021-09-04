@@ -912,19 +912,30 @@ function buildURLComponents(baseURL){
 /**
  * Purpose: Check if only one type of form exists and
  * update global variables to store boolean and ID of that type
- * @param searchQuery - variable with result of leafSearch.getLeafFormQuery().getQuery()
+ * @param searchQueryTerms - variable with result of leafSearch.getLeafFormQuery().getQuery().terms
  */
-function checkIfOneTypeSearchedAndUpdate(searchQuery){
-    console.log(searchQuery.terms);
-    let categoriesSearched = searchQuery.terms.filter(function(term){
+function checkIfOneTypeSearchedAndUpdate(searchQueryTerms) {
+    isOneFormType = false;   //global
+    categoryID = 'strCatID'; //global
+    let boolGateCheck = false;
+    let categoriesSearched = searchQueryTerms.filter(function(term){
         return term.id === "categoryID";
     });
-    if (categoriesSearched.length === 1 && categoriesSearched[0].operator === "=" && categoriesSearched[0].gate === "AND"){
-        isOneFormType = true;
-        categoryID = categoriesSearched[0].match;
-    } else {
-        isOneFormType = false;
-        categoryID = 'strCatID';
+    //search must be limited to one Type, and its operator must be "=", additionally search differs based on location:
+    //If Type is the first criteria, all gates must be AND. If not, only its own gate must be AND.
+    //example: 'type IS <form> OR title is <title>', VS 'title IS <title> OR <other search> AND type IS <form>'
+    if (categoriesSearched.length === 1 && categoriesSearched[0].operator === "=") {
+        if (searchQueryTerms[0].id === "categoryID") {
+            boolGateCheck = searchQueryTerms.every(function(term) {
+                return term.gate === "AND";
+            });
+        } else {
+            boolGateCheck = (categoriesSearched[0].gate === "AND");
+        }
+        if (boolGateCheck) {
+            isOneFormType = true; //global
+            categoryID = categoriesSearched[0].match; //global
+        }
     }
 }
 
@@ -1120,7 +1131,7 @@ $(function() {
     		$('#editLabels').css('display', 'inline');
     	}
     	let leafSearchQuery = leafSearch.getLeafFormQuery().getQuery();
-        checkIfOneTypeSearchedAndUpdate(leafSearchQuery);
+        checkIfOneTypeSearchedAndUpdate(leafSearchQuery.terms);
 
     	urlQuery = LZString.compressToBase64(JSON.stringify(leafSearchQuery));
     	urlIndicators = LZString.compressToBase64(JSON.stringify(selectedIndicators));
@@ -1182,7 +1193,7 @@ $(function() {
                 colors = colors.replace(/ /g, '+');
                 inQuery = JSON.parse(LZString.decompressFromBase64(query));
                 //if refreshed or not a new report
-                checkIfOneTypeSearchedAndUpdate(inQuery);
+                checkIfOneTypeSearchedAndUpdate(inQuery.terms);
 
                 t_inIndicators = JSON.parse(LZString.decompressFromBase64(indicators));
                 let queryColors = JSON.parse(LZString.decompressFromBase64(colors));
