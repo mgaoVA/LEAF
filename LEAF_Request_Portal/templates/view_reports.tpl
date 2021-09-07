@@ -910,8 +910,8 @@ function buildURLComponents(baseURL){
 }
 
 /**
- * Purpose: Check if only one type of form exists and
- * update global variables to store boolean and ID of that type
+ * Purpose: Check if only one type of form could logically be returned and,
+ * if so, update global variables isOneFormType (bool) and categoryID (string).
  * @param searchQueryTerms - variable with result of leafSearch.getLeafFormQuery().getQuery().terms
  */
 function checkIfOneTypeSearchedAndUpdate(searchQueryTerms) {
@@ -925,7 +925,7 @@ function checkIfOneTypeSearchedAndUpdate(searchQueryTerms) {
     //If Type is the first criteria, all gates must be AND. If not, only its own gate must be AND.
     //example: 'type IS <form> OR title is <title>', VS 'title IS <title> OR <other search> AND type IS <form>'
     if (categoriesSearched.length === 1 && categoriesSearched[0].operator === "=") {
-        if (searchQueryTerms[0].id === "categoryID") {
+        if (searchQueryTerms[0].id === "categoryID") {  //if it's the first search criteria
             boolGateCheck = searchQueryTerms.every(function(term) {
                 return term.gate === "AND";
             });
@@ -1088,6 +1088,17 @@ $(function() {
                     recordIDs += res[i].recordID + ',';
                 }
             	grid.loadData(recordIDs);
+            }
+            let gridResults = grid.getCurrentData();
+            let filteredGridResults = gridResults.filter(function(r) {
+                return r.categoryID != undefined;
+            });
+            //if catID info is available for the results, it can be used to determine form type.
+            if (filteredGridResults.length > 0) {
+                categoryID = filteredGridResults[0].categoryID;
+                isOneFormType = filteredGridResults.every(function(fr) {
+                    return fr.categoryID === categoryID;
+                });
             }
             if (isOneFormType){
                 $('#newRequestButton').css('display', 'inline-block');

@@ -134,7 +134,7 @@
             //use name for consistency. group selected will be null if the val has not been edited, use current val
             let facility = groupSelected ? groupSelected.textContent.trim() :
                 document.getElementById("data_23_1").textContent.trim();
-            getQuerterlyReport(year, quarter, facility);
+            getQuarterlyReport(year, quarter, facility);
         });
     });
 </script>
@@ -151,7 +151,7 @@
 <script src="./js/lz-string/lz-string.min.js"></script>
 
 <script>
-    const getQuerterlyReport = function(fiscal_year, quarter, facility){
+    const getQuarterlyReport = function(fiscal_year, quarter, facility){
 
         fiscal_year = fiscal_year || 0;
         quarter = quarter || 0;
@@ -275,6 +275,6 @@
 
 
     $(document).ready(function(){
-        getQuerterlyReport();
+        getQuarterlyReport();
     });
 </script>
