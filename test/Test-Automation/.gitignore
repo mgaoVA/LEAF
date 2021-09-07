@@ -4,3 +4,5 @@ test-output/**
 *.html
 *.htm
 
+bin/
+test-output/
