@@ -12,6 +12,18 @@
     "@aws-cdk/aws-ecs-patterns:removeDefaultDesiredCount": true,
     "@aws-cdk/aws-rds:lowercaseDbIdentifier": true,
     "@aws-cdk/aws-efs:defaultEncryptionAtRest": true,
-    "@aws-cdk/aws-lambda:recognizeVersionProps": true
+    "@aws-cdk/aws-lambda:recognizeVersionProps": true,
+    "prod": {
+      "vpc_name": "leaf-prod",
+      "efs_name": "leaf-prod-legacy-efs",
+      "image_base": "leaf-monolith",
+      "image_version": "latest",
+      "efs_id": "fs-5c725ce8",
+      "efs_sec_group": "sg-07a51951e24d3e21b"
+    },
+    "dev": {
+      "vpc_name": "leaf-dev",
+      "efs_name": "leaf-dev-legacy-efs"
+    }
   }
 }

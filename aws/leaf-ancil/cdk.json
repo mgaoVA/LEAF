@@ -12,6 +12,14 @@
     "@aws-cdk/aws-ecs-patterns:removeDefaultDesiredCount": true,
     "@aws-cdk/aws-rds:lowercaseDbIdentifier": true,
     "@aws-cdk/aws-efs:defaultEncryptionAtRest": true,
-    "@aws-cdk/aws-lambda:recognizeVersionProps": true
+    "@aws-cdk/aws-lambda:recognizeVersionProps": true,
+    "prod": {
+      "vpc_name": "leaf-prod",
+      "efs_name": "leaf-prod-legacy-efs"
+    },
+    "dev": {
+      "vpc_name": "leaf-dev",
+      "efs_name": "leaf-dev-legacy-efs"
+    }
   }
 }

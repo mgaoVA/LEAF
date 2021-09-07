@@ -27,6 +27,7 @@
     "@aws-cdk/aws-efs": "^1.118.0",
     "@aws-cdk/aws-ssm": "^1.118.0",
     "@aws-cdk/core": "1.114.0",
+    "@aws-cdk/custom-resources": "^1.120.0",
     "source-map-support": "^0.5.16"
   }
 }
