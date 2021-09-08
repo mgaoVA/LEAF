@@ -65,7 +65,7 @@ public class createNewRequest extends setupFramework {
 //create New Request Workflow
 	
 	@Test(priority = 202) //
-	public void selectNewRequest() {         
+	public void selectNewRequest() {         //
 		//waitMethods.implicitWait(waitMethods.w300);
 		//waitMethods.waiter(waitMethods.w1k);	
 		WebElement ele = driver.findElement(By.xpath("//*[@id=\"bodyarea\"]/div[1]/a[1]/span")); 
@@ -77,13 +77,13 @@ public class createNewRequest extends setupFramework {
 
 
 	
-	@Test(priority = 204) //
+	@Test(priority = 204) 					//select drop down
 	private void selectService() {
-		waitMethods.waiter(waitMethods.w500);       
+		waitMethods.waiter(waitMethods.w200);       
 		WebElement ele = driver.findElement(By.cssSelector("#service_chosen > a > span"));
 	    highlightElement.highLightElement(driver, ele);
 	    ele.click();
-		waitMethods.waiter(waitMethods.w500);
+		waitMethods.waiter(waitMethods.w200);
 	    System.out.println("Clicked Service Drop down menu");
 	} 
 
@@ -91,7 +91,7 @@ public class createNewRequest extends setupFramework {
 	
 	
 	@Test(priority = 206) // 
-	private void selectServiceAcuteCare() {
+	private void selectServiceAcuteCare() {			//Acute Care
 		//waitMethods.implicitWait(waitMethods.w300);	
 		waitMethods.waiter(waitMethods.w250);
 		WebElement ele = driver.findElement(By.cssSelector("#service-chosen-search-result-1")); //.click(); 
@@ -103,7 +103,7 @@ public class createNewRequest extends setupFramework {
 
 	//#priority_chosen > a > span	
 	
-	@Test(priority = 208) //
+	@Test(priority = 208) 						//select drop down
 	private void selectRequestPriority() {
 		//waitMethods.implicitWait(waitMethods.w300);	
 		waitMethods.waiter(waitMethods.w250);
@@ -116,7 +116,7 @@ public class createNewRequest extends setupFramework {
 	} 
 
 
-	@Test(priority = 210) 
+	@Test(priority = 210) 					//select Normal Priority
 	private void selectRequestNormalPriority() {
 		//waitMethods.implicitWait(waitMethods.w300);	
 		waitMethods.waiter(waitMethods.w250);
@@ -156,28 +156,12 @@ public class createNewRequest extends setupFramework {
 
 	
 
-	//CSS: #record > div.section.group > div:nth-child(2) > div > div:nth-child(2) > span > div.icheckbox_square-blue.icheck-item.icheck\\[7y38p\\]
-	//XPath: //*[@id="record"]/div[2]/div[2]/div/div[2]/span/div[10]
-	//Full XPath/html/body/div[2]/div/div/form/div[2]/div[2]/div/div[2]/span/div[10]
-	
-	//HTML Correct box   <div class="icheckbox_square-blue icheck-item icheck[za83u]"><input name="numform_44b02" type="checkbox" class="ischecked icheck-input icheck[za83u]" id="numform_44b02" style="font-family: Courier; font-size: 24px; font-weight: bold; margin: 4px"></div>
-	//HTML Incorrect box <div class="icheckbox_square-blue icheck-item icheck[vivgd]"><input name="numform_3ac37" type="checkbox" class="ischecked icheck-input icheck[vivgd]" id="numform_3ac37" style="font-family: Courier; font-size: 24px; font-weight: bold; margin: 4px"></div>
-
-	// *********** THIS XPATH MAY CHANGE !!!!!!!!!!!!!
-	
-	// It DID change
-	// <div class="icheckbox_square-blue icheck-item icheck[4vvai]"><input name="numform_491f2" 
-	//type="checkbox" class="ischecked icheck-input icheck[4vvai]" id="numform_491f2" 
-	//style="font-family: Courier; font-size: 24px; font-weight: bold; margin: 4px"></div>
-	
-	
 	@Test(priority = 214) //
 	private void selectMRTestChkBox() {
-		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/form/div[2]/div[2]/div/div[2]/span/div[12]"));
-		//WebElement ele = driver.findElement(By.xpath("*[@id=\"record\"]/div[2]/div[2]/div/div[2]/span/div[11]"));
-		//WebElement ele = driver.findElement(By.xpath("//*[@id=\"record\"]/div[2]/div[2]/div/div[2]/span/div[10]"));
+		WebElement ele = driver.findElement (By.xpath ("//*[contains(text(),'MR - Test')]"));       
+		//WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/form/div[2]/div[2]/div/div[2]/span/div[12]"));
 	    highlightElement.highLightElement(driver, ele);
-	    waitMethods.waiter(waitMethods.w250);
+	    waitMethods.waiter(waitMethods.w500);
 	    ele.click();   
 	    waitMethods.waiter(waitMethods.w500);
 	    System.out.println("Selected MR - Test Checkbox");
@@ -187,7 +171,6 @@ public class createNewRequest extends setupFramework {
 
 	@Test(priority = 216) 
 	private void selectClickToProceedButton() {
-		waitMethods.implicitWait(waitMethods.w300);	
 		//waitMethods.implicitWait(waitMethods.w300);	
 		waitMethods.waiter(waitMethods.w250);
 		WebElement ele = driver.findElement(By.xpath("//*[@id=\"record\"]/div[2]/div[2]/div/div[3]/button")); 
@@ -197,7 +180,6 @@ public class createNewRequest extends setupFramework {
 	    System.out.println("Clicked Click to Proceed button");
 	} 
 
-	
 	
 	@Test(priority = 218)
 	public void cancelRequest()  {   //
@@ -211,7 +193,7 @@ public class createNewRequest extends setupFramework {
 	}
 
 
-	//Yes = confirm_button_save
+	//Yes = confirm_button_save  <--Reference only   Not used in this test
 	@Test(priority = 220)
 	public void confirmCancelNo()  {   //
 		//waitMethods.implicitWait(waitMethods.w300);
@@ -351,19 +333,18 @@ public class createNewRequest extends setupFramework {
 
 
 	
-	
 	@Test(priority = 240) //
 	private void selectMRTestChkBox2() {
-		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/form/div[2]/div[2]/div/div[2]/span/div[12]"));
-		//WebElement ele = driver.findElement(By.xpath("*[@id=\"record\"]/div[2]/div[2]/div/div[2]/span/div[11]"));
-		//WebElement ele = driver.findElement(By.xpath("//*[@id=\"record\"]/div[2]/div[2]/div/div[2]/span/div[10]"));
-	    highlightElement.highLightElement(driver, ele);
+		WebElement ele = driver.findElement (By.xpath ("//*[contains(text(),'MR - Test')]"));
+		//WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/form/div[2]/div[2]/div/div[2]/span/div[12]"));
+		highlightElement.highLightElement(driver, ele);
 	    waitMethods.waiter(waitMethods.w250);
 	    ele.click();   
 	    waitMethods.waiter(waitMethods.w250);
 	    System.out.println("Selected MR - Test Checkbox");
 	}
 	
+
 	
 
 	@Test(priority = 242) 
@@ -476,7 +457,7 @@ public class createNewRequest extends setupFramework {
 	@Test(priority = 258) 
 	private void enterRequestCommend() {
 		//waitMethods.implicitWait(waitMethods.w300);	
-		waitMethods.waiter(waitMethods.w1k);
+		waitMethods.waiter(waitMethods.w1k);	    //
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[1]/div[3]/div/form/div[2]/textarea")); 
 	    highlightElement.highLightElement(driver, ele);     
 
@@ -494,23 +475,13 @@ public class createNewRequest extends setupFramework {
 	} 
 
 
-	@Test(priority = 260) 
+	@Test(priority = 260) 					//This test is failing
 	private void selectAcceptJob() {
 		//waitMethods.implicitWait(waitMethods.w300);	
-		waitMethods.waiter(waitMethods.w250);
+		waitMethods.waiter(waitMethods.w250);		//
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[1]/div[3]/div/form/div[2]/div/button")); 
 	    highlightElement.highLightElement(driver, ele);     
-
-    	String name = "Automated Test Comment";
-    	   
-    	for(int i = 0; i < name.length(); i++) {
-    		char c = name.charAt(i);
-    		String s = new StringBuilder().append(c).toString();
-    		//ele.sendKeys(Keys.chord(name));
-    		ele.sendKeys(s);
-    		waitMethods.waiter(waitMethods.w50);
-    	}
-	    
+	    ele.click();
 	    System.out.println("selected 'Accept Job'");
 	} 
 
