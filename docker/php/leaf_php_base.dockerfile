@@ -59,7 +59,8 @@ COPY ssmtp/ssmtp.conf /etc/ssmtp/
 COPY swagger-proxy.conf /etc/apache2/conf-enabled/
 COPY 000-default.conf /etc/apache2/sites-enabled/
 COPY default-ssl.conf /etc/apache2/sites-enabled/
-COPY apache2.conf /etc/apache2/
+COPY etc/apache2.conf /etc/apache2/
+RUN ln -s /etc/apache2/mods-available/speling.load /etc/apache2/mods-enabled/speling.load
 ## not sure if this is needed but...
 RUN service apache2 restart 
 
