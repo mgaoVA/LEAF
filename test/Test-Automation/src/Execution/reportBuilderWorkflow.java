@@ -384,11 +384,11 @@ public class reportBuilderWorkflow extends setupFramework {
 
 
 	
-	@Test(priority = 148) //  
+	@Test(priority = 148) 						//     
 	private void selectCheckboxMRTest() {
 		waitMethods.waiter(waitMethods.w250);       
-		WebElement ele = driver.findElement(By.xpath("//*[@id=\"indicatorList\"]/div[2]/div[4]/div[1]"));
-		//WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[3]/div[1]"));
+		WebElement ele = driver.findElement(By.xpath("//*[contains(text(),'MR - Test')]"));
+		//WebElement ele = driver.findElement(By.xpath("//*[@id=\"indicatorList\"]/div[2]/div[4]/div[1]"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
 		waitMethods.waiter(waitMethods.w200);
@@ -399,7 +399,7 @@ public class reportBuilderWorkflow extends setupFramework {
 	@Test(priority = 150) // FREQUENCY 
 	private void selectMRTestField1() {
 		waitMethods.waiter(waitMethods.w250);         
-		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[4]/div[2]/div"));
+		WebElement ele = driver.findElement(By.xpath("//*[contains(text(),'Frequency')]"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
 		waitMethods.waiter(waitMethods.w200);
@@ -409,22 +409,24 @@ public class reportBuilderWorkflow extends setupFramework {
 
 	@Test(priority = 152) // Middle Initial 
 	private void selectMRTestField2() {
-		waitMethods.waiter(waitMethods.w250);       
-		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[4]/div[3]/div"));
+		waitMethods.waiter(waitMethods.w250);         //  //*[text()='Get started free']
+		WebElement ele = driver.findElement(By.xpath("//*[contains(text(),'Middle Initial')]"));
+		//WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[4]/div[3]/div"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
-		waitMethods.waiter(waitMethods.w200);
+		waitMethods.waiter(waitMethods.w250);
     	System.out.println("Middle Initial checkbox for  MR - Test selected");
 	}
 
 
-	@Test(priority = 154) // Name 
+	@Test(priority = 154) // Name 				//Cannot find by text()   //*[contains(text(),'Name')]???
 	private void selectMRTestField3() {
-		waitMethods.waiter(waitMethods.w250);       
-		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[4]/div[4]/div"));
+		waitMethods.waiter(waitMethods.w250);     //      
+		//WebElement ele = driver.findElement(By.xpath("//*[contains(text(),'Name')]"));
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[6]/div[4]/label"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
-		waitMethods.waiter(waitMethods.w200);
+		waitMethods.waiter(waitMethods.w250);
     	System.out.println("Name checkbox for  MR - Test selected");
 	}
 
@@ -733,5 +735,5 @@ public class reportBuilderWorkflow extends setupFramework {
 		
 	}
 
-}  //class
+}  //class            //Leave for Validation - Amanda
 	
