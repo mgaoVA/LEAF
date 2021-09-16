@@ -282,41 +282,145 @@ public class formsWorkflow extends setupFramework {
 
 		
 		
-//>>>>>>>>>>>>>>  Pickup here
-		// Add group - Info is below
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		@Test(priority = 198) //  
-		private void closeEditCollaborators() {	
+		@Test(priority = 134) //  
+		private void selectAddGroup() {	
 			waitMethods.waiter(waitMethods.w250);       
-			WebElement ele = driver.findElement(By.xpath("/html/body/div[5]/div[1]/button/span[1]"));
+			WebElement ele = driver.findElement(By.xpath("//*[text()='Add Group']"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
 			waitMethods.waiter(waitMethods.w50);
-	    	System.out.println("Forms-Selected Edit Collaborators)");
+	    	System.out.println("Forms-Selected Add Group)");
+		}
+		
+		
+		@Test(priority = 136) //  
+		private void selectAddCollaborators() {	
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("groupID"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w50);
+	    	System.out.println("Forms-Selected Add Collaborators)");
+			Select select = new Select(driver.findElement(By.id("groupID")));
+			highlightElement.highLightElement(driver, ele);
+			select.selectByValue("54");
+			waitMethods.waiter(waitMethods.w250);
+			System.out.println("Forms-Selected CPAC Exec 1");
+		}
+		
+		
+		@Test(priority = 138) //  
+		private void selectSaveCollaborators() {	
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("button_save"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w50);
+	    	System.out.println("Forms-Selected Save Collaborators)");
+		}
+		
+			
+		
+		@Test(priority = 140) //  
+		private void closeCollaborators() {	
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.xpath("/html/body/div[5]/div[1]/button/span[1]"));    
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w50);
+	    	System.out.println("Forms-Selected Close Collaborators)");
 		}
 
 		
+		@Test(priority = 142) //  
+		private void selectEditCollaborators2() {	
+			selectEditCollaborators();
+		}
 		
+		
+		
+		@Test(priority = 144) //  
+		private void selectRemoveCollaborators() {	
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.linkText("Remove"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w50);
+	    	System.out.println("Forms-Selected Remove Collaborators)");
+		}
+		
+		
+		@Test(priority = 146) //  
+		private void selectAddGroup2() {	
+			selectAddGroup();
+		}
+		
+		
+
+		@Test(priority = 148) //  
+		private void selectAddCollaborators2() {	
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("groupID"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w50);
+	    	System.out.println("Forms-Selected Add Collaborators)");
+			Select select = new Select(driver.findElement(By.id("groupID")));
+			highlightElement.highLightElement(driver, ele);
+			select.selectByValue("16");
+			waitMethods.waiter(waitMethods.w250);
+			System.out.println("Forms-Selected Approval Group (Washington DC)");
+		}
+	
+		
+		
+		@Test(priority = 150) //  
+		private void selectSaveCollaborators2() {	
+			selectSaveCollaborators();
+		}
+			
+		
+		
+		@Test(priority = 152) //  
+		private void closeCollaborators2() {	
+			closeCollaborators();
+		}	
+		
+		
+		@Test(priority = 154) //  
+		private void selectAddSectionHeading() {	
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.cssSelector("#formEditor_form > div > div"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w50);
+	    	System.out.println("Forms-Selected +Add Section Heading)");
+		}
+		
+		
+		//////// Adding New Question Sub-Form \\\\\\\\    Pickup Here
+		
+//		**Perform a cancel early on
+		
+//==========================================		
+		
+//		@Test(priority = 198) //  
+//		private void closeEditCollaborators() {	
+//			waitMethods.waiter(waitMethods.w250);       
+//			WebElement ele = driver.findElement(By.xpath("/html/body/div[5]/div[1]/button/span[1]"));    
+//	    	highlightElement.highLightElement(driver, ele);
+//	   		ele.click();
+//			waitMethods.waiter(waitMethods.w50);
+//	    	System.out.println("Forms-Selected Edit Collaborators)");
+//		}
+
+
 		
 		
 		
 		
 		
 /*  /////// FORM EDITOR Main Screen Element Locators \\\\\\
-
-	Edit Properties 		ID = editFormData  (<div>)
-							CSS = #editFormData
-	Edit Collaborators = 	ID = editFormPermissions
-	+ AddSection Heading	CSS = #formEditor_form > div > div
-							XPath = /html/body/div[1]/div/div/div[2]/div[2]/div/div
 							
 	View all forms:	TODO		
 	+ Add Internal=Use		CSS = #menu > div:nth-child(4)
@@ -325,33 +429,45 @@ public class formsWorkflow extends setupFramework {
 	Delete this form:		CSS = #menu > div:nth-child(18)
 	Restore Fields:			CSS = #menu > div:nth-child(21)
 							
-	
-				/// Edit Properties Dialogue \\\
-
-			Workflow:		ID = workflowID
-			Need to Know:	ID = needToKnow
-			Availability:	ID = visible
-			Sort Priority:	IE = sort
-			Type:			ID = formType
-	
-
-	Save:					button_save
-	Cancel:					button_cancelchange
-	
-	Name:  ID = name
-	Desc:	ID = description
 			
+			//////  + Adding New Question \\\\\\\\\\\\\
+			 Field Name:				id=  name
+			  	Advanced Formatting:	id=  advNameEditor
+		  	Short Label:				id=  description
+		  	
+		  	Input Format (DDL):			id=  indicatorType
+		  	
+		  	Import Values (Field Types):
+		  			value = None:						//Don't use this
+		  			value = text				Single line text:  	
+		  			value = textarea			Multi-line text:	
+		  			value = grid				Grid (Table with rows and columns)		
+		  			value = number				Numeric:			
+		  			value = currency			Currency:			
+		  			value = date				Date:				
+		  			value = radio				Radio (single select, multiple options)
+		  			value = checkbox			Checkbox (A single checkbox)
+		  			value = checkboxes			Checkboxes (Multiple Checkboxes)
+		  			value = multiselect			Multi-Select Dropdown
+		  			value = dropdown			Dropdown Menu (single select, multiple options) 
+		  			value = fileupload			File Attachment
+		  			value = image				Image Attachment
+		  			value = orgchart_group		Orgchart Group
+		  			value = orgchart_position	Orgchart Position
+		  			value = orgchart_employee	Orgchart Employee
+		  			value = raw_data			Raw Data (for programmers)
+		  			
+		  			
+		  	
+		  	Default Answer:				id=  default
+		  	
+		  	Required:					id=  required
+		  	Sensitive:					id=  sensitive
+			Sort Priority: 				id=  sort
 			
-				/// Edit Colaborators Dialogue \\\      TODO
+			Save:						id=  button_save
+			Cancel:						id=  button_cancelchange
 
-			Add Group:	XPath = /html/body/div[5]/div[2]/div/main/div/span
-
-					Edit Collaborators:		ID = groupID		//Use Select Method for DDL
-					`````````Value = 121
-					Save:		    ID =   button_save
-					Cancel: 		ID = button_cancelchange
-			
-			Close x:    XPath = /html/body/div[5]/div[1]/button/span[1]
 */			
 			
 ///////////////  Normal Template \\\\\\\\\\\\\\\\\\\\	
@@ -434,9 +550,8 @@ public class formsWorkflow extends setupFramework {
 	      System.out.println(date);
 	      
 	      return date;
-		
-		
 	}
 
+	
 }  //class
 	
