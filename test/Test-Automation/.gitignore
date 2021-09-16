@@ -1,5 +1,5 @@
-bin/**
-test-output/**
+bin/
+test-output/
 *.class
 *.html
 *.htm
