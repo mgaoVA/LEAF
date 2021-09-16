@@ -735,5 +735,5 @@ public class reportBuilderWorkflow extends setupFramework {
 		
 	}
 
-}  //class            //Leave for Validation - Amanda
+}  //class 
 	
