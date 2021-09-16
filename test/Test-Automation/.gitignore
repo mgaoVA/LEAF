@@ -3,6 +3,3 @@ test-output/
 *.class
 *.html
 *.htm
-
-bin/
-test-output/
