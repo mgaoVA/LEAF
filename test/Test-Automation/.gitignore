@@ -1,5 +1,6 @@
 bin/
 test-output/
+test/Test-Automation/test-output/
 *.class
 *.html
 *.htm

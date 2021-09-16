@@ -31,7 +31,10 @@ LEAF_Nexus/UPLOADS
 LEAF_Request_Portal/UPLOADS
 
 /LEAF_Request_Portal/templates_c/mailer/
+
+bin/
+test-output/
+test/Test-Automation/test-output/
 *.class
-*.html
-*.html
+
 test/Test-Automation/test-output/testng-results.xml
