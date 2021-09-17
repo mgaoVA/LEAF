@@ -72,7 +72,7 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.id("createFormButton"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 	    	System.out.println("Forms - clicked Create Form");
 		}
 		
@@ -123,7 +123,7 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.id("button_cancelchange"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 	    	System.out.println("Forms - clicked Cancel");
 		}
 
@@ -155,7 +155,7 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.id("button_save"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 	    	System.out.println("Forms - clicked Save");
 		}
 
@@ -165,10 +165,11 @@ public class formsWorkflow extends setupFramework {
 		@Test(priority = 118) //
 		private void selectEditProperties() {
 			waitMethods.waiter(waitMethods.w250);       
+			//WebElement ele = driver.findElement(By.xpath("//*[text()='Edit Properties']"));
 			WebElement ele = driver.findElement(By.id("editFormData"));
-	    	highlightElement.highLightElement(driver, ele);
+ 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 	    	System.out.println("Forms - clicked Edit Properties");
 		}
 
@@ -180,7 +181,7 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.id("workflowID"));
 			highlightElement.highLightElement(driver, ele);
 			ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 			Select select = new Select(driver.findElement(By.id("workflowID")));
 			highlightElement.highLightElement(driver, ele);
 			select.selectByValue("76");
@@ -197,7 +198,7 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.id("needToKnow"));
 			highlightElement.highLightElement(driver, ele);
 			ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 			Select select = new Select(driver.findElement(By.id("needToKnow")));
 			highlightElement.highLightElement(driver, ele);
 			select.selectByValue("0");
@@ -214,7 +215,7 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.id("visible"));
 			highlightElement.highLightElement(driver, ele);
 			ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 			Select select = new Select(driver.findElement(By.id("visible")));
 			highlightElement.highLightElement(driver, ele);
 			select.selectByValue("1");
@@ -231,7 +232,7 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.id("sort"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		//ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 	    	System.out.println("Forms-Selected Sort Priority");
 		}
 		
@@ -243,7 +244,7 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.id("formType"));
 			highlightElement.highLightElement(driver, ele);
 			ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 			Select select = new Select(driver.findElement(By.id("formType")));
 			highlightElement.highLightElement(driver, ele);
 			//select.selectByValue("Standard");		
@@ -265,7 +266,7 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.id("button_save"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 	    	System.out.println("Forms-Selected Save (Properties)");
 		}
 
@@ -276,7 +277,7 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.id("editFormPermissions"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 	    	System.out.println("Forms-Selected Edit Collaborators)");
 		}
 
@@ -288,7 +289,7 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.xpath("//*[text()='Add Group']"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 	    	System.out.println("Forms-Selected Add Group)");
 		}
 		
@@ -299,7 +300,7 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.id("groupID"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 	    	System.out.println("Forms-Selected Add Collaborators)");
 			Select select = new Select(driver.findElement(By.id("groupID")));
 			highlightElement.highLightElement(driver, ele);
@@ -315,7 +316,7 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.id("button_save"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 	    	System.out.println("Forms-Selected Save Collaborators)");
 		}
 		
@@ -327,7 +328,7 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.xpath("/html/body/div[5]/div[1]/button/span[1]"));    
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 	    	System.out.println("Forms-Selected Close Collaborators)");
 		}
 
@@ -345,7 +346,7 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.linkText("Remove"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 	    	System.out.println("Forms-Selected Remove Collaborators)");
 		}
 		
@@ -363,7 +364,7 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.id("groupID"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 	    	System.out.println("Forms-Selected Add Collaborators)");
 			Select select = new Select(driver.findElement(By.id("groupID")));
 			highlightElement.highLightElement(driver, ele);
@@ -386,6 +387,8 @@ public class formsWorkflow extends setupFramework {
 			closeCollaborators();
 		}	
 		
+	
+	//////// Adding New Question Sub-Form \\\\\\\\   	
 		
 		@Test(priority = 154) //  
 		private void selectAddSectionHeading() {	
@@ -393,12 +396,12 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.cssSelector("#formEditor_form > div > div"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
-			waitMethods.waiter(waitMethods.w50);
+			waitMethods.waiter(waitMethods.w250);
 	    	System.out.println("Forms-Selected +Add Section Heading)");
 		}
 		
 		
-		//////// Adding New Question Sub-Form \\\\\\\\    Pickup Here
+		 //Pickup Here	
 		
 //		**Perform a cancel early on
 		
@@ -410,7 +413,7 @@ public class formsWorkflow extends setupFramework {
 //			WebElement ele = driver.findElement(By.xpath("/html/body/div[5]/div[1]/button/span[1]"));    
 //	    	highlightElement.highLightElement(driver, ele);
 //	   		ele.click();
-//			waitMethods.waiter(waitMethods.w50);
+//			waitMethods.waiter(waitMethods.w250);
 //	    	System.out.println("Forms-Selected Edit Collaborators)");
 //		}
 
@@ -477,7 +480,7 @@ public class formsWorkflow extends setupFramework {
 //		WebElement ele = driver.findElement(By.xpath("//*[text()='Report Builder']"));
 //    	highlightElement.highLightElement(driver, ele);
 //   		ele.click();
-//		waitMethods.waiter(waitMethods.w50);
+//		waitMethods.waiter(waitMethods.w250);
 //    	System.out.println("Report Builder clicked from home page");
 //	}
 //
@@ -490,7 +493,7 @@ public class formsWorkflow extends setupFramework {
 //			WebElement ele = driver.findElement(By.id(""));
 //			highlightElement.highLightElement(driver, ele);
 //			ele.click();
-//			waitMethods.waiter(waitMethods.w50);
+//			waitMethods.waiter(waitMethods.w250);
 //			Select select = new Select(driver.findElement(By.id("")));
 //			highlightElement.highLightElement(driver, ele);
 //			select.selectByValue("1");
@@ -510,7 +513,7 @@ public class formsWorkflow extends setupFramework {
 //		WebElement ele = driver.findElement(By.xpath(""));
 //		highlightElement.highLightElement(driver, ele);
 //		ele.click();
-//		waitMethods.waiter(waitMethods.w50);
+//		waitMethods.waiter(waitMethods.w250);
 //		WebElement ele2 = driver.findElement(By.xpath(""));
 //		highlightElement.highLightElement(driver, ele2);
 //		ele2.click();
@@ -532,7 +535,7 @@ public class formsWorkflow extends setupFramework {
 //    		char c = name.charAt(i);
 //    		String s = new StringBuilder().append(c).toString();
 //    		ele.sendKeys(s);
-//    		waitMethods.waiter(waitMethods.w50);
+//    		waitMethods.waiter(waitMethods.w250);
 //    	}
 //    	
 //    	driver.findElement(By.id("search")).clear();
