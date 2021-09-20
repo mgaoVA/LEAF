@@ -186,6 +186,8 @@ public class formsWorkflow extends setupFramework {
 			highlightElement.highLightElement(driver, ele);
 			select.selectByValue("76");
 			waitMethods.waiter(waitMethods.w250);
+			WebElement ele2 = driver.findElement(By.id("workflowID"));
+			ele2.click();
 			System.out.println("Forms-Selected Workflow");
 		}
 		
@@ -203,6 +205,8 @@ public class formsWorkflow extends setupFramework {
 			highlightElement.highLightElement(driver, ele);
 			select.selectByValue("0");
 			waitMethods.waiter(waitMethods.w200);
+			WebElement ele2 = driver.findElement(By.id("needToKnow"));
+			ele2.click();
 			System.out.println("Forms-Selected Need to Know");
 		}
 
@@ -220,6 +224,8 @@ public class formsWorkflow extends setupFramework {
 			highlightElement.highLightElement(driver, ele);
 			select.selectByValue("1");
 			waitMethods.waiter(waitMethods.w200);
+			WebElement ele2 = driver.findElement(By.id("visible"));
+			ele2.click();
 			System.out.println("Forms-Selected Availability");
 		}
 
@@ -250,6 +256,8 @@ public class formsWorkflow extends setupFramework {
 			//select.selectByValue("Standard");		
 			select.selectByIndex(0);			//0= Standard; 1=Parallel Processing   (I suppose??)
 			waitMethods.waiter(waitMethods.w200);
+			WebElement ele2 = driver.findElement(By.id("formType"));
+			ele2.click();
 			System.out.println("Forms-Selected Type");
 		}
 
@@ -306,6 +314,8 @@ public class formsWorkflow extends setupFramework {
 			highlightElement.highLightElement(driver, ele);
 			select.selectByValue("54");
 			waitMethods.waiter(waitMethods.w250);
+			WebElement ele2 = driver.findElement(By.id("groupID"));
+			ele2.click();
 			System.out.println("Forms-Selected CPAC Exec 1");
 		}
 		
@@ -370,6 +380,8 @@ public class formsWorkflow extends setupFramework {
 			highlightElement.highLightElement(driver, ele);
 			select.selectByValue("16");
 			waitMethods.waiter(waitMethods.w250);
+			WebElement ele2 = driver.findElement(By.id("groupID"));
+			ele2.click();
 			System.out.println("Forms-Selected Approval Group (Washington DC)");
 		}
 	
@@ -390,48 +402,228 @@ public class formsWorkflow extends setupFramework {
 	
 	//////// Adding New Question Sub-Form \\\\\\\\   	
 		
-		@Test(priority = 154) //  
-		private void selectAddSectionHeading() {	
+		@Test(priority = 154) //  t
+		private void selectAddSectionHeading() {			//Will reuse this to add all field types
 			waitMethods.waiter(waitMethods.w250);       
 			WebElement ele = driver.findElement(By.cssSelector("#formEditor_form > div > div"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
 			waitMethods.waiter(waitMethods.w250);
-	    	System.out.println("Forms-Selected +Add Section Heading)");
+	    	System.out.println("Test Question: +Add Section Heading)");
 		}
 		
 		
-		 //Pickup Here	
-		
-//		**Perform a cancel early on
-		
-//==========================================		
-		
-//		@Test(priority = 198) //  
-//		private void closeEditCollaborators() {	
-//			waitMethods.waiter(waitMethods.w250);       
-//			WebElement ele = driver.findElement(By.xpath("/html/body/div[5]/div[1]/button/span[1]"));    
-//	    	highlightElement.highLightElement(driver, ele);
-//	   		ele.click();
-//			waitMethods.waiter(waitMethods.w250);
-//	    	System.out.println("Forms-Selected Edit Collaborators)");
-//		}
-
 
 		
+		@Test(priority = 156) //
+		private void inputFieldName() {
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("name"));
+	    	highlightElement.highLightElement(driver, ele);
+	    	
+	    	String name = "Test Q1 Single line text";
+	   
+	    	for(int i = 0; i < name.length(); i++) {
+	    		char c = name.charAt(i);
+	    		String s = new StringBuilder().append(c).toString();
+	    		ele.sendKeys(s);
+	    		waitMethods.waiter(waitMethods.w50);
+	    	}
+	    	
+	    	System.out.println("Test Question: Single line text)");			
+		}
+		
+
+		
+		@Test(priority = 158) //
+		private void inputShortLabel() {
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("description"));
+	    	highlightElement.highLightElement(driver, ele);
+	    	
+	    	String name = "Q1";
+	   
+	    	for(int i = 0; i < name.length(); i++) {
+	    		char c = name.charAt(i);
+	    		String s = new StringBuilder().append(c).toString();
+	    		ele.sendKeys(s);
+	    		waitMethods.waiter(waitMethods.w50);
+	    	}
+	    	
+	    	System.out.println("Test Question: Short Label)");			
+		}
+
+		
+
+		@Test(priority = 160) //
+		public void selectSingleLineText() {         
+			//waitMethods.implicitWait(waitMethods.w300);
+			waitMethods.waiter(waitMethods.w200);			//The below opens the DDL
+			WebElement ele = driver.findElement(By.id("indicatorType"));
+			highlightElement.highLightElement(driver, ele);
+			ele.click();
+			waitMethods.waiter(waitMethods.w250);
+			Select select = new Select(driver.findElement(By.id("indicatorType")));
+			highlightElement.highLightElement(driver, ele);
+			select.selectByValue("text");
+			waitMethods.waiter(waitMethods.w200);
+			WebElement ele2 = driver.findElement(By.id("indicatorType"));
+			ele2.click();
+			System.out.println("Test Question: Single Line Text");
+		}
+		
+		
+		@Test(priority = 162) //  
+		private void selectQuestionCancel() {			//
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("button_cancelchange"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w250);
+	    	System.out.println("Test Question: Cancel button");
+		}
+		
+		
+		@Test(priority = 164) //  
+		private void selectAddSectionHeading2() {	
+			selectAddSectionHeading();
+		}
+		
+		
+		@Test(priority = 166) //
+		private void inputFieldName2() {
+			inputFieldName();
+		}
+		
+		
+		@Test(priority = 168) //
+		private void inputShortLabel2() {
+			inputShortLabel();
+		}
+		
+		
+		@Test(priority = 170) //
+		public void selectSingleLineText2() {
+			selectSingleLineText();
+		}
+		
+		
+		@Test(priority = 172) //
+		private void inputDefaultAnswer() {
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("default"));
+	    	highlightElement.highLightElement(driver, ele);
+	    	
+	    	String name = "MR Test Default Response";
+	   
+	    	for(int i = 0; i < name.length(); i++) {
+	    		char c = name.charAt(i);
+	    		String s = new StringBuilder().append(c).toString();
+	    		ele.sendKeys(s);
+	    		waitMethods.waiter(waitMethods.w50);
+	    	}
+	    	
+	    	System.out.println("Test Question: input Default Answer");			
+		}
+		
+		
+		@Test(priority = 174) //  
+		private void selectFieldRequired() {			//
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("required"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w250);
+	    	System.out.println("Test Question: Field Required = Y");
+		}
+		
+		
+		@Test(priority = 176) //  
+		private void selectFieldSensitiveData() {			//
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("sensitive"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+	   		waitMethods.waiter(waitMethods.w250);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w250);
+	    	System.out.println("Test Question: Sensitive Data = N");
+		}
+		
+		
+		
+		@Test(priority = 178) //  
+		private void selectSortValue() {			//
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("required"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.sendKeys("1");
+			waitMethods.waiter(waitMethods.w250);
+	    	System.out.println("Test Question: Sort Priority = 0");
+		}
+		
+		
+		@Test(priority = 180) //  
+		private void selectQuestionSave() {			//
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("button_save"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w5k);						//CHANGE TO w250
+	    	System.out.println("Test Question: Save button");
+		}
+		
+		
+		@Test(priority = 182) //						//Err Here  
+		private void selectEditFieldIcon() {			//Try this: //img[contains(@title,'Collector')]
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.xpath("//tagname[@title='Edit this field']"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			waitMethods.waiter(waitMethods.w250);	
+	    	System.out.println("Test Question: Edit Field Icon");
+		}
+		
+		
+		@Test(priority = 184) //
+		private void editDefaultAnswer() {
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("default"));
+	    	highlightElement.highLightElement(driver, ele);
+	    	
+	    	String name = "Test Default";
+	   
+	    	for(int i = 0; i < name.length(); i++) {
+	    		char c = name.charAt(i);
+	    		String s = new StringBuilder().append(c).toString();
+	    		ele.sendKeys(s);
+	    		waitMethods.waiter(waitMethods.w50);
+	    	}
+	    	
+	    	System.out.println("Test Question: Edit Default Answer");			
+		}
+		
+		/*
+	
+				Need to code tests for Advanced Options
+				id = button_advanced
+	
+		
+		*/
+		
+		
+		@Test(priority = 190) //  
+		private void selectQuestionSave2() {	
+			selectQuestionSave();		
+		}
+		
+
 		
 		
 		
 		
 /*  /////// FORM EDITOR Main Screen Element Locators \\\\\\
-							
-	View all forms:	TODO		
-	+ Add Internal=Use		CSS = #menu > div:nth-child(4)
-	Staple Other Form:		CSS = #menu > div:nth-child(7)
-	View History:			CSS = #menu > div:nth-child(11)
-	Delete this form:		CSS = #menu > div:nth-child(18)
-	Restore Fields:			CSS = #menu > div:nth-child(21)
-							
+					
 			
 			//////  + Adding New Question \\\\\\\\\\\\\
 			 Field Name:				id=  name
@@ -442,17 +634,17 @@ public class formsWorkflow extends setupFramework {
 		  	
 		  	Import Values (Field Types):
 		  			value = None:						//Don't use this
-		  			value = text				Single line text:  	
-		  			value = textarea			Multi-line text:	
-		  			value = grid				Grid (Table with rows and columns)		
-		  			value = number				Numeric:			
-		  			value = currency			Currency:			
-		  			value = date				Date:				
+		  			value = text				Single line text
+		  			value = textarea			Multi-line text	
+		  			value = grid				Grid (Table with rows and columns)
+		  			value = number				Numeric
+		  			value = currency			Currency
+		  			value = date				Date
 		  			value = radio				Radio (single select, multiple options)
 		  			value = checkbox			Checkbox (A single checkbox)
 		  			value = checkboxes			Checkboxes (Multiple Checkboxes)
 		  			value = multiselect			Multi-Select Dropdown
-		  			value = dropdown			Dropdown Menu (single select, multiple options) 
+		  			value = dropdown			Dropdown Menu (single select, multiple options)
 		  			value = fileupload			File Attachment
 		  			value = image				Image Attachment
 		  			value = orgchart_group		Orgchart Group
@@ -470,11 +662,22 @@ public class formsWorkflow extends setupFramework {
 			
 			Save:						id=  button_save
 			Cancel:						id=  button_cancelchange
+			
+			
+			
+										
+	View all forms:	TODO		
+	+ Add Internal=Use		CSS = #menu > div:nth-child(4)
+	Staple Other Form:		CSS = #menu > div:nth-child(7)
+	View History:			CSS = #menu > div:nth-child(11)
+	Delete this form:		CSS = #menu > div:nth-child(18)
+	Restore Fields:			CSS = #menu > div:nth-child(21)
+		
 
 */			
 			
 ///////////////  Normal Template \\\\\\\\\\\\\\\\\\\\	
-//	@Test(priority = 102) //
+//	@Test(priority = 198) //
 //	private void clickReportBuilder() {
 //		waitMethods.waiter(waitMethods.w250);       
 //		WebElement ele = driver.findElement(By.xpath("//*[text()='Report Builder']"));
@@ -498,6 +701,8 @@ public class formsWorkflow extends setupFramework {
 //			highlightElement.highLightElement(driver, ele);
 //			select.selectByValue("1");
 //			waitMethods.waiter(waitMethods.w200);
+//			WebElement ele2 = driver.findElement(By.id("indicatorType"));
+//			ele2.click();
 //			System.out.println("Selected ");
 //		}
 //		
@@ -535,7 +740,7 @@ public class formsWorkflow extends setupFramework {
 //    		char c = name.charAt(i);
 //    		String s = new StringBuilder().append(c).toString();
 //    		ele.sendKeys(s);
-//    		waitMethods.waiter(waitMethods.w250);
+//    		waitMethods.waiter(waitMethods.w50);
 //    	}
 //    	
 //    	driver.findElement(By.id("search")).clear();
