@@ -49,6 +49,24 @@ public class waitMethods {
 //		public final static int w4k = 500;		//4000
 //		public final static int w5k = 600;		//5000
 
+
+//Slow-Mo
+		
+//		public final static int w50 = 50;		//50
+//		public final static int w100 = 200;		//100
+//		public final static int w200 = 250;		//200
+//		public final static int w250 = 450;		//250
+//		public final static int w300 = 550;		//300
+//		public final static int w500 = 675;		//500
+//		public final static int w750 = 1000		//750
+//		public final static int w1k = 2000;		//1000
+//		public final static int w2k = 3000;		//2000
+//		public final static int w3k = 4000;		//3000
+//		public final static int w4k = 5500;		//4000
+//		public final static int w5k = 7000;		//5000
+		
+		
+		
 		
 //	}
 	
@@ -62,6 +80,7 @@ public class waitMethods {
 		}
 	}
 	
+
 	
 	public static void implicitWait(int milli) {
 
