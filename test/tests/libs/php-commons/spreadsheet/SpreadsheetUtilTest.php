@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-include __DIR__.'/../../../../libs/php-commons/spreadsheet/SpreadsheetUtil.php';
+include __DIR__ . '/../../../../../libs/php-commons/spreadsheet/SpreadsheetUtil.php';
 
 use PHPUnit\Framework\TestCase;
 
