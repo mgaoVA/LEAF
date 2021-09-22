@@ -20,18 +20,16 @@ truncate -s 0 /var/www/html/test/test_output/cachegrind.out || true
 
 echo "Running All Tests"
 /var/www/html/test/vendor/phpunit/phpunit/phpunit --bootstrap ./bootstrap.php \
- --coverage-html test/test_output/html \
- --coverage-php test/test_output/php/code_coverage.php \
- --coverage-text=test/test_output/txt/code_coverage.txt \
- --coverage-cache test/test_output/ \
- --path-coverage \
+ --coverage-html=../test_output/html \
+ --coverage-php=../test_output/php/code_coverage.php \
+ --coverage-text=../test_output/txt/code_coverage.txt \
  --disable-coverage-ignore \
  --strict-coverage \
  --disallow-todo-tests \
- --colors "always" --columns 80 --fail-on-incomplete \
+ --colors --columns 80 \
  --fail-on-risky --fail-on-warning --cache-result \
- --cache-result-file test/test_output/cachegrind.out
-
+ --cache-result-file test_output/cachegrind.out \
+ tests
 # echo "Generating Coverage Report"
 # cd /var/www/html/test/prepend/
 # ./vendor/bin/phpcov merge --html="../cov/report/" ../cov -vvv

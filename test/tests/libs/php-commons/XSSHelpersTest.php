@@ -7,7 +7,7 @@ declare(strict_types = 1);
 
 if (!class_exists('XSSHelpers'))
 {
-    include __DIR__.'/../../../../libs/php-commons/XSSHelpers.php';
+    include __DIR__.'/../../../libs/php-commons/XSSHelpers.php';
 }
 
 use PHPUnit\Framework\TestCase;

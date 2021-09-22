@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-include __DIR__.'/../../../../../libs/php-commons/spreadsheet/SpreadsheetUtil.php';
+include __DIR__.'/../../../../libs/php-commons/spreadsheet/SpreadsheetUtil.php';
 
 use PHPUnit\Framework\TestCase;
 
@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
  */
 final class SpreadsheetUtilTest extends TestCase
 {
-    var $fileName = __DIR__ . DIRECTORY_SEPARATOR;
+    var $fileName = __DIR__ . DIRECTORY_SEPARATOR . 'import_test.xlsx';
 
     /**
      * Tests SpreadsheetUtil::loadFile($fileName)
