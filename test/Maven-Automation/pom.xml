@@ -1,12 +1,40 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+https://maven.apache.org/xsd/maven-4.0.0.xsd">			<!--  http??  --> 
   <modelVersion>4.0.0</modelVersion>
   <groupId>Maven-Automation</groupId>
   <artifactId>Maven-Automation</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Create pom.xml</name>
-  <description>Create pom.xml after converting project to Maven</description>
+  <packaging>jar</packaging>
+  <properties>
+  	<name>Create pom.xml</name>													  <!-- ?? -->
+  	<description>Create pom.xml after converting project to Maven</description>   <!-- ?? -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    <selenium.version>3.14.0</selenium.version>
+    <junit.version>4.12</junit.version>
+  </properties>
   <build>
-    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+ <dependencies>
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>${selenium.version}</version>
+    </dependency>
+    <!-- <sourceDirectory>src</sourceDirectory>   -->
     <resources>
       <resource>
         <directory>src</directory>
@@ -18,10 +46,13 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
+        <version>3.8.2</version>
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
+            <suiteXmlFiles>
+			  <suiteXmlFile>allTestsChrome.xml</suiteXmlFile>
+		   </suiteXmlFiles>
         </configuration>
       </plugin>
     </plugins>
