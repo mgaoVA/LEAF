@@ -6,7 +6,7 @@ on:
     # * is a special character in YAML so you have to quote this string
     # - cron:  '30 5 * * * '   # uses UTC time - currently set to 1:30am EST (using UTC values)
     - cron:  '0 20 * * * '     # uses UTC time - currently set to 3:30pm CST (using UTC values)
-  pull request:
+  pull_request:
     branches: [ master ]
 
 jobs:
