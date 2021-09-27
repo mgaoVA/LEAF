@@ -3,19 +3,19 @@ name: Automated PROD Monitoring
 on:
   pull_request:
     branches:
-     - main
-  # workflow_dispatch:
-    # To get CST in Summer, add 5 hours to get UTC time
-    # * is a special character in YAML so you have to quote this string
-    # - cron:  '30 5 * * * '   # uses UTC time - currently set to 1:30am EST (using UTC values)
-  schedule:
-    - cron:  '*/10 * * * *'    # At every 10th minute
-    # - cron:  '45 20 * * * '     # uses UTC time - currently set to 3:30pm CST (using UTC values)
+      - main
+    # workflow_dispatch:
+      # To get CST in Summer, add 5 hours to get UTC time
+      # * is a special character in YAML so you have to quote this string
+      # - cron:  '30 5 * * * '   # uses UTC time - currently set to 1:30am EST (using UTC values)
+    schedule:
+      - cron:  '*/10 * * * *'    # At every 10th minute
+      # - cron:  '45 20 * * * '     # uses UTC time - currently set to 3:30pm CST (using UTC values)
 
 jobs:
   build:
-  # build_ChromeHeadless:
-  # runs-on: ubuntu-latest
+    # build_ChromeHeadless:
+    # runs-on: ubuntu-latest
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v2
