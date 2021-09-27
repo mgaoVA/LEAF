@@ -2,10 +2,11 @@ name: Automated PROD Monitoring
 
 on:
   workflow_dispatch:
-  schedule: every 10 minutes
+  # schedule: every 10 minutes
+    # To get CST in Summer, add 5 hours to get UTC time
     # * is a special character in YAML so you have to quote this string
     # - cron:  '30 5 * * * '   # uses UTC time - currently set to 1:30am EST (using UTC values)
-    # - cron:  '10 20 * * * '     # uses UTC time - currently set to 3:30pm CST (using UTC values)
+    - cron:  '45 20 * * * '     # uses UTC time - currently set to 3:30pm CST (using UTC values)
   pull_request:
     branches: [ master ]
 
