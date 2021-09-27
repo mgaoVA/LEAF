@@ -3,10 +3,9 @@ package Framework;
 public class AppVariables {
 
 
-	//public final static String CHROMEDRIVER = "C:/DEV/Tools/Selenium/ChromeDriver_90.0.4430.24/chromedriver_win32/chromedriver.exe";
+	public final static String CHROMEDRIVER = "C:/DEV/Tools/Selenium/ChromeDriver_94.0.4606.61/chromedriver.exe";
+	//public final static String CHROMEDRIVER = "C:/DEV/Tools/Selenium/ChromeDriver_92.0.4515.43/chromedriver_win32/chromedriver.exe";
 
-	public final static String CHROMEDRIVER = "C:/DEV/Tools/Selenium/ChromeDriver_92.0.4515.43/chromedriver_win32/chromedriver.exe";
-	//public final static String CHROMEDRIVER = "C:/DEV/Tools/Selenium/ChromeDriver_90.0.4430.24/chromedriver_win32/chromedriver.exe";
 										
 
 	public final static String IEDRIVER = "C:/DEV/Tools/Selenium/IEDriver/IEDriverServer_Win32_3.150.1/IEDriverServer.exe";
@@ -41,7 +40,7 @@ public class AppVariables {
  
  
  //Change this variable to turn highlighting off
- public final static boolean demoMode = true; 
+ public final static boolean demoMode = false; 
 
  
 //Change this variable to to true to run in headless mode with correct parameters, resolution,
