@@ -2,22 +2,22 @@ name: Automated PROD Monitoring
 
 on:
   workflow_dispatch:
-  schedule: every 10 minutes
+  # schedule: every 10 minutes
+    # To get CST in Summer, add 5 hours to get UTC time
     # * is a special character in YAML so you have to quote this string
-    # - cron:  '30 5 * * * *'   # uses UTC time - currently set to 1:30am EST (using UTC values)
-    # - cron:  '50 19 * * * *'  # uses UTC time - currently set to 3:30pm CST (using UTC values)
+    # - cron:  '30 5 * * * '   # uses UTC time - currently set to 1:30am EST (using UTC values)
+    - cron:  '45 20 * * * '     # uses UTC time - currently set to 3:30pm CST (using UTC values)
   pull_request:
     branches: [ master ]
 
 jobs:
-  build_ChromeHeadless:
-
-runs-on: ubuntu-latest
-
-steps:
+  build:
+  # build_ChromeHeadless:
+  runs-on: ubuntu-latest
+  steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 8
-      uses: actions/setup-java@v2     # was v2
+      uses: actions/setup-java@v1     # was v2
       with:
         java-version: '1.8'
         # distribution: 'adopt'
@@ -26,4 +26,4 @@ steps:
                           ./scripts/InstallChrome.sh:
     - name: Build with Maven
       # run: mvn clean test
-      run:      
+      run: mvn test --file pom.xml
