@@ -3,7 +3,7 @@ name: Automated PROD Monitoring
 on:
   pull_request:
     branches:
-      - main
+      - Maven-Automation
     # workflow_dispatch:
       # To get CST in Summer, add 5 hours to get UTC time
       # * is a special character in YAML so you have to quote this string
