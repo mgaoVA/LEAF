@@ -2,10 +2,10 @@ name: Automated PROD Monitoring
 
 on:
   workflow_dispatch:
-  schedule:
+  schedule: every 10 minutes
     # * is a special character in YAML so you have to quote this string
     # - cron:  '30 5 * * * '   # uses UTC time - currently set to 1:30am EST (using UTC values)
-    - cron:  '10 20 * * * '     # uses UTC time - currently set to 3:30pm CST (using UTC values)
+    # - cron:  '10 20 * * * '     # uses UTC time - currently set to 3:30pm CST (using UTC values)
   pull_request:
     branches: [ master ]
 

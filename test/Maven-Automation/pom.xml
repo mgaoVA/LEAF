@@ -12,6 +12,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <java.version>1.8</java.version>
     <selenium.version>3.141.59</selenium.version>
     <junit.version>4.13.2</junit.version>
+    <testng.version>7.4.0</testng.version>
   </properties>
   <build>
     <plugins>
