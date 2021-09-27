@@ -2,10 +2,9 @@ package Framework;
 
 public class AppVariables {
 
-
-	//public final static String CHROMEDRIVER = "C:/DEV/Tools/Selenium/ChromeDriver_90.0.4430.24/chromedriver_win32/chromedriver.exe";
-
-	public final static String CHROMEDRIVER = "C:/DEV/Tools/Selenium/ChromeDriver_92.0.4515.43/chromedriver_win32/chromedriver.exe";
+										
+	public final static String CHROMEDRIVER = "C:/DEV/Tools/Selenium/ChromeDriver_94.0.4606.61/chromedriver.exe";
+	//public final static String CHROMEDRIVER = "C:/DEV/Tools/Selenium/ChromeDriver_92.0.4515.43/chromedriver_win32/chromedriver.exe";
 	//public final static String CHROMEDRIVER = "C:/DEV/Tools/Selenium/ChromeDriver_90.0.4430.24/chromedriver_win32/chromedriver.exe";
 										
 
