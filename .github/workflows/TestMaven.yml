@@ -1,9 +1,10 @@
 name: Automated PROD Monitoring
 
 on:
-on:
+  pull_request:
+    branches:
+     - main
   # workflow_dispatch:
-  # schedule: every 10 minutes
     # To get CST in Summer, add 5 hours to get UTC time
     # * is a special character in YAML so you have to quote this string
     # - cron:  '30 5 * * * '   # uses UTC time - currently set to 1:30am EST (using UTC values)
@@ -14,6 +15,7 @@ on:
 jobs:
   build:
   # build_ChromeHeadless:
+  # runs-on: ubuntu-latest
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v2
@@ -28,3 +30,4 @@ jobs:
     - name: Build with Maven
       # run: mvn clean test
       run: mvn test --file pom.xml
+      # run: mvn -B package --file pom.xml
