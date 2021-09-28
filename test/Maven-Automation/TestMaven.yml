@@ -4,19 +4,18 @@ on:
   # workflow_dispatch:
   # schedule: every 10 minutes
     # To get CST in Summer, add 5 hours to get UTC time
-    # * is a special character in YAML so you have to quote this string
     # - cron:  '30 5 * * * '   # uses UTC time - currently set to 1:30am EST (using UTC values)
   schedule:
     - cron:  '*/10 * * * *'    # At every 10th minute
     # - cron:  '45 20 * * * '     # uses UTC time - currently set to 3:30pm CST (using UTC values)
   pull_request:
-    branches: [ master ]
+    branches: [ Maven-Automation ]
 
 jobs:
   build:
   # build_ChromeHeadless:
-  runs-on: ubuntu-latest
-  steps:
+    runs-on: ubuntu-latest
+    steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 8
       uses: actions/setup-java@v1     # was v2
