@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="46" started-at="2021-09-29T20:24:19 CDT" finished-at="2021-09-29T20:24:19 CDT">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="46" started-at="2021-09-29T20:24:19 CDT" finished-at="2021-09-29T20:24:19 CDT">
+      <class name="Execution.TestMavenCI">
+        <test-method status="PASS" signature="TestCI()[pri:1, instance:Execution.TestMavenCI@3c0f93f1]" name="TestCI" duration-ms="5" started-at="2021-09-29T20:24:19 CDT" finished-at="2021-09-29T20:24:19 CDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCI -->
+      </class> <!-- Execution.TestMavenCI -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
