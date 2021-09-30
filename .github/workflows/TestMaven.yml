@@ -17,6 +17,7 @@ jobs:
   build:
     # name: CI-Automation
     runs-on: ubuntu-latest
+    # a step cannot have both the `uses` and `run` keys
     steps:
     - name: Checkout Code
       uses: actions/checkout@v2
@@ -25,6 +26,7 @@ jobs:
       with:
         java-version: '1.8'
         # distribution: 'adopt'
+     -name: setup Chrome
       run:   |
               chmod +x ./scripts/InstallChrome.sh
                           ./scripts/InstallChrome.sh:
