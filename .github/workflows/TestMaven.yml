@@ -1,4 +1,4 @@
-name: Automated PROD Monitoring
+name: Java-Maven CIs
 # every step must define a `uses` or `run` key
 on:
   # workflow_dispatch:
