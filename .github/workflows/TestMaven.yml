@@ -9,7 +9,9 @@ on:
     - cron:  '*/10 * * * *'    # At every 10th minute
     # - cron:  '45 20 * * * '     # uses UTC time - currently set to 3:30pm CST (using UTC values)
   pull_request:
-    branches: [ Maven-Automation ]
+    branches: [ Master ]
+    
+  workflow_dispatch:
 
 jobs:
   build:
