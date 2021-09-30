@@ -2,7 +2,7 @@ name: Java-Maven CI
 
 on:
   schedule:
-  - cron:  '*/10 * * * *'    # At every 10th minute (every 5 is minimum)
+  - cron:  '*/10 * * * *'    # At every 10th minute (every 5 is minimum .)
   pull_request:
     branches: [ master ]
 
