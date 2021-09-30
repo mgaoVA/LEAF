@@ -1,5 +1,5 @@
 
-name: Java-Maven CI
+name: Java-Maven-CI
 
 on:
   schedule:
