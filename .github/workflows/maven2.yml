@@ -1,11 +1,11 @@
 
-name: Java-Maven-CI
+name: Java-Maven CI
 
 on:
   schedule:
   - cron:  '*/10 * * * *'    # At every 10th minute (every 5 is minimum...)
   pull_request:
-    branches: [ Maven-Automation ]
+    branches: [ master ]
 
 jobs:
   build:
