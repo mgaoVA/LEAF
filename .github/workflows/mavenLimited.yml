@@ -1,11 +1,12 @@
+---
 
 name: Java-Maven-CI
 
 on:
   pull_request:
-    branches: [ Maven-Automation ]
+    branches: [Maven-Automation]
   push:
-    branches: [ Maven-Automation ]
+    branches: [Maven-Automation]
 
 jobs:
   build:
