@@ -3,7 +3,8 @@
 name: Maven-CI
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [Maven-Automation]
   pull_request:
     branches: [Maven-Automation]
 
