@@ -1,6 +1,6 @@
 ---
 
-name: MavenCI
+name: Maven-CI
 
 on:
   workflow_dispatch:
