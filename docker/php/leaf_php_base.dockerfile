@@ -11,7 +11,10 @@ ENV REMOTE_USER=\\tester
 RUN useradd -u $BUILD_UID -g www-data build_user
 
 # Server installs
-RUN apt-get update && apt-get install -y wget libpng-dev zlib1g-dev libzip-dev git zip unzip iputils-ping netcat vim mysql-client
+RUN apt-get update && apt-get install -y wget libpng-dev zlib1g-dev \
+  libzip-dev git zip unzip iputils-ping netcat vim \
+  mysql-client\
+  apt-transport-https=1.4.10
 
 # PHP installs
 RUN docker-php-ext-install zip mysqli pdo pdo_mysql gd
@@ -76,5 +79,32 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 
 FROM base as legacy
 RUN apt-get install -y subversion libapache2-mod-svn
+
+# Installing SQL Server libs
+RUN pear config-set php_ini $PHP_INI_DIR/php.ini
+RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+RUN apt-get update
+RUN apt-get -y --allow-unauthenticated install unixodbc-dev gnupg2 lsb-core libodbc1 odbcinst odbcinst1debian2 unixodbc-dev
+RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
+RUN curl https://packages.microsoft.com/config/debian/9/prod.list > /etc/apt/sources.list.d/mssql-release.list
+RUN apt-get update
+RUN pecl install sqlsrv pdo_sqlsrv
+
+RUN ACCEPT_EULA=Y apt-get install -y --allow-unauthenticated msodbcsql17
+# optional: for bcp and sqlcmd
+RUN ACCEPT_EULA=Y apt-get install -y --allow-unauthenticated mssql-tools
+RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+# RUN source ~/.bashrc
+ENV PATH $PATH:/opt/mssql-tools/bin
+
+
+
+# RUN apt-get -y install gnupg2
+# RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+# RUN curl https://packages.microsoft.com/config/debian/9/prod.list > /etc/apt/sources.list.d/mssql-release.list
+# RUN pecl install sqlsrv pdo_sqlsrv
+
+# ENV PATH=$PATH:/opt/mssql-tools/bin
 
 
