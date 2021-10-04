@@ -569,15 +569,15 @@ public class formsWorkflow extends setupFramework {
 			WebElement ele = driver.findElement(By.id("button_save"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
-			waitMethods.waiter(waitMethods.w5k);						//CHANGE TO w250
+			waitMethods.waiter(waitMethods.w250);						//CHANGE TO w250
 	    	System.out.println("Test Question: Save button");
 		}
 		
 		
-		@Test(priority = 182) //						//Err Here  
+		@Test(priority = 182) //						//Err Here  			
 		private void selectEditFieldIcon() {			//Try this: //img[contains(@title,'Collector')]
 			waitMethods.waiter(waitMethods.w250);       
-			WebElement ele = driver.findElement(By.xpath("//tagname[@title='Edit this field']"));
+			WebElement ele = driver.findElement(By.xpath("//*[contains(text(),'Test Q1')]"));
 	    	highlightElement.highLightElement(driver, ele);
 	   		ele.click();
 			waitMethods.waiter(waitMethods.w250);	
@@ -590,6 +590,7 @@ public class formsWorkflow extends setupFramework {
 			waitMethods.waiter(waitMethods.w250);       
 			WebElement ele = driver.findElement(By.id("default"));
 	    	highlightElement.highLightElement(driver, ele);
+	    	ele.clear();
 	    	
 	    	String name = "Test Default";
 	   
@@ -603,6 +604,77 @@ public class formsWorkflow extends setupFramework {
 	    	System.out.println("Test Question: Edit Default Answer");			
 		}
 		
+		
+		
+		@Test(priority = 186) //						//  			
+		private void selectAdvancedOptions() {			
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("button_advanced"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			//waitMethods.waiter(waitMethods.w250);	
+	    	System.out.println("Select Advanced Options");
+		}
+		
+		
+		
+		@Test(priority = 188) //						//  Try: /html/body/div[3]/div[2]/form/div/main/div/fieldset/div[1]/div[6]/div[1]
+														//    /html/body/div[3]/div[2]/form/div/main/div/fieldset/div[1]/div[6]/div[1]/div
+														//    /html/body/div[3]/div[2]/form/div/main/div/fieldset/div[1]/div[6]/div[1]/div/div
+		private void inputHTMLEditData() {			
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.xpath("/html/body/div[3]/div[2]/form/div/main/div/fieldset/div[1]/div[6]/div[1]/div"));
+			String strHTML = "HTML Text Here";
+			//String strHTML = "<button id=\"button_save\" class=\"usa-button leaf-btn-med\" style=\"border: 2px solid white; "
+			//		+ "visibility: visible;\">\r\n"
+			//		+ "                        Save\r\n"
+			//		+ "                    </button>";
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.sendKeys(strHTML);
+			//waitMethods.waiter(waitMethods.w250);	
+	    	System.out.println("Input HTML-Edit Data");
+		}
+
+		
+		@Test(priority = 190) //						//  			
+		private void selectSaveCode01() {			
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("btn_codeSave_html"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			//waitMethods.waiter(waitMethods.w250);	
+	    	System.out.println("Select Save Code (1st HTML box)");
+		}
+
+		
+		
+		@Test(priority = 192) //						//  			
+		private void inputHTMLReadData() {			
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.xpath("/html/body/div[3]/div[2]/form/div/main/div/fieldset/div[2]/div[6]/div[1]"));
+			String strHTML = "<title>Form Editor&nbsp; - Academy Demo Site (Test site) | Washington DC</title>";
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.sendKeys(strHTML);
+			//waitMethods.waiter(waitMethods.w250);	
+	    	System.out.println("Input HTML-Read Data");
+		}
+		
+		
+		
+		@Test(priority = 194) //						//  			
+		private void selectSaveCode02() {			
+			waitMethods.waiter(waitMethods.w250);       
+			WebElement ele = driver.findElement(By.id("btn_codeSave_htmlPrint"));
+	    	highlightElement.highLightElement(driver, ele);
+	   		ele.click();
+			//waitMethods.waiter(waitMethods.w250);	
+	    	System.out.println("Select Save Code (2nd HTML box)");
+		}
+		
+		
+		
+		
+		
 		/*
 	
 				Need to code tests for Advanced Options
@@ -612,13 +684,12 @@ public class formsWorkflow extends setupFramework {
 		*/
 		
 		
-		@Test(priority = 190) //  
+		@Test(priority = 220) //  
 		private void selectQuestionSave2() {	
 			selectQuestionSave();		
 		}
 		
 
-		
 		
 		
 		
@@ -662,7 +733,13 @@ public class formsWorkflow extends setupFramework {
 			
 			Save:						id=  button_save
 			Cancel:						id=  button_cancelchange
+			Advanced Options			id = button_advanced
 			
+			1st html textbx				xPath = /html/body/div[3]/div[2]/form/div/main/div/fieldset/div[1]/div[6]/div[1]
+			Save Code (1st)				id = btn_codeSave_html
+			
+			2nd html textbx				xPath = /html/body/div[3]/div[2]/form/div/main/div/fieldset/div[2]/div[6]/div[1]
+			Save Code (2nd)				id = btn_codeSave_htmlPrint 
 			
 			
 										
