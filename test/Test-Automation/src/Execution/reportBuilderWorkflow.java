@@ -283,18 +283,18 @@ public class reportBuilderWorkflow extends setupFramework {
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[2]/div"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
-		waitMethods.waiter(waitMethods.w200);
+		//waitMethods.waiter(waitMethods.w200);
     	System.out.println("Report Builder checkbox for Service");
 	}
 
 	
 	@Test(priority = 132) //  
 	private void selectCheckboxRequestType() {
-		waitMethods.waiter(waitMethods.w250);       
+		waitMethods.waiter(waitMethods.w200);       
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[3]/div"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
-		waitMethods.waiter(waitMethods.w200);
+		//waitMethods.waiter(waitMethods.w200);
     	System.out.println("Report Builder checkbox for Type of Request");
 	}
 	
@@ -302,11 +302,11 @@ public class reportBuilderWorkflow extends setupFramework {
 	
 	@Test(priority = 134) //  
 	private void selectCheckboxCurrentStatus() {
-		waitMethods.waiter(waitMethods.w250);       
+		waitMethods.waiter(waitMethods.w200);       
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[4]/div"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
-		waitMethods.waiter(waitMethods.w200);
+		//waitMethods.waiter(waitMethods.w200);
     	System.out.println("Report Builder checkbox for Current Status");
 	}
 
@@ -314,12 +314,12 @@ public class reportBuilderWorkflow extends setupFramework {
 	
 	@Test(priority = 136) //  
 	private void selectCheckboxInitiator() {
-		driver.manage().timeouts().implicitlyWait(250, TimeUnit.MILLISECONDS);
-		//waitMethods.waiter(waitMethods.w250);       
+		//driver.manage().timeouts().implicitlyWait(250, TimeUnit.MILLISECONDS);
+		waitMethods.waiter(waitMethods.w200);       
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[5]/div"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
-		waitMethods.waiter(waitMethods.w200);
+		//waitMethods.waiter(waitMethods.w200);
     	System.out.println("Report Builder checkbox for Initiator");
 	}
 
@@ -327,11 +327,11 @@ public class reportBuilderWorkflow extends setupFramework {
 	
 	@Test(priority = 138) //  
 	private void selectCheckboxActionButton() {
-		waitMethods.waiter(waitMethods.w250);       
+		waitMethods.waiter(waitMethods.w200);       
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[6]/div"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
-		waitMethods.waiter(waitMethods.w200);
+		//waitMethods.waiter(waitMethods.w200);
     	System.out.println("Report Builder checkbox for Action Button");
 	}
 
@@ -339,22 +339,22 @@ public class reportBuilderWorkflow extends setupFramework {
 	
 	@Test(priority = 140) //  
 	private void selectCheckboxCommentHistory() {
-		waitMethods.waiter(waitMethods.w250);       
+		waitMethods.waiter(waitMethods.w200);       
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[7]/div"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
-		waitMethods.waiter(waitMethods.w200);
+		//waitMethods.waiter(waitMethods.w200);
     	System.out.println("Report Builder checkbox for Comment History");
 	}
 
 
 	@Test(priority = 142) //  
 	private void selectCheckboxApprovalHistory() {
-		waitMethods.waiter(waitMethods.w250);       
+		waitMethods.waiter(waitMethods.w200);       
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[8]/div"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
-		waitMethods.waiter(waitMethods.w200);
+		//waitMethods.waiter(waitMethods.w200);
     	System.out.println("Report Builder checkbox for Approval History");
 	}
 
@@ -362,11 +362,11 @@ public class reportBuilderWorkflow extends setupFramework {
 	
 	@Test(priority = 144) //  
 	private void selectCheckboxLastAction() {
-		waitMethods.waiter(waitMethods.w250);       
+		waitMethods.waiter(waitMethods.w200);       
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[9]/div"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
-		waitMethods.waiter(waitMethods.w200);
+		//waitMethods.waiter(waitMethods.w200);
     	System.out.println("Report Builder checkbox for Last Action Days");
 	}
 
@@ -374,11 +374,11 @@ public class reportBuilderWorkflow extends setupFramework {
 	
 	@Test(priority = 146) //  
 	private void selectCheckboxLastMovement() {
-		waitMethods.waiter(waitMethods.w250);       
+		waitMethods.waiter(waitMethods.w200);       
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[1]/div[10]/div"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
-		waitMethods.waiter(waitMethods.w200);
+		//waitMethods.waiter(waitMethods.w200);
     	System.out.println("Report Builder checkbox for Last Movement Days");
 	}
 
@@ -409,7 +409,7 @@ public class reportBuilderWorkflow extends setupFramework {
 
 	@Test(priority = 152) // Middle Initial 
 	private void selectMRTestField2() {
-		waitMethods.waiter(waitMethods.w250);         //  //*[text()='Get started free']
+		waitMethods.waiter(waitMethods.w250);         // 
 		WebElement ele = driver.findElement(By.xpath("//*[contains(text(),'Middle Initial')]"));
 		//WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[4]/div[3]/div"));
 		highlightElement.highLightElement(driver, ele);
@@ -418,12 +418,15 @@ public class reportBuilderWorkflow extends setupFramework {
     	System.out.println("Middle Initial checkbox for  MR - Test selected");
 	}
 
-
+	
+	
+	
 	@Test(priority = 154) // Name 				//Cannot find by text()   //*[contains(text(),'Name')]???
 	private void selectMRTestField3() {
 		waitMethods.waiter(waitMethods.w250);     //      
 		//WebElement ele = driver.findElement(By.xpath("//*[contains(text(),'Name')]"));
-		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[6]/div[4]/label"));
+		//WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[4]/div[4]/div/input"));
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div/div[2]/div[4]/div[4]/div"));
 		highlightElement.highLightElement(driver, ele);
    		ele.click();
 		waitMethods.waiter(waitMethods.w250);

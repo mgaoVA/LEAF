@@ -157,17 +157,17 @@ public class createNewRequest extends setupFramework {
 	
 
 	@Test(priority = 214) //
-	private void selectMRTestChkBox() {
+	private void selectMRTestChkBox() {					  
 		WebElement ele = driver.findElement (By.xpath ("//*[contains(text(),'MR - Test')]"));       
 		//WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/form/div[2]/div[2]/div/div[2]/span/div[12]"));
 	    highlightElement.highLightElement(driver, ele);
-	    waitMethods.waiter(waitMethods.w500);
+	    waitMethods.waiter(waitMethods.w300);
 	    ele.click();   
-	    waitMethods.waiter(waitMethods.w500);
+	    waitMethods.waiter(waitMethods.w300);
 	    System.out.println("Selected MR - Test Checkbox");
 	} 
 
-
+	
 
 	@Test(priority = 216) 
 	private void selectClickToProceedButton() {
@@ -260,11 +260,11 @@ public class createNewRequest extends setupFramework {
 	
 	@Test(priority = 230) //
 	private void selectService2() {
-		waitMethods.waiter(waitMethods.w500);       
+		waitMethods.waiter(waitMethods.w300);       
 		WebElement ele = driver.findElement(By.cssSelector("#service_chosen > a > span"));
 	    highlightElement.highLightElement(driver, ele);
 	    ele.click();
-		waitMethods.waiter(waitMethods.w500);
+		waitMethods.waiter(waitMethods.w300);
 	    System.out.println("Clicked Service Drop down menu (2)");
 	} 
 
@@ -445,8 +445,8 @@ public class createNewRequest extends setupFramework {
 	@Test(priority = 256) 
 	private void selectSubmitRequest() {
 		//waitMethods.implicitWait(waitMethods.w300);	
-		waitMethods.waiter(waitMethods.w2k);				//
-		WebElement ele = driver.findElement(By.xpath("html/body/div[2]/div/div/div[1]/div[1]/div[2]/div[2]/button")); 
+		waitMethods.waiter(waitMethods.w2k);	//   
+		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[1]/div[2]/div[2]/button")); 
 	    highlightElement.highLightElement(driver, ele);     
 	    ele.click();
 		waitMethods.waiter(waitMethods.w250);
@@ -455,7 +455,7 @@ public class createNewRequest extends setupFramework {
 
 
 	@Test(priority = 258) 
-	private void enterRequestCommend() {
+	private void enterRequestComment() {
 		//waitMethods.implicitWait(waitMethods.w300);	
 		waitMethods.waiter(waitMethods.w1k);	    //
 		WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/div[1]/div[3]/div/form/div[2]/textarea")); 
@@ -475,7 +475,7 @@ public class createNewRequest extends setupFramework {
 	} 
 
 
-	@Test(priority = 260) 					//This test is failing
+	@Test(priority = 260) 					//
 	private void selectAcceptJob() {
 		//waitMethods.implicitWait(waitMethods.w300);	
 		waitMethods.waiter(waitMethods.w250);		//
