@@ -51,7 +51,7 @@
 			</parameter>
 	</test>
 	
- -->
+ 
   	
  	<test name="Report Builder Workflow">
 		<parameter name="env" value="https://localhost/LEAF_Request_Portal/">
@@ -62,9 +62,8 @@
 		</parameter>
 	</test>    
 
-<!--    
 	
-	 	<test name="Forms Workflow">
+ 	<test name="Forms Workflow">
 		<parameter name="env" value="https://localhost/LEAF_Request_Portal/admin/?a=form#">
 		<parameter name="browser" value="chrome"/>
 			<classes>
@@ -73,7 +72,22 @@
 		</parameter>
 	</test>
 	    
- -->
+-->
+
+<!--    -->    
+
+
+ 	<test name="Custom Test">
+		<parameter name="env" value="https://localhost/LEAF_Request_Portal/admin/?a=form#">
+		<parameter name="browser" value="chrome"/>
+			<classes>
+				<class name="Execution.TestHTMLBox"/>
+			</classes>
+		</parameter>
+	</test>
+
+
+
  		
 </suite>
 
