@@ -115,8 +115,8 @@ services:
     api-test-helper:
         image: golang
         volumes:
-            - "../x-test/api-test-helper/:/app"
-            - "../x-test/API-tests/:/API-tests"
+            - "../LEAF-Automated-Tests/api-test-helper/:/app"
+            - "../LEAF-Automated-Tests/API-tests/:/API-tests"
         ports:
             - "8000:8000"
         env_file:
@@ -185,7 +185,7 @@ services:
         stdin_open: true # docker run -i
         tty: true        # docker run -t
         volumes:
-            - ../x-test/end2end/:/usr/app/leaf
+            - ../LEAF-Automated-Tests/end2end/:/usr/app/leaf
         ports:
             - "8001:8001"
         env_file:
