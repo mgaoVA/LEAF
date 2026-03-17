@@ -306,7 +306,7 @@ class XSSHelpers
      */
     public static function scrubNewLinesFromURL($stringToSanitize = '')
     {
-        $toRemove = ['%0a','%0A', '%0d','%0D', '\r', '\n'];
+        $toRemove = ['%0a','%0A', '%0d','%0D', "\r", "\n"]; //r and n should be in double quotes
 
         return str_replace($toRemove, '', (string) $stringToSanitize);
     }

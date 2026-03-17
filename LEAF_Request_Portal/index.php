@@ -413,12 +413,17 @@ switch ($action) {
         break;
 
     case 'sitemap':
-        $form = new Portal\Form($db, $login);
+        $portal_site = new Portal\Site($db, $login);
+        $sitemap_json_record = $portal_site->getSitemapJSON();
+        $cardJSON = $sitemap_json_record[0]['data'];
+        $cardConfig = json_decode($cardJSON, true);
+        $cardConfig = isset($cardConfig['buttons']) && is_array($cardConfig['buttons']) ? $cardConfig['buttons'] : [];
+
         $t_form = new Smarty;
         $t_form->left_delimiter = '<!--{';
         $t_form->right_delimiter = '}-->';
 
-        $t_form->assign('sitemap', $settings['sitemap_json']['buttons']);
+        $t_form->assign('sitemap', $cardConfig);
         $t_form->assign('city', $settings['subHeading'] == '' ? $config->city : $settings['subHeading']);
         $t_form->assign('css_path', 'https://' . HTTP_HOST . '/app/libs/css');
         $main->assign('body', $t_form->fetch('sitemap.tpl'));
