@@ -198,24 +198,29 @@ class VAMCActiveDirectory
                         ON DUPLICATE KEY UPDATE `data` = :data";
 
                 $this->db->prepared_query($sql, $vars);
+                if(!empty($this->users[$key]['phone'])){
+                    $vars = array(':empUID' => $res[0]['empUID'],
+                                ':indicatorID' => 5,
+                                ':data' => $this->fixIfHex($this->users[$key]['phone']));
 
-                $vars = array(':empUID' => $res[0]['empUID'],
-                            ':indicatorID' => 5,
-                            ':data' => $this->fixIfHex($this->users[$key]['phone']));
+                    $this->db->prepared_query($sql, $vars);
+                }
 
-                $this->db->prepared_query($sql, $vars);
+                if(!empty($this->users[$key]['roomNum'])){
+                    $vars = array(':empUID' => $res[0]['empUID'],
+                                ':indicatorID' => 8,
+                                ':data' => $this->fixIfHex($this->users[$key]['roomNum']));
 
-                $vars = array(':empUID' => $res[0]['empUID'],
-                            ':indicatorID' => 8,
-                            ':data' => $this->fixIfHex($this->users[$key]['roomNum']));
+                    $this->db->prepared_query($sql, $vars);
+                }
 
-                $this->db->prepared_query($sql, $vars);
+                if(!empty($this->users[$key]['title'])){
+                    $vars = array(':empUID' => $res[0]['empUID'],
+                                ':indicatorID' => 23,
+                                ':data' => $this->fixIfHex($this->users[$key]['title']));
 
-                $vars = array(':empUID' => $res[0]['empUID'],
-                            ':indicatorID' => 23,
-                            ':data' => $this->fixIfHex($this->users[$key]['title']));
-
-                $this->db->prepared_query($sql, $vars);
+                    $this->db->prepared_query($sql, $vars);
+                }
 
                 // don't store mobile # if it's the same as the primary phone #
                 if ($this->users[$key]['phone'] != $this->users[$key]['mobile']) {
