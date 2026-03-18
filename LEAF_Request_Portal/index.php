@@ -56,6 +56,7 @@ switch ($action) {
     case 'newform':
         $main->assign('useLiteUI', true);
         $main->assign('javascripts', array(
+            APP_JS_PATH . '/dompurify/dompurify.min.js',
             'js/titleValidator.js',
             'js/formQuery.js',
             APP_JS_PATH . '/qr-code/qrcode.min.js'));
@@ -108,7 +109,9 @@ switch ($action) {
             array('css/view.css',
                 APP_JS_PATH . '/choicesjs/choices.min.css'));
         $main->assign('javascripts',
-            array('js/form.js',
+            array(
+                APP_JS_PATH . '/dompurify/dompurify.min.js',
+                'js/form.js',
                 'js/formQuery.js',
                 'js/gridInput.js',
                 'js/formGrid.js',
@@ -168,6 +171,7 @@ switch ($action) {
         $main->assign('useUI', true);
         $main->assign('stylesheets', array(APP_JS_PATH . '/choicesjs/choices.min.css'));
         $main->assign('javascripts', array(
+            APP_JS_PATH . '/dompurify/dompurify.min.js',
             'js/form.js',
             'js/gridInput.js',
             'js/workflow.js',
@@ -389,6 +393,7 @@ switch ($action) {
         break;
     case 'search':
         $main->assign('javascripts', array(
+            APP_JS_PATH . '/dompurify/dompurify.min.js',
             'js/form.js',
             'js/formGrid.js',
             'js/formQuery.js',
@@ -413,12 +418,17 @@ switch ($action) {
         break;
 
     case 'sitemap':
-        $form = new Portal\Form($db, $login);
+        $portal_site = new Portal\Site($db, $login);
+        $sitemap_json_record = $portal_site->getSitemapJSON();
+        $cardJSON = $sitemap_json_record[0]['data'];
+        $cardConfig = json_decode($cardJSON, true);
+        $cardConfig = isset($cardConfig['buttons']) && is_array($cardConfig['buttons']) ? $cardConfig['buttons'] : [];
+
         $t_form = new Smarty;
         $t_form->left_delimiter = '<!--{';
         $t_form->right_delimiter = '}-->';
 
-        $t_form->assign('sitemap', $settings['sitemap_json']['buttons']);
+        $t_form->assign('sitemap', $cardConfig);
         $t_form->assign('city', $settings['subHeading'] == '' ? $config->city : $settings['subHeading']);
         $t_form->assign('css_path', 'https://' . HTTP_HOST . '/app/libs/css');
         $main->assign('body', $t_form->fetch('sitemap.tpl'));
@@ -433,7 +443,9 @@ switch ($action) {
 
         $main->assign('stylesheets', array('css/report.css',
                 APP_JS_PATH . '/choicesjs/choices.min.css'));
-        $main->assign('javascripts', array('js/form.js',
+        $main->assign('javascripts', array(
+                APP_JS_PATH . '/dompurify/dompurify.min.js',
+                'js/form.js',
                'js/formGrid.js',
                'js/formQuery.js',
                'js/formSearch.js',
@@ -488,7 +500,9 @@ switch ($action) {
         exit();
     default:
 
-        $main->assign('javascripts', array('js/form.js',
+        $main->assign('javascripts', array(
+                APP_JS_PATH . '/dompurify/dompurify.min.js',
+                'js/form.js',
                 'js/formGrid.js',
                 'js/formQuery.js',
                 'js/formSearch.js',

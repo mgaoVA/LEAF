@@ -45,7 +45,7 @@
                     //set order = arraykeyat(id)
                     sitemapOBJ.buttons[index].order = idsInOrder.indexOf(value.id)
                 });
-                refreshButtons();
+                save();
             }
         });
     });
@@ -54,15 +54,15 @@
     function parseSitemapJSON() {
         $.ajax({
             type: 'GET',
-            url: './api/system/settings',
+            url: './api/site/settings/sitemap_json',
             cache: false,
             success: function(res) {
                 $("#spinner").hide();
-                sitemapOBJ = jQuery.parseJSON(res['sitemap_json']);
+                sitemapOBJ = JSON.parse(res[0]?.data ?? '{}');
                 refreshButtons();
             },
             error: function(err) {
-                console.log(err);
+                console.error(err);
             }
         });
     }
@@ -72,18 +72,17 @@
         return JSON.stringify(sitemapOBJ);
     }
 
-    //refresh buttons after edit
+    //clear and re-add buttons to UI
     function refreshButtons() {
         $('ul.usa-sidenav').html('');
         $('div#sortable').html('');
-        var buttons = sitemapOBJ.buttons;
+        let buttons = sitemapOBJ?.buttons ?? [];
         buttons.sort(function(a, b) {
             return a.order - b.order;
         });
         $.each(buttons, function(index, value) {
             addButtonToUI(value);
         });
-        save();
     }
 
     // insert button into sortable list and sidenav
@@ -94,7 +93,7 @@
         const icon = button.icon ? '<img alt="" style="float: left; margin-right: 1rem; height: 48px; width: 48px;" src="' +
             button.icon + '">' : '';
         $('div#sortable').append(
-            '<div tabindex="0" class="edit-card leaf-sitemap-card draggable="true" style="cursor: pointer; background-color: ' +
+            '<div tabindex="0" class="edit-card leaf-sitemap-card" draggable="true" style="cursor: pointer; background-color: ' +
             button.color + '; color: ' + button.fontColor + ';" id="div_buttonID_' + button.id +
             '");" title="Drag to move, click to edit."><h3 class="edit-card" id="div_headingID_' + button.id +
             '"><a tabindex="-1" href="javascript:void(0);" onClick="editButtonDialog(\'' + button.id +
@@ -143,7 +142,6 @@
             }
         });
         dialog.hide();
-        refreshButtons();
         save();
     }
 
@@ -187,10 +185,10 @@
             '<input type="color" id="btnFntColor" name="btnFntColor" style="display: block;" value="#000000">' +
             '</div>' +
             '<div class="leaf-marginAll-1rem" style="width: 90%; float: left;">' +
-            '<label for="iconpicker" class="leaf-bold" style="display: inline-block;">Icon (Optional)</label>' +
+            '<div id="iconpicker_label" class="leaf-bold" style="display: inline-block;">Icon (Optional)</div>' +
             '<div id="picked-icon" class="icon-picked" style="display: inline-block;"></div>' +
             '</div>' +
-            '<div id="iconpicker" style="border: 1px solid grey; width: 100%; height: 10rem; overflow: auto; float: left; margin-bottom: 1rem;"></div>' +
+            '<div id="iconpicker" aria-labelledby="iconpicker_label" style="border: 1px solid grey; width: 100%; height: 10rem; overflow: auto; float: left; margin-bottom: 1rem;"></div>' +
             '</div></div>');
         $('#iconpicker').on('keydown', function(event) {
             if (event.keyCode === 13) {
@@ -207,17 +205,16 @@
     function createNewButtonDialog() {
         dialog.setSaveHandler(function() {
             dialog.indicateBusy();
-            let id = generateNewButtonID();
-            let title = $("#xhr input#button-title").val();
-            let description = $("#xhr input#button-description").val();
-            let target = $("#xhr input#button-target").val();
-            let color = $("#xhr input[name='btnColor']").val();
-            let fontColor = $("#xhr input[name='btnFntColor']").val();
-            let icon = $("#xhr #picked-icon>img").attr('src') ?? '';
-            let order = sitemapOBJ.buttons.length;
-            let newButton = {id: id, title: title, description: description, target: target, color: color, fontColor: fontColor, icon: icon, order: order};
+            const id = generateNewButtonID();
+            const title = stripAllTags($("#xhr input#button-title").val());
+            const description = stripAllTags($("#xhr input#button-description").val());
+            const target = stripAllTags($("#xhr input#button-target").val());
+            const color = stripAllTags($("#xhr input[name='btnColor']").val());
+            const fontColor = stripAllTags($("#xhr input[name='btnFntColor']").val());
+            const icon = stripAllTags($("#xhr #picked-icon>img").attr('src') ?? '');
+            const order = sitemapOBJ.buttons.length;
+            const newButton = { id, title, description, target, color, fontColor, icon, order };
             sitemapOBJ.buttons.push(newButton);
-            addButtonToUI(newButton);
             dialog.hide();
             save();
         });
@@ -261,12 +258,12 @@
             '<input type="color" id="btnFntColor" name="btnFntColor" style="display: block;" value="#000000" />' +
             '</div>' +
             '<div class="leaf-marginAll-1rem" style="width: 90%; float: left;">' +
-            '<label for="iconpicker" class="leaf-bold" style="display: inline-block;">Icon (Optional)</label>' +
+            '<div id="iconpicker_label" class="leaf-bold" style="display: inline-block;">Icon (Optional)</div>' +
             '<div id="picked-icon" class="icon-picked" style="display: inline-block;">' + (icon ?
                 '<img alt="" class="icon leaf-marginLeft-1rem" style="vertical-align: middle;" src=' + icon + '>' : '') +
             '</div>' +
             '</div>' +
-            '<div id="iconpicker" tabindex="0" style="border: 1px solid grey; width: 100%; height: 10rem; overflow: auto; float: left; margin-bottom: 1rem;"></div>' +
+            '<div id="iconpicker" tabindex="0" aria-labelledby="iconpicker_label" style="border: 1px solid grey; width: 100%; height: 10rem; overflow: auto; float: left; margin-bottom: 1rem;"></div>' +
             '<div class="leaf-buttonBar leaf-clearBoth">' +
             '<button class="usa-button usa-button--secondary leaf-float-right" onClick="deleteButtonFromUI(\'' +
             buttonID + '\');" id="delete-button">Delete Site</button>' +
@@ -284,14 +281,13 @@
         // save handler
         dialog.setSaveHandler(function() {
             dialog.indicateBusy();
-            let id = generateNewButtonID();
-            let title = $("#xhr input#button-title").val();
-            let description = $("#xhr input#button-description").val();
-            let target = $("#xhr input#button-target").val();
-            let color = $("#xhr input[name='btnColor']").val();
-            let fontColor = $("#xhr input[name='btnFntColor']").val();
-            let icon = $("#xhr #picked-icon>img").attr('src') ?? '';
-            let order = sitemapOBJ.buttons.length;
+            const title = stripAllTags($("#xhr input#button-title").val());
+            const description = stripAllTags($("#xhr input#button-description").val());
+            const target = stripAllTags($("#xhr input#button-target").val());
+            const color = stripAllTags($("#xhr input[name='btnColor']").val());
+            const fontColor = stripAllTags($("#xhr input[name='btnFntColor']").val());
+            const icon = stripAllTags($("#xhr #picked-icon>img").attr('src') ?? '');
+
             $.each(sitemapOBJ.buttons, function(index, value) {
                 if (value.id == buttonID) {
                     sitemapOBJ.buttons[index].title = title;
@@ -302,23 +298,22 @@
                     sitemapOBJ.buttons[index].icon = icon;
                 }
             });
-            refreshButtons();
             dialog.hide();
             save();
         });
         $('#simplexhr').css({width: $(window).width() * .8, height: $(window).height() * .8});
         dialog.show();
         $('input:visible:first, select:visible:first').focus();
-        getIcons(icon);
+        getIcons();
     }
 
-    function getIcons(currIcon) {
+    function getIcons() {
         $.ajax({
             type: 'GET',
             url: './api/iconPicker/list',
             success: function(results) {
-                for (result in results) {
-                    icon = results[result];
+                for (const result in results) {
+                    let icon = results[result];
                     icon.id = icon.alt.replace('.svg', '');
                     $('#iconpicker').append(`
 <div id="${icon.id}_parent" value=${icon.src} onClick="selectIcon('${icon.src}');" style="cursor: pointer;">
@@ -329,8 +324,8 @@
                     `);
                 }
             },
-            fail: function(err) {
-                console.log(err);
+            error: function(err) {
+                console.error(err);
             }
         });
     }
@@ -348,14 +343,16 @@
 
     // saves sitemap json into the custom report
     function save() {
-        var newJson = buildSitemapJSON();
+        const newJson = buildSitemapJSON();
         $.ajax({
-                type: 'POST',
-                url: './api/site/settings/sitemap_json',
-                data: {CSRFToken: '<!--{$CSRFToken}-->',
+            type: 'POST',
+            url: './api/site/settings/sitemap_json',
+            data: {
+                CSRFToken: '<!--{$CSRFToken}-->',
                 sitemap_json: newJson
             },
             success: function(res) {
+                refreshButtons();
                 // show/hide alert
                 $("#sitemap-alert").fadeIn();
                 $("#sitemap-alert").delay(1800).fadeOut();
